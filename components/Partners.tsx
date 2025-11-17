@@ -33,7 +33,7 @@ export default function Partners() {
               <img
                 src={getLogoUrl(partner.domain)}
                 alt={partner.name}
-                className="object-contain w-32 h-32 md:w-40 md:h-40"
+                className="object-contain w-24 h-24 md:w-32 md:h-32"
                 loading="lazy"
               />
             </div>

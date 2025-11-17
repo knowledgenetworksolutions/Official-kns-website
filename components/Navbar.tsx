@@ -31,35 +31,45 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 relative ${
         scrolled
           ? 'bg-white shadow-md'
           : 'bg-white/95 backdrop-blur-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
-        <div className="flex items-center justify-between h-24 md:h-28">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            {logoError ? (
-              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-mauve to-mauve-dark bg-clip-text text-transparent">
-                KNS
-              </div>
-            ) : (
-              <div className="relative h-20 w-40 md:h-24 md:w-48 flex-shrink-0">
-                <Image
-                  src="/IMG_2498-removebg-preview.png"
-                  alt="KNS Logo"
-                  fill
-                  className="object-contain"
-                  priority
-                  sizes="(max-width: 768px) 160px, 192px"
-                  onError={() => setLogoError(true)}
-                />
-              </div>
-            )}
-          </Link>
+      {/* Logo + Name */}
+      <Link
+        href="/"
+        className="absolute left-2 sm:left-4 lg:left-8 top-1/2 -translate-y-1/2 flex items-center gap-1 z-10"
+      >
+        {logoError ? (
+          <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-mauve to-mauve-dark bg-clip-text text-transparent">
+            KNS
+          </div>
+        ) : (
+          <div className="relative h-20 w-20 md:h-24 md:w-24 flex-shrink-0">
+            <Image
+              src="/IMG_2498-removebg-preview.png"
+              alt="KNS Logo"
+              fill
+              className="object-contain"
+              priority
+              sizes="(max-width: 768px) 80px, 96px"
+              onError={() => setLogoError(true)}
+            />
+          </div>
+        )}
 
+        {/* Text now close to logo */}
+        <div className="flex flex-col text-sm lg:text-base font-semibold text-charcoal leading-tight ml-1 sm:ml-2">
+          <span>Knowledge</span>
+          <span>Network</span>
+          <span>Solutions</span>
+        </div>
+      </Link>
+
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="flex items-center justify-end h-24 md:h-28">
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
             {navLinks.map((link) => (
@@ -72,12 +82,6 @@ export default function Navbar() {
                 <span className="absolute bottom-1.5 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-mauve group-hover:w-3/4 transition-all duration-300 rounded-full"></span>
               </Link>
             ))}
-            <Link
-              href="/auth"
-              className="ml-2 px-5 py-2.5 bg-gradient-to-r from-mauve to-mauve-dark text-white rounded-lg hover:from-mauve-dark hover:to-mauve transition-all duration-300 font-semibold text-sm lg:text-base whitespace-nowrap shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
-            >
-              Sign Up / Login
-            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -111,13 +115,6 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <Link
-                href="/auth"
-                onClick={() => setIsOpen(false)}
-                className="block px-5 py-3.5 bg-gradient-to-r from-mauve to-mauve-dark text-white rounded-lg hover:from-mauve-dark hover:to-mauve transition-all duration-300 text-center font-semibold text-base mt-4 shadow-md"
-              >
-                Sign Up / Login
-              </Link>
             </div>
           </motion.div>
         )}
@@ -125,4 +122,3 @@ export default function Navbar() {
     </nav>
   )
 }
-

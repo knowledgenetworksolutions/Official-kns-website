@@ -20,7 +20,6 @@ export default function Hero() {
   // - hero-3-training.jpg
   // - hero-4-telecommunications.jpg
   // - hero-5-cloud.jpg
-  // - hero-6-call-center.jpg
   const heroImages = [
     '/hero-images/hero-1-it-consultancy.webp', // IT Consultancy & Software Solutions - Black professionals group high-five
     '/hero-images/hero-2-cybersecurity.webp', // Cybersecurity Solutions - Black man with cybersecurity interface
@@ -47,7 +46,7 @@ export default function Hero() {
                   fill
                   className="object-cover"
                   priority={index < 2}
-                  sizes="20vw"
+                  sizes="40vw"
                 />
                 {/* Gradient overlay for text readability */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40"></div>

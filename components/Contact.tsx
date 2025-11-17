@@ -8,18 +8,47 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
+    company: '',
+    subject: '',
+    service: '',
     message: '',
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const services = [
+    'Cybersecurity & Digital Resilience',
+    'Telecommunications Engineering & Network Services',
+    'Digital Skills Development & Capacity Building',
+    'Customer Experience & Call Center Services',
+    'Digital Transformation & Enterprise Technology Solutions',
+    'Outsourcing & Managed Services',
+    'General Inquiry',
+  ]
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log('Form submitted:', formData)
-    alert('Thank you for your message! We will get back to you soon.')
-    setFormData({ name: '', email: '', message: '' })
+    setIsSubmitting(true)
+    
+    // Simulate form submission (replace with actual API call)
+    setTimeout(() => {
+      console.log('Form submitted:', formData)
+      alert('Thank you for your message! We will get back to you soon.')
+      setFormData({ 
+        name: '', 
+        email: '', 
+        phone: '',
+        company: '',
+        subject: '',
+        service: '',
+        message: '' 
+      })
+      setIsSubmitting(false)
+    }, 1000)
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -54,39 +83,109 @@ export default function Contact() {
             className="bg-white p-8 rounded-xl shadow-lg"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-charcoal mb-2">
+                    Full Name <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mauve focus:border-transparent transition-all duration-300"
+                    placeholder="John Doe"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-charcoal mb-2">
+                    Email Address <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mauve focus:border-transparent transition-all duration-300"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-charcoal mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mauve focus:border-transparent transition-all duration-300"
+                    placeholder="+232 79 442 442"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-charcoal mb-2">
+                    Company/Organization
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mauve focus:border-transparent transition-all duration-300"
+                    placeholder="Your Company Name"
+                  />
+                </div>
+              </div>
+
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-charcoal mb-2">
-                  Name
+                <label htmlFor="service" className="block text-sm font-medium text-charcoal mb-2">
+                  Service of Interest
+                </label>
+                <select
+                  id="service"
+                  name="service"
+                  value={formData.service}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mauve focus:border-transparent transition-all duration-300 bg-white"
+                >
+                  <option value="">Select a service (optional)</option>
+                  {services.map((service) => (
+                    <option key={service} value={service}>
+                      {service}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="subject" className="block text-sm font-medium text-charcoal mb-2">
+                  Subject <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mauve focus:border-transparent transition-all duration-300"
-                  placeholder="Your Name"
+                  placeholder="What is your inquiry about?"
                 />
               </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-charcoal mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mauve focus:border-transparent transition-all duration-300"
-                  placeholder="your.email@example.com"
-                />
-              </div>
+
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-charcoal mb-2">
-                  Message
+                  Message <span className="text-red-500">*</span>
                 </label>
                 <textarea
                   id="message"
@@ -96,27 +195,41 @@ export default function Contact() {
                   required
                   rows={6}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mauve focus:border-transparent transition-all duration-300 resize-none"
-                  placeholder="Your message..."
+                  placeholder="Please provide details about your inquiry..."
                 />
               </div>
+
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-mauve text-white rounded-lg font-semibold hover:bg-mauve-dark transition-colors duration-300 flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className="w-full px-6 py-3 bg-mauve text-white rounded-lg font-semibold hover:bg-mauve-dark transition-colors duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
-                <span className="relative w-5 h-5">
-                  <img
-                    src="/icons/send-icon.svg"
-                    alt="Send"
-                    className="w-5 h-5 object-contain"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none'
-                      const fallback = e.currentTarget.nextElementSibling as HTMLElement
-                      if (fallback) fallback.style.display = 'block'
-                    }}
-                  />
-                  <Send size={20} style={{ display: 'none' }} />
-                </span>
+                {isSubmitting ? (
+                  <>
+                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <span className="relative w-5 h-5">
+                      <img
+                        src="/icons/send-icon.svg"
+                        alt="Send"
+                        className="w-5 h-5 object-contain"
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none'
+                          const fallback = e.currentTarget.nextElementSibling as HTMLElement
+                          if (fallback) fallback.style.display = 'block'
+                        }}
+                      />
+                      <Send size={20} style={{ display: 'none' }} />
+                    </span>
+                  </>
+                )}
               </button>
             </form>
           </motion.div>

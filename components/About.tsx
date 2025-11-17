@@ -19,7 +19,7 @@ export default function About() {
             className="relative h-96 md:h-[500px] rounded-lg overflow-hidden shadow-xl"
           >
             <Image
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+              src="https://vellum.co.ke/wp-content/uploads/2024/08/SF2-1.jpg"
               alt="KNS Team"
               fill
               className="object-cover"
@@ -39,9 +39,10 @@ export default function About() {
               About KNS
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Knowledge Network Systems (KNS) is a leading provider of IT solutions,
-              cybersecurity services, and professional training. We empower organizations
-              and individuals with the knowledge and tools needed to thrive in the digital age.
+              Knowledge Network Solutions (KNS) is a premier technology, telecommunications, digital skills, and cybersecurity consulting company transforming how organizations operate, connect, and secure their digital environments across Sierra Leone and West Africa. As a trusted partner to government ministries, development agencies, universities, banks, telecom operators, and private-sector enterprises, we deliver solutions that bridge the digital divide, enhance operational efficiency, and strengthen national competitiveness.
+            </p>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Recognized by the Ministry of Communication, Technology & Innovation (MoCTI) as "Digital Skills Champion 2025," KNS stands at the frontline of Sierra Leone's digital evolution. With over 20 years of experience, we empower citizens with globally recognized certifications and deliver secure, scalable, and future-ready technologies for organizations of all sizes.
             </p>
 
             {/* Mission & Vision */}
@@ -53,9 +54,7 @@ export default function About() {
                 <div>
                   <h3 className="text-xl font-semibold text-charcoal mb-2">Our Mission</h3>
                   <p className="text-gray-600">
-                    To build resilient IT professionals and future-ready enterprises through
-                    cutting-edge solutions, comprehensive training, and unwavering commitment
-                    to excellence.
+                    To empower organizations and communities across Africa with innovative, secure, and human-centered digital solutions, strengthening institutional capacity, elevating customer experience, and driving sustainable digital transformation.
                   </p>
                 </div>
               </div>
@@ -67,9 +66,7 @@ export default function About() {
                 <div>
                   <h3 className="text-xl font-semibold text-charcoal mb-2">Our Vision</h3>
                   <p className="text-gray-600">
-                    To be the premier knowledge network that bridges the gap between
-                    technology and human potential, creating a smarter digital future
-                    for all.
+                    To be West Africa's most trusted digital transformation partner leading in cybersecurity, telecommunications, digital skills, and customer experience while shaping a secure, connected, and digitally empowered future.
                   </p>
                 </div>
               </div>
@@ -81,7 +78,7 @@ export default function About() {
                 <div className="flex items-center justify-center w-16 h-16 bg-mauve rounded-full mb-2">
                   <Award className="text-white" size={32} />
                 </div>
-                <p className="text-3xl font-bold text-mauve">10+</p>
+                <p className="text-3xl font-bold text-mauve">20+</p>
                 <p className="text-sm text-gray-600">Years of Experience</p>
               </div>
             </div>

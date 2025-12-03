@@ -28,12 +28,12 @@ export default function Partners() {
           {duplicatedPartners.map((partner, index) => (
             <div
               key={index}
-              className="flex-shrink-0 mx-8 flex items-center justify-center"
+              className="flex-shrink-0 mx-4 md:mx-8 flex items-center justify-center"
             >
               <img
                 src={getLogoUrl(partner.domain)}
                 alt={partner.name}
-                className="object-contain w-24 h-24 md:w-32 md:h-32"
+                className="object-contain w-16 h-16 md:w-32 md:h-32"
                 loading="lazy"
               />
             </div>

@@ -32,7 +32,7 @@ export default function Hero() {
   const duplicatedImages = [...heroImages, ...heroImages]
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-[50vh] sm:h-[60vh] md:h-[80vh] lg:h-screen w-full overflow-hidden">
       {/* Image Slider Container */}
       <div className="absolute inset-0 w-full h-full">
         {/* Animated Image Slider - slides from left to right continuously */}
@@ -64,16 +64,16 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6 md:space-y-8"
+            className="space-y-3 sm:space-y-4 md:space-y-6 lg:space-y-8"
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white drop-shadow-lg">
               Empowering a Smarter Digital Future
             </h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl lg:text-3xl text-white/90 drop-shadow-md max-w-4xl mx-auto"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white/90 drop-shadow-md max-w-4xl mx-auto px-2"
             >
               Building Resilient IT Professionals and Future-Ready Enterprises
             </motion.p>
@@ -81,18 +81,18 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4"
+              className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center items-center pt-2 sm:pt-3 md:pt-4 px-4"
             >
               <Link
                 href="/services"
-                className="group px-8 py-4 bg-mauve text-white rounded-lg font-semibold text-lg hover:bg-mauve-dark transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2"
+                className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-mauve text-white rounded-lg font-semibold text-base sm:text-lg hover:bg-mauve-dark transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
               >
                 Explore Services
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
               </Link>
               <Link
                 href="/contact"
-                className="group px-8 py-4 bg-white/10 backdrop-blur-sm text-white border-2 border-white rounded-lg font-semibold text-lg hover:bg-white hover:text-charcoal transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2"
+                className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm text-white border-2 border-white rounded-lg font-semibold text-base sm:text-lg hover:bg-white hover:text-charcoal transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
               >
                 Contact Us
                 <ChevronRight className="group-hover:translate-x-1 transition-transform" size={20} />

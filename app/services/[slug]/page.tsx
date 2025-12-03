@@ -6,7 +6,7 @@ import CybersecurityHero from '@/components/CybersecurityHero'
 import TelecommunicationsHero from '@/components/TelecommunicationsHero'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, ShieldCheck, Server, Headphones, Briefcase, GraduationCap, PhoneCall } from 'lucide-react'
+import { ArrowRight, CheckCircle, Shield, Server, Headphones, Briefcase, GraduationCap, PhoneCall } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
@@ -28,7 +28,7 @@ const servicesData: Record<string, ServiceDetail> = {
     slug: 'cybersecurity-digital-resilience',
     title: 'Cybersecurity & Digital Resilience',
     icon: '/icons/cybersecurity-icon.svg',
-    fallbackIcon: ShieldCheck,
+    fallbackIcon: Shield,
     image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1920&q=80',
     shortDescription: 'Protect your organization\'s digital environment with advanced cybersecurity and information assurance solutions.',
     fullDescription: 'KNS protects your organization\'s digital environment with advanced cybersecurity and information assurance solutions. We strengthen your digital defences, enhance regulatory compliance, and ensure secure business continuity in a rapidly evolving threat landscape.',

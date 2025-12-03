@@ -77,10 +77,10 @@ export default function BlogNews() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-charcoal mb-4">
             Blog & News
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
             Stay updated with the latest news, insights, and updates from KNS
           </p>
         </motion.div>
@@ -131,10 +131,10 @@ export default function BlogNews() {
                     <span>{calculateReadingTime(post.excerpt + ' ' + post.title)}</span>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-charcoal mb-3 line-clamp-2">
+                <h3 className="text-lg sm:text-xl font-semibold text-charcoal mb-3 line-clamp-2">
                   {post.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed mb-4 flex-grow line-clamp-3">
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4 flex-grow line-clamp-3">
                   {post.excerpt}
                 </p>
                 <div className="inline-flex items-center gap-2 text-mauve font-semibold hover:text-mauve-dark transition-colors duration-300 mt-auto">
@@ -157,7 +157,7 @@ export default function BlogNews() {
         >
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-mauve text-white rounded-lg font-semibold text-lg hover:bg-mauve-dark transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-mauve text-white rounded-lg font-semibold text-sm sm:text-base md:text-lg hover:bg-mauve-dark transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             View All News & Updates
             <ArrowRight size={20} />

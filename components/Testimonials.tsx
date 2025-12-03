@@ -64,10 +64,10 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-charcoal mb-4">
             Testimonials
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
             See what our clients say about us
           </p>
         </motion.div>
@@ -82,24 +82,24 @@ export default function Testimonials() {
             className="bg-gradient-to-br from-mauve-light/30 to-white p-8 md:p-12 rounded-2xl shadow-xl border border-mauve-light"
           >
             <Quote className="text-mauve mb-4" size={40} />
-            <p className="text-lg md:text-xl text-gray-700 italic mb-8 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 italic mb-6 sm:mb-8 leading-relaxed">
               "{testimonials[currentIndex].feedback}"
             </p>
-            <div className="flex items-center gap-4">
-              <div className="relative w-16 h-16 rounded-full overflow-hidden">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden">
                 <Image
                   src={testimonials[currentIndex].avatar}
                   alt={testimonials[currentIndex].name}
                   fill
                   className="object-cover"
-                  sizes="64px"
+                  sizes="(max-width: 640px) 48px, 64px"
                 />
               </div>
               <div>
-                <p className="font-semibold text-charcoal text-lg">
+                <p className="font-semibold text-charcoal text-base sm:text-lg">
                   {testimonials[currentIndex].name}
                 </p>
-                <p className="text-gray-600">
+                <p className="text-sm sm:text-base text-gray-600">
                   {testimonials[currentIndex].role}, {testimonials[currentIndex].company}
                 </p>
               </div>

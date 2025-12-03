@@ -80,9 +80,9 @@ export default function AboutPage() {
     {
       name: 'Chinedu D. G. Nwaefuna',
       role: 'Co-Founder & Chief Information Security Officer (CISO)',
-      credentials: 'MSc IT, MSc Business Administration, PMP, CCISO, CISA, ISO 27032 Senior Lead Cybersecurity Manager, CCNP, Microsoft Certified Trainer, VMware VCP, CompTIA Security+/Pentest+/CSIE',
+      credentials: 'MSc IT, BSc IT, Microsoft Certified Trainer (MCT), PMP, EC-Council "CCISO, CEH & ECSA", ISACA "CISA & GCEIT", ISO 27032 Senior Lead Cybersecurity Manager, CCNP x4 (Collaboration, Service Provider, Security & Enterprise), VMware VCP "Network & Data Virtualization", CompTIA "SecurityX, Security+, Pentest+, CySA+, CSAE, CNSP & CNVP", Fortinet NSE-7 and more.',
       image: '/Staffs/WhatsApp Image 2025-11-14 at 8.28.08 PM (1).jpeg',
-      bio: 'Chinedu D. G. Nwaefuna is an accomplished cybersecurity leader and enterprise network architect with nearly 20 years of experience in designing, implementing, and securing telecommunications and ICT infrastructure. As the Co-Founder and Chief Information Security Officer (CISO) of KNS, Chinedu oversees the organization\'s cybersecurity architecture, risk management strategies, incident response planning, secure network design, and national cyber capacity-building initiatives.',
+      bio: 'Chinedu D. G. Nwaefuna is an accomplished cybersecurity leader and enterprise network architect with over 20 years of experience in designing, implementing, and securing telecommunications and ICT infrastructure. As the Co-Founder and Chief Information Security Officer (CISO) of KNS, Chinedu oversees the organization\'s cybersecurity architecture, risk management strategies, incident response planning, secure network design, and national cyber capacity-building initiatives.',
       career: 'His expertise spans leading large-scale projects, including fiber backbone deployments, MPLS networks, and national emergency call-center infrastructure. Chinedu\'s extensive background includes serving as CTO at Afcom Sierra Leone, Cyber Security Specialist at Base SL, and co-owner/CTO at KNS, where he has played a pivotal role in advancing secure digital transformation for clients and national stakeholders.',
       keyFocusAreas: [
         'Cybersecurity architecture',
@@ -91,14 +91,14 @@ export default function AboutPage() {
         'Telecom security',
         'Skills training'
       ],
-      linkedin: '#',
+      linkedin: 'https://www.linkedin.com/in/chinedu-nwaefuna-5893835/',
     },
   ]
 
   return (
     <main className="min-h-screen">
       <Navbar />
-      <section className="pt-32 pb-20 bg-gradient-to-b from-mauve-light/20 to-white">
+      <section className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 bg-gradient-to-b from-mauve-light/20 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -106,20 +106,20 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-charcoal mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal mb-4">
               About Us
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               Empowering a Smarter Digital Future
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center mb-12 sm:mb-16 md:mb-20">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="relative h-96 md:h-[500px] rounded-lg overflow-hidden shadow-xl"
+              className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-xl"
             >
               <Image
                 src="https://vellum.co.ke/wp-content/uploads/2024/08/SF2-1.jpg"
@@ -136,17 +136,17 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
               className="space-y-6"
             >
-              <h2 className="text-4xl font-bold text-charcoal">Who We Are</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal">Who We Are</h2>
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                 Knowledge Network Solutions (KNS) is a premier technology, telecommunications, digital skills, and cybersecurity consulting company transforming how organizations operate, connect, and secure their digital environments across Sierra Leone and West Africa. As a trusted partner to government ministries, development agencies, universities, banks, telecom operators, and private-sector enterprises, we deliver solutions that bridge the digital divide, enhance operational efficiency, and strengthen national competitiveness.
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                 Recognized by the Ministry of Communication, Technology & Innovation (MoCTI) as "Digital Skills Champion 2025," KNS stands at the frontline of Sierra Leone's digital evolution. We empower citizens with globally recognized certifications, support digital transformation across institutions, and deliver secure, scalable, and future-ready technologies for organizations of all sizes.
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                 With an integrated portfolio of digital-skills development, cybersecurity advisory, enterprise technology solutions, telecommunications engineering, customer-experience & call-centre operations, and managed services, KNS serves as a one-stop digital transformation partner. Our approach blends innovation, hands-on expertise, and global best practices to create meaningful impact and long-term sustainability.
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                 With over 20 years of experience across national ICT programmes, education reform, enterprise architecture, telecom infrastructure, and cybersecurity initiatives, KNS continues to build Africa's next generation of digital professionals, resilient institutions, and secure digital ecosystems.
               </p>
             </motion.div>
@@ -164,8 +164,8 @@ export default function AboutPage() {
                   <Target className="text-mauve" size={32} />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-charcoal mb-3">Our Mission</h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-charcoal mb-3">Our Mission</h3>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                     To empower organizations and communities across Africa with innovative, secure, and human-centered digital solutions, strengthening institutional capacity, elevating customer experience, and driving sustainable digital transformation.
                   </p>
                 </div>
@@ -183,8 +183,8 @@ export default function AboutPage() {
                   <Eye className="text-mauve" size={32} />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-charcoal mb-3">Our Vision</h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-charcoal mb-3">Our Vision</h3>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                     To be West Africa's most trusted digital transformation partner leading in cybersecurity, telecommunications, digital skills, and customer experience while shaping a secure, connected, and digitally empowered future.
                   </p>
                 </div>
@@ -256,8 +256,8 @@ export default function AboutPage() {
                     <Shield className="text-mauve" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-charcoal mb-2">Integrity & Accountability</h3>
-                    <p className="text-gray-600">
+                    <h3 className="text-lg sm:text-xl font-semibold text-charcoal mb-2">Integrity & Accountability</h3>
+                    <p className="text-sm sm:text-base text-gray-600">
                       We operate with transparency, professionalism, and ethical leadership.
                     </p>
                   </div>
@@ -276,8 +276,8 @@ export default function AboutPage() {
                     <Heart className="text-mauve" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-charcoal mb-2">Customer-Centricity</h3>
-                    <p className="text-gray-600">
+                    <h3 className="text-lg sm:text-xl font-semibold text-charcoal mb-2">Customer-Centricity</h3>
+                    <p className="text-sm sm:text-base text-gray-600">
                       We design solutions around people, ensuring every service enhances user experience.
                     </p>
                   </div>
@@ -296,8 +296,8 @@ export default function AboutPage() {
                     <Lightbulb className="text-mauve" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-charcoal mb-2">Innovation & Excellence</h3>
-                    <p className="text-gray-600">
+                    <h3 className="text-lg sm:text-xl font-semibold text-charcoal mb-2">Innovation & Excellence</h3>
+                    <p className="text-sm sm:text-base text-gray-600">
                       We deliver world-class solutions driven by global standards and continuous improvement.
                     </p>
                   </div>
@@ -316,8 +316,8 @@ export default function AboutPage() {
                     <Handshake className="text-mauve" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-charcoal mb-2">Collaboration & Partnership</h3>
-                    <p className="text-gray-600">
+                    <h3 className="text-lg sm:text-xl font-semibold text-charcoal mb-2">Collaboration & Partnership</h3>
+                    <p className="text-sm sm:text-base text-gray-600">
                       We work closely with clients, stakeholders, and communities to co-create long-lasting value.
                     </p>
                   </div>
@@ -336,8 +336,8 @@ export default function AboutPage() {
                     <Leaf className="text-mauve" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-charcoal mb-2">Resilience & Sustainability</h3>
-                    <p className="text-gray-600">
+                    <h3 className="text-lg sm:text-xl font-semibold text-charcoal mb-2">Resilience & Sustainability</h3>
+                    <p className="text-sm sm:text-base text-gray-600">
                       We build secure, scalable, and future-proof solutions that support long-term development.
                     </p>
                   </div>
@@ -355,7 +355,7 @@ export default function AboutPage() {
           >
             <div className="bg-gradient-to-r from-mauve-light/30 to-mauve/20 rounded-2xl p-8 md:p-12 text-center">
               <h2 className="text-4xl font-bold text-charcoal mb-6">Our Commitment</h2>
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
                 We are dedicated to building a digitally skilled, secure, and competitive Sierra Leone and West Africa one institution, one community, and one citizen at a time. Through innovation, partnership, and excellence, KNS continues to shape the region's digital future.
               </p>
             </div>
@@ -370,7 +370,7 @@ export default function AboutPage() {
           >
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-charcoal mb-4">Leadership</h2>
-              <p className="text-lg text-gray-600 mt-3 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 mt-3 max-w-4xl mx-auto leading-relaxed">
                 Our leadership team consists of experienced cybersecurity specialists, telecom engineers, enterprise architects, educators, and digital transformation experts with over two decades of regional and international experience. They have led initiatives for:
               </p>
             </div>
@@ -378,30 +378,30 @@ export default function AboutPage() {
               <div className="grid md:grid-cols-2 gap-4 text-gray-600">
                 <div className="flex items-start gap-3">
                   <span className="text-mauve font-bold mt-1">·</span>
-                  <p>Government ministries & regulators</p>
+                  <p className="text-sm sm:text-base">Government ministries & regulators</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-mauve font-bold mt-1">·</span>
-                  <p>World Bank–funded national ICT and digital transformation projects</p>
+                  <p className="text-sm sm:text-base">World Bank–funded national ICT and digital transformation projects</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-mauve font-bold mt-1">·</span>
-                  <p>Telecom operators & network infrastructure providers</p>
+                  <p className="text-sm sm:text-base">Telecom operators & network infrastructure providers</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-mauve font-bold mt-1">·</span>
-                  <p>Universities & TVET institutions</p>
+                  <p className="text-sm sm:text-base">Universities & TVET institutions</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-mauve font-bold mt-1">·</span>
-                  <p>Financial institutions & enterprise organizations</p>
+                  <p className="text-sm sm:text-base">Financial institutions & enterprise organizations</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-mauve font-bold mt-1">·</span>
-                  <p>National cybersecurity capacity-building campaigns</p>
+                  <p className="text-sm sm:text-base">National cybersecurity capacity-building campaigns</p>
                 </div>
               </div>
-              <p className="text-lg text-gray-600 mt-8 text-center leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 mt-8 text-center leading-relaxed">
                 Their combined expertise ensures every KNS engagement is strategic, actionable, and impactful.
               </p>
             </div>
@@ -429,9 +429,9 @@ export default function AboutPage() {
                     <p className="text-sm text-gray-600 mb-4 leading-relaxed">{exec.credentials}</p>
                     
                     <div className="space-y-4 mb-6">
-                      <p className="text-gray-700 leading-relaxed">{exec.bio}</p>
+                      <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{exec.bio}</p>
                       {exec.career && (
-                        <p className="text-gray-700 leading-relaxed">{exec.career}</p>
+                        <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{exec.career}</p>
                       )}
                     </div>
 

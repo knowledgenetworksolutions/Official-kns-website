@@ -19,9 +19,9 @@ export default function GalleryAwards() {
       <div className="text-center mb-8">
         <div className="inline-flex items-center gap-3 mb-4">
           <Trophy className="text-mauve" size={40} />
-          <h2 className="text-3xl md:text-4xl font-bold text-charcoal">Awards & Recognition</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal">Awards & Recognition</h2>
         </div>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
           Celebrating our achievements and recognition in the technology industry
         </p>
       </div>
@@ -34,7 +34,7 @@ export default function GalleryAwards() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative h-80 md:h-96 rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-mauve-light to-white"
+            className="relative h-48 sm:h-64 md:h-80 lg:h-96 rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-mauve-light to-white"
           >
             {!imageError ? (
               <img
@@ -76,7 +76,7 @@ export default function GalleryAwards() {
                 <h3 className="text-sm font-semibold text-mauve uppercase tracking-wide">
                   Recognition
                 </h3>
-                <h2 className="text-3xl md:text-4xl font-bold text-charcoal">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal">
                   Digital Skills Champion
                 </h2>
               </div>
@@ -84,7 +84,7 @@ export default function GalleryAwards() {
 
             <div className="space-y-4">
               <div>
-                <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
                   Knowledge Network Solutions has been honored as the{' '}
                   <span className="font-semibold text-mauve">Digital Skills Champion</span> by the{' '}
                   <span className="font-semibold text-charcoal">
@@ -104,7 +104,7 @@ export default function GalleryAwards() {
               </div>
 
               <div className="pt-4">
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                   This prestigious award recognizes our outstanding contribution to advancing digital
                   skills and innovation in Sierra Leone, demonstrating our commitment to empowering
                   individuals and organizations through technology education and solutions.

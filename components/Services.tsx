@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ShieldCheck, Server, Headphones, Briefcase, GraduationCap, PhoneCall, ArrowRight } from 'lucide-react'
+import { Shield, Server, Headphones, Briefcase, GraduationCap, PhoneCall, ArrowRight } from 'lucide-react'
 import { useState } from 'react'
 import Link from 'next/link'
 
@@ -10,7 +10,7 @@ export default function Services() {
     {
       slug: 'cybersecurity-digital-resilience',
       icon: '/icons/cybersecurity-icon.svg',
-      fallbackIcon: ShieldCheck,
+      fallbackIcon: Shield,
       title: 'Cybersecurity & Digital Resilience',
       description: 'Protect your organization\'s digital environment with advanced cybersecurity and information assurance solutions.',
     },
@@ -92,10 +92,10 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-charcoal mb-4">
             Our Services
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             Comprehensive IT solutions tailored to meet your business needs
           </p>
         </motion.div>
@@ -128,10 +128,10 @@ export default function Services() {
                       onError={() => handleImageError(index)}
                     />
                   </div>
-                  <h3 className="text-xl font-semibold text-charcoal mb-3">
+                  <h3 className="text-lg sm:text-xl font-semibold text-charcoal mb-3">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-4 flex-grow">
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4 flex-grow">
                     {service.description}
                   </p>
                   <div className="flex items-center text-mauve font-semibold mt-auto">

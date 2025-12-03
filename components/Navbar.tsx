@@ -37,46 +37,48 @@ export default function Navbar() {
           : 'bg-white/95 backdrop-blur-sm'
       }`}
     >
-      {/* Logo + Name */}
-      <Link
-        href="/"
-        className="absolute left-2 sm:left-4 lg:left-8 top-1/2 -translate-y-1/2 flex items-center gap-1 z-10"
-      >
-        {logoError ? (
-          <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-mauve to-mauve-dark bg-clip-text text-transparent">
-            KNS
-          </div>
-        ) : (
-          <div className="relative h-20 w-20 md:h-24 md:w-24 flex-shrink-0">
-            <Image
-              src="/IMG_2498-removebg-preview.png"
-              alt="KNS Logo"
-              fill
-              className="object-contain"
-              priority
-              sizes="(max-width: 768px) 80px, 96px"
-              onError={() => setLogoError(true)}
-            />
-          </div>
-        )}
-
-        {/* Text now close to logo */}
-        <div className="flex flex-col text-sm lg:text-base font-semibold text-charcoal leading-tight ml-1 sm:ml-2">
-          <span>Knowledge</span>
-          <span>Network</span>
-          <span>Solutions</span>
-        </div>
-      </Link>
-
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
-        <div className="flex items-center justify-end h-24 md:h-28">
+        <div className="flex items-center justify-between h-16 sm:h-20 md:h-24 lg:h-28">
+          {/* Logo + Name */}
+          <Link
+            href="/"
+            className="flex items-center gap-1 sm:gap-2 z-10 flex-shrink-0 min-w-0 max-w-[calc(100%-60px)] md:max-w-none"
+          >
+            {logoError ? (
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-mauve to-mauve-dark bg-clip-text text-transparent">
+                KNS
+              </div>
+            ) : (
+              <>
+                <div className="relative h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 xl:h-24 xl:w-24 flex-shrink-0">
+                  <Image
+                    src="/IMG_2498-removebg-preview.png"
+                    alt="KNS Logo"
+                    fill
+                    className="object-contain"
+                    priority
+                    sizes="(max-width: 640px) 40px, (max-width: 768px) 48px, (max-width: 1024px) 64px, (max-width: 1280px) 80px, 96px"
+                    onError={() => setLogoError(true)}
+                  />
+                </div>
+
+                {/* Text - visible on all screens with responsive sizing */}
+                <div className="flex flex-col text-[10px] sm:text-xs md:text-sm lg:text-base font-semibold text-charcoal leading-tight ml-0.5 sm:ml-1 md:ml-2">
+                  <span className="whitespace-nowrap">Knowledge</span>
+                  <span className="whitespace-nowrap">Network</span>
+                  <span className="whitespace-nowrap">Solutions</span>
+                </div>
+              </>
+            )}
+          </Link>
+
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
+          <div className="hidden md:flex items-center space-x-1 lg:space-x-2 flex-1 justify-end">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="relative group px-4 py-2.5 text-charcoal font-semibold hover:text-mauve transition-all duration-300 text-sm lg:text-base rounded-lg hover:bg-mauve-light/10"
+                className="relative group px-3 lg:px-4 py-2.5 text-charcoal font-semibold hover:text-mauve transition-all duration-300 text-sm lg:text-base rounded-lg hover:bg-mauve-light/10"
               >
                 <span className="relative z-10">{link.name}</span>
                 <span className="absolute bottom-1.5 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-mauve group-hover:w-3/4 transition-all duration-300 rounded-full"></span>
@@ -87,7 +89,7 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-charcoal hover:text-mauve transition-colors p-2 flex items-center justify-center"
+            className="md:hidden text-charcoal hover:text-mauve transition-colors p-2 flex items-center justify-center flex-shrink-0 ml-2"
             aria-label="Toggle menu"
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -102,15 +104,15 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-gray-200 shadow-lg"
+            className="md:hidden bg-white border-t border-gray-200 shadow-lg overflow-hidden"
           >
-            <div className="px-4 pt-4 pb-6 space-y-2">
+            <div className="px-4 sm:px-6 pt-4 pb-6 space-y-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-5 py-3.5 text-charcoal hover:text-mauve hover:bg-mauve-light/20 rounded-lg transition-all duration-300 font-semibold text-base border-l-4 border-transparent hover:border-mauve"
+                  className="block px-4 sm:px-5 py-3 sm:py-3.5 text-charcoal hover:text-mauve hover:bg-mauve-light/20 rounded-lg transition-all duration-300 font-semibold text-sm sm:text-base border-l-4 border-transparent hover:border-mauve"
                 >
                   {link.name}
                 </Link>

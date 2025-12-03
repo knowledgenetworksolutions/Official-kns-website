@@ -18,14 +18,14 @@ export default function Award() {
           transition={{ duration: 0.8 }}
           className="bg-gradient-to-r from-mauve-light/30 via-white to-mauve-light/30 rounded-2xl shadow-2xl overflow-hidden border border-mauve/20"
         >
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center p-8 md:p-12">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center p-6 sm:p-8 md:p-12">
             {/* Award Image */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-80 md:h-96 rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-mauve-light to-white"
+              className="relative h-48 sm:h-64 md:h-96 rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-mauve-light to-white"
             >
               {!imageError ? (
                 <img
@@ -67,7 +67,7 @@ export default function Award() {
                   <h3 className="text-sm font-semibold text-mauve uppercase tracking-wide">
                     Recognition
                   </h3>
-                  <h2 className="text-3xl md:text-4xl font-bold text-charcoal">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal">
                     Digital Skills Champion
                   </h2>
                 </div>
@@ -75,7 +75,7 @@ export default function Award() {
 
               <div className="space-y-4">
                 <div>
-                  <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
                     Knowledge Network Solutions has been honored as the{' '}
                     <span className="font-semibold text-mauve">Digital Skills Champion</span> by the{' '}
                     <span className="font-semibold text-charcoal">
@@ -95,7 +95,7 @@ export default function Award() {
                 </div>
 
                 <div className="pt-4">
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                     This prestigious award recognizes our outstanding contribution to advancing digital
                     skills and innovation in Sierra Leone, demonstrating our commitment to empowering
                     individuals and organizations through technology education and solutions.

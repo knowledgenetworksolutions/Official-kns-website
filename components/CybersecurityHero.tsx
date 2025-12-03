@@ -116,7 +116,7 @@ export default function CybersecurityHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-cyan-400 font-semibold text-lg mb-4 tracking-wider"
+              className="text-cyan-400 font-semibold text-sm sm:text-base md:text-lg mb-4 tracking-wider"
             >
               DEFEND. PROTECT. RESILIENT.
             </motion.p>
@@ -126,7 +126,7 @@ export default function CybersecurityHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 leading-tight"
             >
               Cybersecurity & Digital Resilience
             </motion.h1>
@@ -136,7 +136,7 @@ export default function CybersecurityHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 leading-relaxed"
             >
               Protecting institutions, empowering people, and strengthening national digital security across Sierra Leone, Guinea & Liberia.
             </motion.p>
@@ -146,7 +146,7 @@ export default function CybersecurityHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-lg text-cyan-300 mb-10 font-medium"
+              className="text-sm sm:text-base md:text-lg text-cyan-300 mb-6 sm:mb-8 md:mb-10 font-medium"
             >
               Identify threats. Strengthen defences. Build resilient systems.
             </motion.p>

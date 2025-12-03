@@ -84,6 +84,13 @@ html {
   object-position: center center;
 }
 
+/* Mobile responsive hero images */
+@media (max-width: 640px) {
+  .hero-slide img {
+    transform: scale(1.2);
+  }
+}
+
 /* Blog Images - Crop to hide watermarks */
 .blog-image-container {
   overflow: hidden;
@@ -124,7 +131,13 @@ html {
   animation: scrollLeft 30s linear infinite;
   display: flex;
   width: fit-content;
-  min-height: 160px;
+  min-height: 80px;
   align-items: center;
+}
+
+@media (min-width: 768px) {
+  .animate-scroll-left {
+    min-height: 160px;
+  }
 }
 

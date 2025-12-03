@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import { 
-  ShieldCheck, Search, FileCheck, AlertTriangle, Activity, Lock, GraduationCap, 
+  Shield, Search, FileCheck, AlertTriangle, Activity, Lock, GraduationCap, 
   ArrowRight, CheckCircle, Award, Globe, Building2, Landmark, Phone, 
   Heart, Briefcase, Server, Target, Users
 } from 'lucide-react'
@@ -79,7 +79,7 @@ export default function CybersecurityPage() {
       description: 'We support MDAs, banks, telcos, health systems, universities, NGOs, and enterprises with mission-critical cybersecurity needs.'
     },
     {
-      icon: ShieldCheck,
+      icon: Shield,
       title: 'Trusted Digital Skills Champion 2025',
       description: 'Recognized by MoCTI, KNS leads national cybersecurity awareness and capacity-building initiatives.'
     },

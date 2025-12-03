@@ -150,7 +150,7 @@ export default function TelecommunicationsHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-cyan-400 font-semibold text-sm md:text-base mb-4 tracking-wider uppercase"
+              className="text-cyan-400 font-semibold text-xs sm:text-sm md:text-base mb-4 tracking-wider uppercase"
             >
               Reliable. Scalable. Future-Ready Telecommunications Engineering.
             </motion.p>
@@ -160,7 +160,7 @@ export default function TelecommunicationsHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 leading-tight"
             >
               Building the Future of Connectivity
             </motion.h1>
@@ -170,7 +170,7 @@ export default function TelecommunicationsHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed"
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed"
             >
               High-performance fiber, mobile, and enterprise network solutions powering digital transformation across Sierra Leone and the Mano River region.
             </motion.p>

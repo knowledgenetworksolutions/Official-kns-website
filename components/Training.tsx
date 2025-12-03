@@ -48,10 +48,10 @@ export default function Training() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-charcoal mb-4">
             Training & Courses
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
             Enhance your skills with our comprehensive training programs
           </p>
         </motion.div>
@@ -70,10 +70,10 @@ export default function Training() {
               <div className="w-12 h-12 bg-mauve rounded-lg flex items-center justify-center mb-4">
                 <training.icon className="text-white" size={24} />
               </div>
-              <h3 className="text-xl font-semibold text-charcoal mb-3">
+              <h3 className="text-lg sm:text-xl font-semibold text-charcoal mb-3">
                 {training.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                 {training.description}
               </p>
             </motion.div>
@@ -89,7 +89,7 @@ export default function Training() {
         >
           <Link
             href="/auth"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-mauve text-white rounded-lg font-semibold text-lg hover:bg-mauve-dark transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-mauve text-white rounded-lg font-semibold text-sm sm:text-base md:text-lg hover:bg-mauve-dark transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Get Started
             <ArrowRight size={20} />

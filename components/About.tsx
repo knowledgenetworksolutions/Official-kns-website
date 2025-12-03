@@ -35,13 +35,13 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-charcoal">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-charcoal">
               About KNS
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
               Knowledge Network Solutions (KNS) is a premier technology, telecommunications, digital skills, and cybersecurity consulting company transforming how organizations operate, connect, and secure their digital environments across Sierra Leone and West Africa. As a trusted partner to government ministries, development agencies, universities, banks, telecom operators, and private-sector enterprises, we deliver solutions that bridge the digital divide, enhance operational efficiency, and strengthen national competitiveness.
             </p>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
               Recognized by the Ministry of Communication, Technology & Innovation (MoCTI) as "Digital Skills Champion 2025," KNS stands at the frontline of Sierra Leone's digital evolution. With over 20 years of experience, we empower citizens with globally recognized certifications and deliver secure, scalable, and future-ready technologies for organizations of all sizes.
             </p>
 
@@ -52,8 +52,8 @@ export default function About() {
                   <Target className="text-mauve" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-charcoal mb-2">Our Mission</h3>
-                  <p className="text-gray-600">
+                  <h3 className="text-lg sm:text-xl font-semibold text-charcoal mb-2">Our Mission</h3>
+                  <p className="text-sm sm:text-base text-gray-600">
                     To empower organizations and communities across Africa with innovative, secure, and human-centered digital solutions, strengthening institutional capacity, elevating customer experience, and driving sustainable digital transformation.
                   </p>
                 </div>
@@ -64,8 +64,8 @@ export default function About() {
                   <Eye className="text-mauve" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-charcoal mb-2">Our Vision</h3>
-                  <p className="text-gray-600">
+                  <h3 className="text-lg sm:text-xl font-semibold text-charcoal mb-2">Our Vision</h3>
+                  <p className="text-sm sm:text-base text-gray-600">
                     To be West Africa's most trusted digital transformation partner leading in cybersecurity, telecommunications, digital skills, and customer experience while shaping a secure, connected, and digitally empowered future.
                   </p>
                 </div>
@@ -78,8 +78,8 @@ export default function About() {
                 <div className="flex items-center justify-center w-16 h-16 bg-mauve rounded-full mb-2">
                   <Award className="text-white" size={32} />
                 </div>
-                <p className="text-3xl font-bold text-mauve">20+</p>
-                <p className="text-sm text-gray-600">Years of Experience</p>
+                <p className="text-2xl sm:text-3xl font-bold text-mauve">20+</p>
+                <p className="text-xs sm:text-sm text-gray-600">Years of Experience</p>
               </div>
             </div>
 

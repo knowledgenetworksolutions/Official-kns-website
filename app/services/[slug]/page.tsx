@@ -299,7 +299,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
       ) : isTelecommunications ? (
         <TelecommunicationsHero />
       ) : (
-      <section className="pt-32 pb-20 bg-gradient-to-b from-mauve-light/30 to-white">
+      <section className="pt-24 sm:pt-28 md:pt-32 pb-14 sm:pb-16 md:pb-20 bg-gradient-to-b from-mauve-light/30 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -380,7 +380,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
       )}
 
       {/* Features Section */}
-      <section id="services" className={`py-20 ${isCybersecurity ? 'bg-gradient-to-b from-black via-slate-900 to-slate-800' : 'bg-white'}`}>
+      <section id="services" className={`py-14 sm:py-16 md:py-20 ${isCybersecurity ? 'bg-gradient-to-b from-black via-slate-900 to-slate-800' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -418,7 +418,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* Benefits Section */}
-      <section className={`py-20 ${isCybersecurity ? 'bg-slate-900' : 'bg-gradient-to-b from-white to-mauve-light/20'}`}>
+      <section className={`py-14 sm:py-16 md:py-20 ${isCybersecurity ? 'bg-slate-900' : 'bg-gradient-to-b from-white to-mauve-light/20'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -454,7 +454,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* Use Cases Section */}
-      <section className={`py-20 ${isCybersecurity ? 'bg-gradient-to-b from-slate-800 to-black' : 'bg-white'}`}>
+      <section className={`py-14 sm:py-16 md:py-20 ${isCybersecurity ? 'bg-gradient-to-b from-slate-800 to-black' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -489,7 +489,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-mauve to-mauve-dark text-white">
+      <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-r from-mauve to-mauve-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

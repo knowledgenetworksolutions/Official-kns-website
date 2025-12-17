@@ -98,15 +98,15 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen">
       <Navbar />
-      <section className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 bg-gradient-to-b from-mauve-light/20 to-white">
+      <section className="pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-10 sm:pb-14 md:pb-16 lg:pb-20 bg-gradient-to-b from-mauve-light/20 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-12 md:mb-16"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-charcoal mb-3 sm:mb-4">
               About Us
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
@@ -114,12 +114,12 @@ export default function AboutPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center mb-12 sm:mb-16 md:mb-20">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center mb-10 sm:mb-14 md:mb-20">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-xl"
+              className="relative h-60 sm:h-72 md:h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-xl"
             >
               <Image
                 src="https://vellum.co.ke/wp-content/uploads/2024/08/SF2-1.jpg"
@@ -134,7 +134,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-6"
+              className="space-y-5 sm:space-y-6"
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal">Who We Are</h2>
               <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
@@ -152,12 +152,12 @@ export default function AboutPage() {
             </motion.div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-20">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-10 mb-12 sm:mb-16 md:mb-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-white p-8 rounded-xl shadow-lg"
+              className="bg-white p-6 sm:p-8 rounded-xl shadow-lg"
             >
               <div className="flex items-start gap-4">
                 <div className="p-4 bg-mauve-light rounded-lg">
@@ -176,7 +176,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white p-8 rounded-xl shadow-lg"
+              className="bg-white p-6 sm:p-8 rounded-xl shadow-lg"
             >
               <div className="flex items-start gap-4">
                 <div className="p-4 bg-mauve-light rounded-lg">
@@ -192,12 +192,12 @@ export default function AboutPage() {
             </motion.div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8 mb-14 sm:mb-16 md:mb-20">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="text-center bg-white p-8 rounded-xl shadow-lg"
+              className="text-center bg-white p-6 sm:p-8 rounded-xl shadow-lg"
             >
               <div className="flex items-center justify-center w-20 h-20 bg-mauve rounded-full mx-auto mb-4">
                 <Award className="text-white" size={40} />
@@ -210,7 +210,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-center bg-white p-8 rounded-xl shadow-lg"
+              className="text-center bg-white p-6 sm:p-8 rounded-xl shadow-lg"
             >
               <div className="flex items-center justify-center w-20 h-20 bg-mauve rounded-full mx-auto mb-4">
                 <Users className="text-white" size={40} />
@@ -223,7 +223,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-center bg-white p-8 rounded-xl shadow-lg"
+              className="text-center bg-white p-6 sm:p-8 rounded-xl shadow-lg"
             >
               <div className="flex items-center justify-center w-20 h-20 bg-mauve rounded-full mx-auto mb-4">
                 <TrendingUp className="text-white" size={40} />
@@ -238,18 +238,18 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mt-20 mb-20"
+            className="mt-14 sm:mt-16 md:mt-20 mb-14 sm:mb-16 md:mb-20"
           >
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-charcoal mb-4">Our Values</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal mb-3 sm:mb-4">Our Values</h2>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="bg-white p-6 rounded-xl shadow-lg border border-gray-100"
+                className="bg-white p-5 sm:p-6 rounded-xl shadow-lg border border-gray-100"
               >
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-mauve-light rounded-lg">
@@ -269,7 +269,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="bg-white p-6 rounded-xl shadow-lg border border-gray-100"
+                className="bg-white p-5 sm:p-6 rounded-xl shadow-lg border border-gray-100"
               >
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-mauve-light rounded-lg">
@@ -289,7 +289,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="bg-white p-6 rounded-xl shadow-lg border border-gray-100"
+                className="bg-white p-5 sm:p-6 rounded-xl shadow-lg border border-gray-100"
               >
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-mauve-light rounded-lg">
@@ -309,7 +309,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="bg-white p-6 rounded-xl shadow-lg border border-gray-100"
+                className="bg-white p-5 sm:p-6 rounded-xl shadow-lg border border-gray-100"
               >
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-mauve-light rounded-lg">
@@ -329,7 +329,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 md:col-span-2 lg:col-span-1"
+                className="bg-white p-5 sm:p-6 rounded-xl shadow-lg border border-gray-100 md:col-span-2 lg:col-span-1"
               >
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-mauve-light rounded-lg">
@@ -351,10 +351,10 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mt-20 mb-20"
+            className="mt-14 sm:mt-16 md:mt-20 mb-14 sm:mb-16 md:mb-20"
           >
-            <div className="bg-gradient-to-r from-mauve-light/30 to-mauve/20 rounded-2xl p-8 md:p-12 text-center">
-              <h2 className="text-4xl font-bold text-charcoal mb-6">Our Commitment</h2>
+            <div className="bg-gradient-to-r from-mauve-light/30 to-mauve/20 rounded-2xl p-6 md:p-10 lg:p-12 text-center">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal mb-4 sm:mb-6">Our Commitment</h2>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
                 We are dedicated to building a digitally skilled, secure, and competitive Sierra Leone and West Africa one institution, one community, and one citizen at a time. Through innovation, partnership, and excellence, KNS continues to shape the region's digital future.
               </p>
@@ -366,10 +366,10 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mt-20"
+            className="mt-14 sm:mt-16 md:mt-20"
           >
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-charcoal mb-4">Leadership</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal mb-3 sm:mb-4">Leadership</h2>
               <p className="text-sm sm:text-base md:text-lg text-gray-600 mt-3 max-w-4xl mx-auto leading-relaxed">
                 Our leadership team consists of experienced cybersecurity specialists, telecom engineers, enterprise architects, educators, and digital transformation experts with over two decades of regional and international experience. They have led initiatives for:
               </p>
@@ -408,7 +408,7 @@ export default function AboutPage() {
 
             {/* Executive Team Grid */}
             <div className="text-center mb-12">
-              <h3 className="text-3xl md:text-4xl font-bold text-charcoal mb-4">Board Members</h3>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal mb-4">Board Members</h3>
             </div>
             <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {executives.map((exec, idx) => (

@@ -109,7 +109,7 @@ export default function TelecommunicationsPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-b from-[#0A1A3A] via-[#0A1A3A] to-black overflow-hidden">
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-14 md:pb-16 bg-gradient-to-b from-[#0A1A3A] via-[#0A1A3A] to-black overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 20% 50%, rgba(4, 217, 255, 0.1) 0%, transparent 50%)`
@@ -150,7 +150,7 @@ export default function TelecommunicationsPage() {
       </section>
 
       {/* Overview Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-[#0A1A3A]">
+      <section className="py-10 sm:py-12 md:py-16 bg-gradient-to-b from-black to-[#0A1A3A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -192,7 +192,7 @@ export default function TelecommunicationsPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-[#0A1A3A]">
+      <section className="py-10 sm:py-12 md:py-16 bg-[#0A1A3A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -252,7 +252,7 @@ export default function TelecommunicationsPage() {
       </section>
 
       {/* Why Choose KNS Section */}
-      <section className="py-20 bg-gradient-to-b from-[#0A1A3A] to-black">
+      <section className="py-10 sm:py-12 md:py-16 bg-gradient-to-b from-[#0A1A3A] to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -297,7 +297,7 @@ export default function TelecommunicationsPage() {
       </section>
 
       {/* Who We Serve Section */}
-      <section className="py-20 bg-[#0A1A3A]">
+      <section className="py-10 sm:py-12 md:py-16 bg-[#0A1A3A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -340,7 +340,7 @@ export default function TelecommunicationsPage() {
       </section>
 
       {/* Methodology Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-[#0A1A3A]">
+      <section className="py-10 sm:py-12 md:py-16 bg-gradient-to-b from-black to-[#0A1A3A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -389,7 +389,7 @@ export default function TelecommunicationsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-mauve-dark to-mauve">
+      <section className="py-10 sm:py-12 md:py-16 bg-gradient-to-r from-mauve-dark to-mauve">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

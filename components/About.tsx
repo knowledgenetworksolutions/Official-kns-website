@@ -7,24 +7,36 @@ import Image from 'next/image'
 
 export default function About() {
   return (
-    <section id="about" className="py-20 md:py-32 bg-white">
+    <section id="about" className="py-10 sm:py-12 md:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Image */}
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start">
+          {/* Images */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative h-96 md:h-[500px] rounded-lg overflow-hidden shadow-xl"
+            className="space-y-4 sm:space-y-6"
           >
-            <Image
-              src="https://vellum.co.ke/wp-content/uploads/2024/08/SF2-1.jpg"
-              alt="KNS Team"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
+            <div className="relative h-[300px] sm:h-[340px] md:h-[400px] lg:h-[440px] rounded-lg overflow-hidden shadow-xl">
+              <Image
+                src="https://vellum.co.ke/wp-content/uploads/2024/08/SF2-1.jpg"
+                alt="KNS Team"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+            </div>
+            <div className="relative h-[300px] sm:h-[340px] md:h-[400px] lg:h-[440px] rounded-lg overflow-hidden shadow-xl">
+              <Image
+                src="/about-professional.jpg"
+                alt="KNS Professional"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
           </motion.div>
 
           {/* Content */}

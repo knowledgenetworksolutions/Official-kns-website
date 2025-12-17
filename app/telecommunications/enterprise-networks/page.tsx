@@ -58,7 +58,7 @@ export default function EnterpriseNetworksPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-b from-[#0A1A3A] via-[#0A1A3A] to-black overflow-hidden">
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-14 md:pb-16 bg-gradient-to-b from-[#0A1A3A] via-[#0A1A3A] to-black overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -92,7 +92,7 @@ export default function EnterpriseNetworksPage() {
       </section>
 
       {/* Overview Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-[#0A1A3A]">
+      <section className="py-10 sm:py-12 md:py-16 bg-gradient-to-b from-black to-[#0A1A3A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -128,7 +128,7 @@ export default function EnterpriseNetworksPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-[#0A1A3A]">
+      <section className="py-10 sm:py-12 md:py-16 bg-[#0A1A3A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -150,7 +150,7 @@ export default function EnterpriseNetworksPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-slate-800/50 border border-cyan-500/20 rounded-xl p-8 hover:border-cyan-400/40 transition-all"
+                className="bg-slate-800/50 border border-cyan-500/20 rounded-xl p-6 sm:p-8 hover:border-cyan-400/40 transition-all"
               >
                 <h3 className="text-2xl font-semibold text-white mb-3">
                   {service.title}
@@ -173,7 +173,7 @@ export default function EnterpriseNetworksPage() {
       </section>
 
       {/* Why Choose Section */}
-      <section className="py-20 bg-gradient-to-b from-[#0A1A3A] to-black">
+      <section className="py-10 sm:py-12 md:py-16 bg-gradient-to-b from-[#0A1A3A] to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -208,7 +208,7 @@ export default function EnterpriseNetworksPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-cyan-600 to-blue-600">
+      <section className="py-10 sm:py-12 md:py-16 bg-gradient-to-r from-cyan-600 to-blue-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

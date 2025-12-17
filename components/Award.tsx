@@ -2,11 +2,9 @@
 
 import { motion } from 'framer-motion'
 import { Trophy, Award as AwardIcon } from 'lucide-react'
-import { useState } from 'react'
+import Image from 'next/image'
 
 export default function Award() {
-  const [imageError, setImageError] = useState(false)
-  const [imageLoaded, setImageLoaded] = useState(false)
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-white via-mauve-light/10 to-white">
@@ -27,28 +25,14 @@ export default function Award() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative h-48 sm:h-64 md:h-96 rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-mauve-light to-white"
             >
-              {!imageError ? (
-                <img
-                  src="/Digital champion award -mocti.jpeg"
-                  alt="Digital Skills Champion Award"
-                  className="w-full h-full object-contain p-4"
-                  onLoad={() => setImageLoaded(true)}
-                  onError={() => {
-                    setImageError(true)
-                    setImageLoaded(false)
-                  }}
-                  style={{ display: imageLoaded ? 'block' : 'none' }}
-                />
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Trophy className="text-mauve/30" size={120} />
-                </div>
-              )}
-              {!imageLoaded && !imageError && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Trophy className="text-mauve/30" size={120} />
-                </div>
-              )}
+              <Image
+                src="/Digital champion award -mocti.jpeg"
+                alt="Digital Skills Champion Award"
+                fill
+                className="object-contain p-4"
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </motion.div>
 
             {/* Award Details */}

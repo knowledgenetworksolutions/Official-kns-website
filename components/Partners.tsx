@@ -22,7 +22,7 @@ export default function Partners() {
   const duplicatedPartners = [...partners, ...partners]
 
   return (
-    <section id="partners" className="py-12 md:py-16 bg-white overflow-hidden">
+    <section id="partners" className="py-8 sm:py-10 md:py-12 bg-white overflow-hidden">
       <div className="relative w-full">
         <div className="flex animate-scroll-left items-center">
           {duplicatedPartners.map((partner, index) => (

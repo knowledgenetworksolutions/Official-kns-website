@@ -110,7 +110,7 @@ export default function CybersecurityPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-b from-slate-900 via-blue-900 to-black overflow-hidden">
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-14 sm:pb-16 md:pb-20 bg-gradient-to-b from-slate-900 via-blue-900 to-black overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
@@ -152,7 +152,7 @@ export default function CybersecurityPage() {
       </section>
 
       {/* Overview Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-slate-900">
+      <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-b from-black to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -201,7 +201,7 @@ export default function CybersecurityPage() {
       </section>
 
       {/* Capabilities Section */}
-      <section className="py-20 bg-slate-900">
+      <section className="py-14 sm:py-16 md:py-20 bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -262,7 +262,7 @@ export default function CybersecurityPage() {
       </section>
 
       {/* Why Choose KNS Section */}
-      <section className="py-20 bg-gradient-to-b from-slate-800 to-black">
+      <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-b from-slate-800 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -308,7 +308,7 @@ export default function CybersecurityPage() {
       </section>
 
       {/* Who We Support Section */}
-      <section className="py-20 bg-slate-900">
+      <section className="py-14 sm:py-16 md:py-20 bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -348,7 +348,7 @@ export default function CybersecurityPage() {
       </section>
 
       {/* Methodology Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-slate-900">
+      <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-b from-black to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -397,7 +397,7 @@ export default function CybersecurityPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-mauve-dark to-mauve">
+      <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-r from-mauve-dark to-mauve">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

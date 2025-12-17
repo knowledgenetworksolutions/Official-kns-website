@@ -159,7 +159,7 @@ export default function PenetrationTestingPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-b from-slate-900 via-blue-900 to-black overflow-hidden">
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-14 md:pb-16 bg-gradient-to-b from-slate-900 via-blue-900 to-black overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 20% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%)`
@@ -200,7 +200,7 @@ export default function PenetrationTestingPage() {
       </section>
 
       {/* Overview Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-slate-900">
+      <section className="py-10 sm:py-12 md:py-16 bg-gradient-to-b from-black to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -242,7 +242,7 @@ export default function PenetrationTestingPage() {
       </section>
 
       {/* Why Critical Section */}
-      <section className="py-20 bg-slate-900">
+      <section className="py-10 sm:py-12 md:py-16 bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -303,7 +303,7 @@ export default function PenetrationTestingPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="bg-slate-800/50 border border-cyan-500/20 rounded-xl p-8"
+              className="bg-slate-800/50 border border-cyan-500/20 rounded-xl p-6 sm:p-8"
             >
               <h3 className="text-2xl font-semibold text-white mb-6">
                 Penetration Testing and Vulnerability Assessments help local organizations:
@@ -331,7 +331,7 @@ export default function PenetrationTestingPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gradient-to-b from-slate-800 to-black">
+      <section className="py-10 sm:py-12 md:py-16 bg-gradient-to-b from-slate-800 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -355,7 +355,7 @@ export default function PenetrationTestingPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-slate-800/50 border border-cyan-500/20 rounded-xl p-8 hover:border-cyan-400/40 transition-all"
+                  className="bg-slate-800/50 border border-cyan-500/20 rounded-xl p-6 sm:p-8 hover:border-cyan-400/40 transition-all"
                 >
                   <div className="flex items-start gap-6 mb-6">
                     <div className="p-4 bg-cyan-500/20 rounded-lg">
@@ -386,7 +386,7 @@ export default function PenetrationTestingPage() {
       </section>
 
       {/* Methodology Section */}
-      <section className="py-20 bg-slate-900">
+      <section className="py-10 sm:py-12 md:py-16 bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -450,7 +450,7 @@ export default function PenetrationTestingPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-slate-900">
+      <section className="py-10 sm:py-12 md:py-16 bg-gradient-to-b from-black to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
             <motion.div
@@ -495,7 +495,7 @@ export default function PenetrationTestingPage() {
       </section>
 
       {/* Why Choose Section */}
-      <section className="py-20 bg-slate-900">
+      <section className="py-10 sm:py-12 md:py-16 bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -530,7 +530,7 @@ export default function PenetrationTestingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-mauve-dark to-mauve">
+      <section className="py-10 sm:py-12 md:py-16 bg-gradient-to-r from-mauve-dark to-mauve">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

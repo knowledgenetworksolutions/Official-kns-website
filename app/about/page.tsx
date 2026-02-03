@@ -1,11 +1,19 @@
 'use client'
 
+import dynamic from 'next/dynamic'
 import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
 import { motion } from 'framer-motion'
 import { Target, Eye, Award, Users, TrendingUp, Linkedin, Shield, Heart, Lightbulb, Handshake, Leaf } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
+
+// Lazy load Footer since it's below the fold
+const Footer = dynamic(() => import('@/components/Footer'), {
+  ssr: true,
+})
+
+// Alias for cleaner code
+const MotionDiv = motion.div
 
 // Executive Image Component with error handling
 function ExecutiveImage({ src, alt }: { src: string; alt: string }) {
@@ -20,7 +28,7 @@ function ExecutiveImage({ src, alt }: { src: string; alt: string }) {
       const extensions = ['.jpg', '.jpeg', '.png', '.webp']
       const currentExt = src.match(/\.(jpg|jpeg|png|webp)$/i)?.[0] || '.jpg'
       const otherExts = extensions.filter(ext => ext !== currentExt)
-      
+
       if (otherExts.length > 0) {
         setImgSrc(basePath + otherExts[0])
       } else {
@@ -54,7 +62,9 @@ function ExecutiveImage({ src, alt }: { src: string; alt: string }) {
         alt={alt}
         fill
         className="object-cover"
-        sizes="(max-width: 768px) 100vw, 50vw"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        loading="lazy"
+        quality={85}
       />
     </>
   )
@@ -127,6 +137,9 @@ export default function AboutPage() {
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+                loading="eager"
+                quality={85}
               />
             </motion.div>
 
@@ -153,7 +166,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-10 mb-12 sm:mb-16 md:mb-20">
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -170,9 +183,9 @@ export default function AboutPage() {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </MotionDiv>
 
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -189,11 +202,11 @@ export default function AboutPage() {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </MotionDiv>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 sm:gap-8 mb-14 sm:mb-16 md:mb-20">
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
@@ -204,9 +217,9 @@ export default function AboutPage() {
               </div>
               <p className="text-4xl font-bold text-mauve mb-2">20+</p>
               <p className="text-gray-600">Years of Experience</p>
-            </motion.div>
+            </MotionDiv>
 
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -217,9 +230,9 @@ export default function AboutPage() {
               </div>
               <p className="text-4xl font-bold text-mauve mb-2">500+</p>
               <p className="text-gray-600">Trained Professionals</p>
-            </motion.div>
+            </MotionDiv>
 
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -230,11 +243,11 @@ export default function AboutPage() {
               </div>
               <p className="text-4xl font-bold text-mauve mb-2">200+</p>
               <p className="text-gray-600">Successful Projects</p>
-            </motion.div>
+            </MotionDiv>
           </div>
 
           {/* Our Values */}
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -247,7 +260,7 @@ export default function AboutPage() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.5 }}
                 className="bg-white p-5 sm:p-6 rounded-xl shadow-lg border border-gray-100"
               >
@@ -344,10 +357,10 @@ export default function AboutPage() {
                 </div>
               </motion.div>
             </div>
-          </motion.div>
+          </MotionDiv>
 
           {/* Our Commitment */}
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -359,10 +372,10 @@ export default function AboutPage() {
                 We are dedicated to building a digitally skilled, secure, and competitive Sierra Leone and West Africa one institution, one community, and one citizen at a time. Through innovation, partnership, and excellence, KNS continues to shape the region's digital future.
               </p>
             </div>
-          </motion.div>
+          </MotionDiv>
 
           {/* Leadership */}
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -412,22 +425,22 @@ export default function AboutPage() {
             </div>
             <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {executives.map((exec, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: idx * 0.1 }}
-                    className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all"
-                  >
-                    <div className="relative h-72 bg-gray-100">
-                      <ExecutiveImage src={exec.image} alt={exec.name} />
-                    </div>
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all"
+                >
+                  <div className="relative h-72 bg-gray-100">
+                    <ExecutiveImage src={exec.image} alt={exec.name} />
+                  </div>
                   <div className="p-6 md:p-8">
                     <h3 className="text-2xl font-bold text-charcoal mb-2">{exec.name}</h3>
                     <p className="text-mauve font-semibold mb-2">{exec.role}</p>
                     <p className="text-sm text-gray-600 mb-4 leading-relaxed">{exec.credentials}</p>
-                    
+
                     <div className="space-y-4 mb-6">
                       <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{exec.bio}</p>
                       {exec.career && (
@@ -465,7 +478,7 @@ export default function AboutPage() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
       <Footer />

@@ -6,6 +6,7 @@ import CybersecurityHero from '@/components/CybersecurityHero'
 import TelecommunicationsHero from '@/components/TelecommunicationsHero'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import NextImage from 'next/image'
 import { ArrowRight, CheckCircle, Shield, Server, Headphones, Briefcase, GraduationCap, PhoneCall } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
@@ -246,31 +247,31 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
 
   useEffect(() => {
     if (!slug) return
-    
+
     // Redirect digital skills to dedicated landing page
     if (slug === 'digital-skills-development-capacity-building') {
       router.push('/digital-skills')
       return
     }
-    
+
     // Redirect customer experience to dedicated landing page
     if (slug === 'customer-experience-call-center-services') {
       router.push('/customer-experience')
       return
     }
-    
+
     // Redirect digital transformation to dedicated landing page
     if (slug === 'digital-transformation-enterprise-technology-solutions') {
       router.push('/digital-transformation')
       return
     }
-    
+
     // Redirect outsourcing & managed services to dedicated landing page
     if (slug === 'outsourcing-managed-services') {
       router.push('/outsourcing-managed-services')
       return
     }
-    
+
     const serviceData = servicesData[slug]
     if (!serviceData) {
       router.push('/services')
@@ -292,91 +293,95 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
   return (
     <main className="min-h-screen">
       <Navbar />
-      
+
       {/* Hero Section */}
       {isCybersecurity ? (
         <CybersecurityHero />
       ) : isTelecommunications ? (
         <TelecommunicationsHero />
       ) : (
-      <section className="pt-24 sm:pt-28 md:pt-32 pb-14 sm:pb-16 md:pb-20 bg-gradient-to-b from-mauve-light/30 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-8"
-          >
-            <Link 
-              href="/" 
-              className="inline-flex items-center text-mauve hover:text-mauve-dark mb-6"
-            >
-              <ArrowRight size={16} className="mr-2" />
-              Go to Home
-            </Link>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <section className="pt-24 sm:pt-28 md:pt-32 pb-14 sm:pb-16 md:pb-20 bg-gradient-to-b from-mauve-light/30 to-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="mb-8"
             >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-20 h-20 bg-mauve-light rounded-lg flex items-center justify-center relative overflow-hidden p-3">
-                  {!imageLoaded && <IconComponent className="text-mauve" size={40} />}
-                  <img
-                    src={service.icon}
-                    alt={service.title}
-                    className={`object-contain w-full h-full p-2 ${imageLoaded ? 'block' : 'hidden'}`}
-                    onLoad={() => setImageLoaded(true)}
-                    onError={() => setImageLoaded(false)}
-                  />
-                </div>
-                <h1 className="text-4xl md:text-5xl font-bold text-charcoal">
-                  {service.title}
-                </h1>
-              </div>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                {service.fullDescription}
-              </p>
               <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-mauve text-white rounded-lg font-semibold text-lg hover:bg-mauve-dark transition-all duration-300 shadow-lg hover:shadow-xl"
+                href="/"
+                className="inline-flex items-center text-mauve hover:text-mauve-dark mb-6"
               >
-                Contact Us
-                <ArrowRight size={20} />
+                <ArrowRight size={16} className="mr-2" />
+                Go to Home
               </Link>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="relative h-96 rounded-lg overflow-hidden shadow-xl bg-gradient-to-br from-mauve-light to-mauve/20"
-            >
-              {service.image && !imageError ? (
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover"
-                  onLoad={() => setImageLoaded(true)}
-                  onError={() => {
-                    setImageError(true)
-                    setImageLoaded(false)
-                  }}
-                  style={{ display: imageLoaded ? 'block' : 'none' }}
-                />
-              ) : null}
-              {(imageError || !service.image || !imageLoaded) && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <IconComponent className="text-mauve/30" size={200} />
+            <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-20 h-20 bg-mauve-light rounded-lg flex items-center justify-center relative overflow-hidden p-3">
+                    {!imageLoaded && <IconComponent className="text-mauve" size={40} />}
+                    <NextImage
+                      src={service.icon}
+                      alt={service.title}
+                      width={80}
+                      height={80}
+                      className={`object-contain p-2 ${imageLoaded ? 'block' : 'hidden'}`}
+                      onLoad={() => setImageLoaded(true)}
+                      onError={() => setImageLoaded(false)}
+                    />
+                  </div>
+                  <h1 className="text-4xl md:text-5xl font-bold text-charcoal">
+                    {service.title}
+                  </h1>
                 </div>
-              )}
-            </motion.div>
+                <p className="text-xl text-gray-600 leading-relaxed mb-8">
+                  {service.fullDescription}
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-mauve text-white rounded-lg font-semibold text-lg hover:bg-mauve-dark transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  Contact Us
+                  <ArrowRight size={20} />
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="relative h-96 rounded-lg overflow-hidden shadow-xl bg-gradient-to-br from-mauve-light to-mauve/20"
+              >
+                {service.image && !imageError ? (
+                  <NextImage
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    onLoad={() => setImageLoaded(true)}
+                    onError={() => {
+                      setImageError(true)
+                      setImageLoaded(false)
+                    }}
+                    style={{ display: imageLoaded ? 'block' : 'none' }}
+                  />
+                ) : null}
+                {(imageError || !service.image || !imageLoaded) && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <IconComponent className="text-mauve/30" size={200} />
+                  </div>
+                )}
+              </motion.div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
       )}
 
       {/* Features Section */}

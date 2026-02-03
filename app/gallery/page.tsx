@@ -1,8 +1,10 @@
+'use client'
+
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
-import Link from 'next/link'
 import GalleryAwards from '@/components/GalleryAwards'
+import { useRouter } from 'next/navigation'
 
 interface EventInfo {
   image: string
@@ -84,12 +86,47 @@ const eventData: EventInfo[] = [
     eventName: 'Enterprise Solutions Showcase',
     description: 'Demonstrating cutting-edge enterprise IT solutions and telecommunications services.',
     socialLink: 'https://facebook.com/your-page'
+  },
+  {
+    image: 'dsti-strategic-meeting-2025.jpeg',
+    eventName: 'DSTI Strategic Planning Meeting',
+    description: 'DSTI held a strategic planning meeting to advance Sierra Leone\'s security sector through digital innovation and training initiatives.',
+    socialLink: 'https://facebook.com/your-page'
+  },
+  {
+    image: 'dsti-mou-signing-2025.jpeg',
+    eventName: 'DSTI-KNS Memorandum of Understanding Signing',
+    description: 'Signing of Memorandum of Understanding between Knowledge Network Solutions and Directorate of Science, Technology and Innovation (DSTI), Office of the President.',
+    socialLink: 'https://facebook.com/your-page'
   }
 ]
 
 export default function GalleryPage() {
+  const router = useRouter()
   // Use all event data as gallery items
   const galleryItems = eventData
+
+  // Check if a URL is valid (not a placeholder)
+  const isValidUrl = (url: string): boolean => {
+    if (!url || url.trim() === '') return false
+    // Check if it's a placeholder URL
+    if (url.includes('your-page') || url.includes('placeholder') || url === '#') return false
+    // Check if it's a valid URL format
+    try {
+      const urlObj = new URL(url)
+      return urlObj.protocol === 'http:' || urlObj.protocol === 'https:'
+    } catch {
+      return false
+    }
+  }
+
+  const handleReadMore = (socialLink: string, e: React.MouseEvent) => {
+    if (!isValidUrl(socialLink)) {
+      e.preventDefault()
+      router.refresh()
+      return false
+    }
+  }
 
   return (
     <main className="min-h-screen">
@@ -132,27 +169,49 @@ export default function GalleryPage() {
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-charcoal mb-2">{item.eventName}</h3>
                     <p className="text-gray-600 mb-4 line-clamp-3">{item.description}</p>
-                    <Link
-                      href={item.socialLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-mauve-primary hover:text-mauve-dark font-semibold transition-colors duration-200"
-                    >
-                      Read More
-                      <svg
-                        className="w-4 h-4 ml-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                    {isValidUrl(item.socialLink) ? (
+                      <a
+                        href={item.socialLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-mauve-primary hover:text-mauve-dark font-semibold transition-colors duration-200"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        />
-                      </svg>
-                    </Link>
+                        Read More
+                        <svg
+                          className="w-4 h-4 ml-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                          />
+                        </svg>
+                      </a>
+                    ) : (
+                      <button
+                        onClick={(e) => handleReadMore(item.socialLink, e)}
+                        className="inline-flex items-center text-mauve-primary hover:text-mauve-dark font-semibold transition-colors duration-200 cursor-pointer"
+                      >
+                        Read More
+                        <svg
+                          className="w-4 h-4 ml-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                          />
+                        </svg>
+                      </button>
+                    )}
                   </div>
                 </div>
               ))}

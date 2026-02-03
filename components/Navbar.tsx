@@ -42,7 +42,7 @@ export default function Navbar() {
           {/* Logo + Name */}
           <Link
             href="/"
-            className="flex items-center gap-1 sm:gap-2 z-10 flex-shrink-0 min-w-0 max-w-[calc(100%-60px)] md:max-w-none"
+            className="flex items-center gap-1 sm:gap-2 z-10 flex-shrink-0 min-w-0 max-w-[calc(100%-60px)] md:max-w-[200px] lg:max-w-[250px] xl:max-w-none"
           >
             {logoError ? (
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-mauve to-mauve-dark bg-clip-text text-transparent">
@@ -72,13 +72,13 @@ export default function Navbar() {
             )}
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1 lg:space-x-2 flex-1 justify-end">
+          {/* Desktop Navigation - iPad responsive spacing */}
+          <div className="hidden md:flex items-center md:space-x-2 md:ml-6 lg:space-x-3 lg:ml-8 xl:space-x-4 xl:ml-12 flex-1 justify-end min-w-0">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="relative group px-3 lg:px-4 py-2.5 text-charcoal font-semibold hover:text-mauve transition-all duration-300 text-sm lg:text-base rounded-lg hover:bg-mauve-light/10"
+                className="relative group md:px-2 lg:px-3 xl:px-4 py-2.5 text-charcoal font-semibold hover:text-mauve transition-all duration-300 md:text-xs lg:text-sm xl:text-base rounded-lg hover:bg-mauve-light/10 whitespace-nowrap flex-shrink-0"
               >
                 <span className="relative z-10">{link.name}</span>
                 <span className="absolute bottom-1.5 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-mauve group-hover:w-3/4 transition-all duration-300 rounded-full"></span>

@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowLeft, Calendar, Tag, Clock, Share2 } from 'lucide-react'
+import { ArrowLeft, Calendar, Tag, Clock, Share2, ExternalLink } from 'lucide-react'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { calculateReadingTime } from '@/lib/readingTime'
@@ -19,6 +19,7 @@ interface BlogPost {
   author?: string
   content: string[]
   relatedPosts?: string[]
+  sourceLink?: string
 }
 
 const blogData: Record<string, BlogPost> = {
@@ -133,6 +134,26 @@ const blogData: Record<string, BlogPost> = {
       'To learn more about our IT Consultancy Services or to schedule a consultation, please contact our team.',
     ],
     relatedPosts: ['digital-skills-champion-award-2025', 'cloud-partnerships-announcement'],
+  },
+  'dsti-security-sector-digital-training': {
+    slug: 'dsti-security-sector-digital-training',
+    title: 'DSTI and Partners Drive Digital Skills Training to Strengthen Sierra Leone\'s Security Sector',
+    excerpt: 'DSTI, in collaboration with MoCTI and KNS College, launches comprehensive digital skills training initiative for over 500 security officers, beginning October 2025 during Cybersecurity Awareness Month.',
+    category: 'Training',
+    date: 'January 15, 2025',
+    image: '/gallery/dsti-mou-signing-2025.jpeg',
+    author: 'KNS Training Team',
+    sourceLink: 'https://www.facebook.com/story.php?story_fbid=1091901303130327&id=100069314015484&rdid=E7zEHn477yzeQMbi#',
+    content: [
+      'The Directorate of Science, Technology and Innovation (DSTI), in collaboration with the Ministry of Communication, Technology and Innovation (MoCTI), in partnership with KNS College, has proposed a comprehensive training initiative for the Office of National Security (ONS), Sierra Leone Police (SLP), and Ministry of Defence / Republic of Sierra Leone Armed Forces (RSLAF).',
+      'DSTI recently held a strategic planning meeting to advance the nation\'s security sector through digital innovation. This initiative directly supports the Government of Sierra Leone\'s digital transformation agenda, reinforcing priorities under the Big Five Game Changers and the National Digital Transformation Strategy (NDTS).',
+      'Beginning in October 2025, which coincides with Cybersecurity Awareness Month, the programme will provide specialized training in cybersecurity, digital literacy, emerging technologies, and other critical courses. More than 500 security officers drawn from the police and armed forces will participate in the first phase.',
+      'The training will equip frontline personnel with practical skills to identify, prevent, and respond to both traditional and emerging security risks, ensuring that national protection keeps pace with rapid technological change. This partnership brings together DSTI, MoCTI, ONS, SLP, and RSLAF in a coordinated effort to modernize national security.',
+      'By training over 500 officers in critical digital competencies, the programme will strengthen the ability of security agencies to prevent cybercrime, safeguard national data, and respond swiftly to evolving threats. The October 2025 launch will mark a turning point, embedding long-term digital resilience within Sierra Leone\'s security architecture.',
+      'All course materials will be stored on a dedicated digital platform, allowing officers to revisit lessons, share knowledge, and train others well beyond the initial sessions. Continuous access to the digital learning platform will support ongoing professional development and foster a culture of lifelong learning within the security services.',
+      'This initiative reflects a wider commitment to integrating innovation with national security, ensuring that skills acquired today remain relevant for years to come.',
+    ],
+    relatedPosts: ['cybersecurity-training-launch', 'digital-skills-champion-award-2025'],
   },
 }
 
@@ -260,6 +281,26 @@ export default function BlogDetailPage({ params }: { params: Promise<{ slug: str
               </p>
             ))}
           </motion.div>
+
+          {/* Source Link Section */}
+          {post.sourceLink && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="mt-8 mb-8"
+            >
+              <a
+                href={post.sourceLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                <ExternalLink size={20} />
+                View Original Post on Facebook
+              </a>
+            </motion.div>
+          )}
 
           {/* Share and Return Section */}
           <motion.div

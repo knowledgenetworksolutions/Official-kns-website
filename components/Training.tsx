@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 import { Brain, Handshake, Database, Code, TrendingUp, ShieldCheck, ArrowRight } from 'lucide-react'
 
 export default function Training() {
@@ -87,13 +86,15 @@ export default function Training() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center"
         >
-          <Link
-            href="/auth"
+          <a
+            href="https://www.kns.edu.sl/Programmes.html"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-mauve text-white rounded-lg font-semibold text-sm sm:text-base md:text-lg hover:bg-mauve-dark transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Get Started
             <ArrowRight size={20} />
-          </Link>
+          </a>
         </motion.div>
       </div>
     </section>

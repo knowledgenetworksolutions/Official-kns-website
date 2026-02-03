@@ -7,7 +7,13 @@ import Link from 'next/link'
 import { Calendar, ArrowRight, Tag, Search } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { calculateReadingTime } from '@/lib/readingTime'
+
+// Blog posts that have source links - update this when adding sourceLink to blogData
+const postsWithSourceLinks = [
+  'dsti-security-sector-digital-training',
+]
 
 interface BlogPost {
   id: number
@@ -61,13 +67,33 @@ const allBlogPosts: BlogPost[] = [
     slug: 'it-consultancy-expansion',
     author: 'KNS Consultancy Team',
   },
+  {
+    id: 5,
+    title: 'DSTI and Partners Drive Digital Skills Training to Strengthen Sierra Leone\'s Security Sector',
+    excerpt: 'DSTI, in collaboration with MoCTI and KNS College, launches comprehensive digital skills training initiative for over 500 security officers, beginning October 2025 during Cybersecurity Awareness Month.',
+    category: 'Training',
+    date: 'January 15, 2025',
+    image: '/gallery/dsti-mou-signing-2025.jpeg',
+    slug: 'dsti-security-sector-digital-training',
+    author: 'KNS Training Team',
+  },
 ]
 
 const categories = ['All', 'Awards', 'Training', 'Partnerships', 'Services']
 
 export default function BlogPage() {
+  const router = useRouter()
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [searchQuery, setSearchQuery] = useState('')
+
+  const handleBlogClick = (slug: string, e: React.MouseEvent) => {
+    // If post doesn't have a sourceLink, refresh the page instead of navigating
+    if (!postsWithSourceLinks.includes(slug)) {
+      e.preventDefault()
+      router.refresh()
+      return false
+    }
+  }
 
   const filteredPosts = allBlogPosts.filter((post) => {
     const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Shield, Server, Headphones, Briefcase, GraduationCap, PhoneCall, ArrowRight } from 'lucide-react'
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Services() {
   const services = [
@@ -120,12 +121,14 @@ export default function Services() {
                 >
                   <div className="w-14 h-14 bg-mauve-light rounded-lg flex items-center justify-center mb-4 relative overflow-hidden p-3">
                     {!imageLoaded && <IconComponent className="text-mauve" size={28} />}
-                    <img
+                    <Image
                       src={service.icon}
                       alt={service.title}
-                      className={`object-contain w-full h-full p-1 ${imageLoaded ? 'block' : 'hidden'}`}
+                      className={`object-contain p-1 transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                       onLoad={() => handleImageLoad(index)}
                       onError={() => handleImageError(index)}
+                      fill
+                      sizes="56px"
                     />
                   </div>
                   <h3 className="text-lg sm:text-xl font-semibold text-charcoal mb-3">

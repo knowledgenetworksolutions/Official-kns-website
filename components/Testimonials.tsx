@@ -83,7 +83,7 @@ export default function Testimonials() {
           >
             <Quote className="text-mauve mb-4" size={40} />
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 italic mb-6 sm:mb-8 leading-relaxed">
-              "{testimonials[currentIndex].feedback}"
+              &quot;{testimonials[currentIndex].feedback}&quot;
             </p>
             <div className="flex items-center gap-3 sm:gap-4">
               <div className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden">

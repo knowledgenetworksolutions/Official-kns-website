@@ -1,4 +1,4 @@
-'use client'
+import Image from 'next/image'
 
 export default function Partners() {
   const partners = [
@@ -30,12 +30,15 @@ export default function Partners() {
               key={index}
               className="flex-shrink-0 mx-4 md:mx-8 flex items-center justify-center"
             >
-              <img
-                src={getLogoUrl(partner.domain)}
-                alt={partner.name}
-                className="object-contain w-16 h-16 md:w-32 md:h-32"
-                loading="lazy"
-              />
+              <div className="relative w-16 h-16 md:w-32 md:h-32">
+                <Image
+                  src={getLogoUrl(partner.domain)}
+                  alt={partner.name}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 64px, 128px"
+                />
+              </div>
             </div>
           ))}
         </div>

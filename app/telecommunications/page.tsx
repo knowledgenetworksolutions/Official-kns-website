@@ -419,7 +419,7 @@ export default function TelecommunicationsPage() {
               </Link>
             </div>
             <p className="text-white/90 mt-8 text-sm">
-              Let's help you build, expand, and optimize your network for the digital era.
+              Let&apos;s help you build, expand, and optimize your network for the digital era.
             </p>
           </motion.div>
         </div>

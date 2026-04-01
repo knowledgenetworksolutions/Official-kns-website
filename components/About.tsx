@@ -54,7 +54,7 @@ export default function About() {
               Knowledge Network Solutions (KNS) is a premier technology, telecommunications, digital skills, and cybersecurity consulting company transforming how organizations operate, connect, and secure their digital environments across Sierra Leone and West Africa. As a trusted partner to government ministries, development agencies, universities, banks, telecom operators, and private-sector enterprises, we deliver solutions that bridge the digital divide, enhance operational efficiency, and strengthen national competitiveness.
             </p>
             <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-              Recognized by the Ministry of Communication, Technology & Innovation (MoCTI) as "Digital Skills Champion 2025," KNS stands at the frontline of Sierra Leone's digital evolution. With over 20 years of experience, we empower citizens with globally recognized certifications and deliver secure, scalable, and future-ready technologies for organizations of all sizes.
+              Recognized by the Ministry of Communication, Technology &amp; Innovation (MoCTI) as &quot;Digital Skills Champion 2025,&quot; KNS stands at the frontline of Sierra Leone&apos;s digital evolution. With over 20 years of experience, we empower citizens with globally recognized certifications and deliver secure, scalable, and future-ready technologies for organizations of all sizes.
             </p>
 
             {/* Mission & Vision */}
@@ -78,7 +78,7 @@ export default function About() {
                 <div>
                   <h3 className="text-lg sm:text-xl font-semibold text-charcoal mb-2">Our Vision</h3>
                   <p className="text-sm sm:text-base text-gray-600">
-                    To be West Africa's most trusted digital transformation partner leading in cybersecurity, telecommunications, digital skills, and customer experience while shaping a secure, connected, and digitally empowered future.
+                    To be West Africa&apos;s most trusted digital transformation partner leading in cybersecurity, telecommunications, digital skills, and customer experience while shaping a secure, connected, and digitally empowered future.
                   </p>
                 </div>
               </div>

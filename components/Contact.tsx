@@ -69,7 +69,7 @@ export default function Contact() {
             Get In Touch
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-            Have a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            Have a question? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
           </p>
         </motion.div>
 

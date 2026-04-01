@@ -99,7 +99,7 @@ export default function QOSCompliancePage() {
               className="text-white"
             >
               <p className="text-lg text-gray-300 leading-relaxed">
-                Quality of Service (QoS) is essential for customer satisfaction, regulatory compliance, and network reliability. KNS delivers monitoring, analytics, and compliance reporting aligned with Sierra Leone's National Telecommunications Authority (NaTCA) requirements.
+                Quality of Service (QoS) is essential for customer satisfaction, regulatory compliance, and network reliability. KNS delivers monitoring, analytics, and compliance reporting aligned with Sierra Leone&apos;s National Telecommunications Authority (NaTCA) requirements.
               </p>
             </motion.div>
             <motion.div

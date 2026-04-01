@@ -1,15 +1,12 @@
-'use client'
-
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import CybersecurityHero from '@/components/CybersecurityHero'
 import TelecommunicationsHero from '@/components/TelecommunicationsHero'
-import { motion } from 'framer-motion'
+import { MotionDiv } from '@/components/MotionWrapper'
 import Link from 'next/link'
-import NextImage from 'next/image'
+import Image from 'next/image'
 import { ArrowRight, CheckCircle, Shield, Server, Headphones, Briefcase, GraduationCap, PhoneCall } from 'lucide-react'
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import { redirect, notFound } from 'next/navigation'
 
 interface ServiceDetail {
   slug: string
@@ -31,8 +28,8 @@ const servicesData: Record<string, ServiceDetail> = {
     icon: '/icons/cybersecurity-icon.svg',
     fallbackIcon: Shield,
     image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1920&q=80',
-    shortDescription: 'Protect your organization\'s digital environment with advanced cybersecurity and information assurance solutions.',
-    fullDescription: 'KNS protects your organization\'s digital environment with advanced cybersecurity and information assurance solutions. We strengthen your digital defences, enhance regulatory compliance, and ensure secure business continuity in a rapidly evolving threat landscape.',
+    shortDescription: 'Protect your organization&apos;s digital environment with advanced cybersecurity and information assurance solutions.',
+    fullDescription: 'KNS protects your organization&apos;s digital environment with advanced cybersecurity and information assurance solutions. We strengthen your digital defences, enhance regulatory compliance, and ensure secure business continuity in a rapidly evolving threat landscape.',
     features: [
       'Penetration Testing & Vulnerability Assessments',
       'IT/IS Audit & Security Compliance Reviews (ITGC, Application Controls, ISO 27001, NIST, CIS)',
@@ -99,8 +96,8 @@ const servicesData: Record<string, ServiceDetail> = {
     icon: '/icons/training-icon.svg',
     fallbackIcon: GraduationCap,
     image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=80',
-    shortDescription: 'Sierra Leone\'s Digital Skills Champion 2025 - delivering comprehensive certification and training programs.',
-    fullDescription: 'As Sierra Leone\'s Digital Skills Champion 2025, we deliver comprehensive digital skills development and capacity building programs. Our services include IC3 Digital Literacy, Microsoft, Cisco, CompTIA, ISO, and ISC2 certifications. We also provide university and TVET programme design, youth digital empowerment programmes, civil service digital upskilling, and national digital literacy campaigns.',
+    shortDescription: 'Sierra Leone&apos;s Digital Skills Champion 2025 - delivering comprehensive certification and training programs.',
+    fullDescription: 'As Sierra Leone&apos;s Digital Skills Champion 2025, we deliver comprehensive digital skills development and capacity building programs. Our services include IC3 Digital Literacy, Microsoft, Cisco, CompTIA, ISO, and ISC2 certifications. We also provide university and TVET programme design, youth digital empowerment programmes, civil service digital upskilling, and national digital literacy campaigns.',
     features: [
       'IC3 Digital Literacy',
       'Microsoft, Cisco, CompTIA, ISO, ISC2 certifications',
@@ -230,60 +227,27 @@ const servicesData: Record<string, ServiceDetail> = {
   }
 }
 
-export default function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> | { slug: string } }) {
-  const [service, setService] = useState<ServiceDetail | null>(null)
-  const [imageLoaded, setImageLoaded] = useState(false)
-  const [imageError, setImageError] = useState(false)
-  const [slug, setSlug] = useState<string>('')
-  const router = useRouter()
+export default async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params
+  const slug = resolvedParams.slug
 
-  useEffect(() => {
-    const getSlug = async () => {
-      const resolvedParams = params instanceof Promise ? await params : params
-      setSlug(resolvedParams.slug)
-    }
-    getSlug()
-  }, [params])
+  // Redirect to dedicated landing pages if applicable
+  if (slug === 'digital-skills-development-capacity-building') {
+    redirect('/digital-skills')
+  }
+  if (slug === 'customer-experience-call-center-services') {
+    redirect('/customer-experience') // Future proofing
+  }
+  if (slug === 'digital-transformation-enterprise-technology-solutions') {
+    redirect('/digital-transformation') // Future proofing
+  }
+  if (slug === 'outsourcing-managed-services') {
+    redirect('/outsourcing-managed-services') // Future proofing
+  }
 
-  useEffect(() => {
-    if (!slug) return
-
-    // Redirect digital skills to dedicated landing page
-    if (slug === 'digital-skills-development-capacity-building') {
-      router.push('/digital-skills')
-      return
-    }
-
-    // Redirect customer experience to dedicated landing page
-    if (slug === 'customer-experience-call-center-services') {
-      router.push('/customer-experience')
-      return
-    }
-
-    // Redirect digital transformation to dedicated landing page
-    if (slug === 'digital-transformation-enterprise-technology-solutions') {
-      router.push('/digital-transformation')
-      return
-    }
-
-    // Redirect outsourcing & managed services to dedicated landing page
-    if (slug === 'outsourcing-managed-services') {
-      router.push('/outsourcing-managed-services')
-      return
-    }
-
-    const serviceData = servicesData[slug]
-    if (!serviceData) {
-      router.push('/services')
-      return
-    }
-    setService(serviceData)
-    setImageError(false)
-    setImageLoaded(false)
-  }, [slug, router])
-
+  const service = servicesData[slug]
   if (!service) {
-    return null
+    notFound()
   }
 
   const IconComponent = service.fallbackIcon
@@ -291,7 +255,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
   const isTelecommunications = slug === 'telecommunications-engineering-network-services'
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen text-charcoal">
       <Navbar />
 
       {/* Hero Section */}
@@ -302,7 +266,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
       ) : (
         <section className="pt-24 sm:pt-28 md:pt-32 pb-14 sm:pb-16 md:pb-20 bg-gradient-to-b from-mauve-light/30 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -315,26 +279,17 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                 <ArrowRight size={16} className="mr-2" />
                 Go to Home
               </Link>
-            </motion.div>
+            </MotionDiv>
 
             <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-              <motion.div
+              <MotionDiv
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-20 h-20 bg-mauve-light rounded-lg flex items-center justify-center relative overflow-hidden p-3">
-                    {!imageLoaded && <IconComponent className="text-mauve" size={40} />}
-                    <NextImage
-                      src={service.icon}
-                      alt={service.title}
-                      width={80}
-                      height={80}
-                      className={`object-contain p-2 ${imageLoaded ? 'block' : 'hidden'}`}
-                      onLoad={() => setImageLoaded(true)}
-                      onError={() => setImageLoaded(false)}
-                    />
+                    <IconComponent className="text-mauve" size={40} />
                   </div>
                   <h1 className="text-4xl md:text-5xl font-bold text-charcoal">
                     {service.title}
@@ -350,35 +305,30 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                   Contact Us
                   <ArrowRight size={20} />
                 </Link>
-              </motion.div>
+              </MotionDiv>
 
-              <motion.div
+              <MotionDiv
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 className="relative h-96 rounded-lg overflow-hidden shadow-xl bg-gradient-to-br from-mauve-light to-mauve/20"
               >
-                {service.image && !imageError ? (
-                  <NextImage
+                {service.image ? (
+                  <Image
                     src={service.image}
                     alt={service.title}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    onLoad={() => setImageLoaded(true)}
-                    onError={() => {
-                      setImageError(true)
-                      setImageLoaded(false)
-                    }}
-                    style={{ display: imageLoaded ? 'block' : 'none' }}
+                    priority
+                    quality={85}
                   />
-                ) : null}
-                {(imageError || !service.image || !imageLoaded) && (
+                ) : (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <IconComponent className="text-mauve/30" size={200} />
                   </div>
                 )}
-              </motion.div>
+              </MotionDiv>
             </div>
           </div>
         </section>
@@ -387,7 +337,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
       {/* Features Section */}
       <section id="services" className={`py-14 sm:py-16 md:py-20 ${isCybersecurity ? 'bg-gradient-to-b from-black via-slate-900 to-slate-800' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -400,11 +350,11 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
             <p className={`text-lg max-w-3xl mx-auto ${isCybersecurity ? 'text-gray-300' : 'text-gray-600'}`}>
               Comprehensive solutions designed to meet your business needs
             </p>
-          </motion.div>
+          </MotionDiv>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {service.features.map((feature, index) => (
-              <motion.div
+              <MotionDiv
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -416,7 +366,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                   <CheckCircle className={`flex-shrink-0 mt-1 ${isCybersecurity ? 'text-cyan-400' : 'text-mauve'}`} size={24} />
                   <p className={`font-medium ${isCybersecurity ? 'text-gray-200' : 'text-gray-700'}`}>{feature}</p>
                 </div>
-              </motion.div>
+              </MotionDiv>
             ))}
           </div>
         </div>
@@ -425,7 +375,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
       {/* Benefits Section */}
       <section className={`py-14 sm:py-16 md:py-20 ${isCybersecurity ? 'bg-slate-900' : 'bg-gradient-to-b from-white to-mauve-light/20'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -438,11 +388,11 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
             <p className={`text-lg max-w-3xl mx-auto ${isCybersecurity ? 'text-gray-300' : 'text-gray-600'}`}>
               Why choose our {service.title} service
             </p>
-          </motion.div>
+          </MotionDiv>
 
           <div className="grid md:grid-cols-2 gap-8">
             {service.benefits.map((benefit, index) => (
-              <motion.div
+              <MotionDiv
                 key={index}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -452,7 +402,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
               >
                 <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${isCybersecurity ? 'bg-cyan-400' : 'bg-mauve'}`}></div>
                 <p className={isCybersecurity ? 'text-gray-200' : 'text-gray-700'}>{benefit}</p>
-              </motion.div>
+              </MotionDiv>
             ))}
           </div>
         </div>
@@ -461,7 +411,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
       {/* Use Cases Section */}
       <section className={`py-14 sm:py-16 md:py-20 ${isCybersecurity ? 'bg-gradient-to-b from-slate-800 to-black' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -474,11 +424,11 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
             <p className={`text-lg max-w-3xl mx-auto ${isCybersecurity ? 'text-gray-300' : 'text-gray-600'}`}>
               Common scenarios where our service delivers value
             </p>
-          </motion.div>
+          </MotionDiv>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {service.useCases.map((useCase, index) => (
-              <motion.div
+              <MotionDiv
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -487,16 +437,16 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                 className={`p-6 rounded-xl shadow-lg border ${isCybersecurity ? 'bg-slate-800/50 border-cyan-500/20' : 'bg-gradient-to-br from-mauve-light to-white border-mauve/20'}`}
               >
                 <p className={`font-medium ${isCybersecurity ? 'text-gray-200' : 'text-gray-700'}`}>{useCase}</p>
-              </motion.div>
+              </MotionDiv>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-r from-mauve to-mauve-dark text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
+      <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-r from-mauve to-mauve-dark text-white text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -515,7 +465,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
               Get in Touch
               <ArrowRight size={20} />
             </Link>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
@@ -523,4 +473,3 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
     </main>
   )
 }
-

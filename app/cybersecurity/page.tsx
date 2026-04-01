@@ -1,8 +1,6 @@
-'use client'
-
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { motion } from 'framer-motion'
+import { MotionDiv } from '@/components/MotionWrapper'
 import Link from 'next/link'
 import Image from 'next/image'
 import { 
@@ -120,8 +118,7 @@ export default function CybersecurityPage() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Back Button */}
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -134,8 +131,8 @@ export default function CybersecurityPage() {
               <ArrowRight size={16} className="mr-2" />
               Go to Home
             </Link>
-          </motion.div>
-          <motion.div
+          </MotionDiv>
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -147,7 +144,7 @@ export default function CybersecurityPage() {
             <p className="text-2xl md:text-3xl text-mauve-light font-semibold mb-8">
               Protecting Institutions. Empowering People. Strengthening Nations.
             </p>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
@@ -155,7 +152,7 @@ export default function CybersecurityPage() {
       <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-b from-black to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -172,8 +169,8 @@ export default function CybersecurityPage() {
               <p className="text-lg text-gray-300 leading-relaxed">
                 We combine global best practices with deep regional experience to provide cybersecurity solutions that are practical, strategic, and aligned with local realities.
               </p>
-            </motion.div>
-            <motion.div
+            </MotionDiv>
+            <MotionDiv
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -187,6 +184,8 @@ export default function CybersecurityPage() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                  quality={85}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end">
                   <div className="p-6 text-white">
@@ -195,7 +194,7 @@ export default function CybersecurityPage() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </MotionDiv>
           </div>
         </div>
       </section>
@@ -203,7 +202,7 @@ export default function CybersecurityPage() {
       {/* Capabilities Section */}
       <section className="py-14 sm:py-16 md:py-20 bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -216,14 +215,14 @@ export default function CybersecurityPage() {
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               A complete service ecosystem designed to protect organizations across the Mano River region.
             </p>
-          </motion.div>
+          </MotionDiv>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {capabilities.map((capability, index) => {
               const Icon = capability.icon
               if (!Icon) return null
               return (
-                <motion.div
+                <MotionDiv
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -254,7 +253,7 @@ export default function CybersecurityPage() {
                     Learn More
                     <ArrowRight size={16} className="ml-2" />
                   </Link>
-                </motion.div>
+                </MotionDiv>
               )
             })}
           </div>
@@ -264,7 +263,7 @@ export default function CybersecurityPage() {
       {/* Why Choose KNS Section */}
       <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-b from-slate-800 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -274,14 +273,14 @@ export default function CybersecurityPage() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Why Choose KNS for Cybersecurity?
             </h2>
-          </motion.div>
+          </MotionDiv>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {whyChoose.map((item, index) => {
               const Icon = item.icon
               if (!Icon) return null
               return (
-                <motion.div
+                <MotionDiv
                   key={index}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -300,7 +299,7 @@ export default function CybersecurityPage() {
                   <p className="text-gray-300 text-sm leading-relaxed">
                     {item.description}
                   </p>
-                </motion.div>
+                </MotionDiv>
               )
             })}
           </div>
@@ -310,7 +309,7 @@ export default function CybersecurityPage() {
       {/* Who We Support Section */}
       <section className="py-14 sm:py-16 md:py-20 bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -320,14 +319,14 @@ export default function CybersecurityPage() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Who We Support
             </h2>
-          </motion.div>
+          </MotionDiv>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {whoWeSupport.map((item, index) => {
               const Icon = item.icon
               if (!Icon) return null
               return (
-                <motion.div
+                <MotionDiv
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -340,7 +339,7 @@ export default function CybersecurityPage() {
                     <Icon className="text-mauve-light/60 flex-shrink-0" size={18} />
                     <p className="text-gray-300 text-sm">{item.label}</p>
                   </div>
-                </motion.div>
+                </MotionDiv>
               )
             })}
           </div>
@@ -350,7 +349,7 @@ export default function CybersecurityPage() {
       {/* Methodology Section */}
       <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-b from-black to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -363,12 +362,12 @@ export default function CybersecurityPage() {
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               KNS uses a structured, globally aligned approach to cybersecurity delivery:
             </p>
-          </motion.div>
+          </MotionDiv>
 
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-6">
               {methodology.map((step, index) => (
-                <motion.div
+                <MotionDiv
                   key={index}
                   initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -380,10 +379,10 @@ export default function CybersecurityPage() {
                     <span className="text-mauve-light font-bold">{index + 1}</span>
                   </div>
                   <p className="text-gray-300 font-medium capitalize">{step}</p>
-                </motion.div>
+                </MotionDiv>
               ))}
             </div>
-            <motion.p
+            <MotionDiv
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -391,7 +390,7 @@ export default function CybersecurityPage() {
               className="text-center text-gray-400 mt-8 text-sm"
             >
               This ensures predictable outcomes, measurable improvements, and long-term resilience.
-            </motion.p>
+            </MotionDiv>
           </div>
         </div>
       </section>
@@ -399,7 +398,7 @@ export default function CybersecurityPage() {
       {/* CTA Section */}
       <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-r from-mauve-dark to-mauve">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -432,7 +431,7 @@ export default function CybersecurityPage() {
             <p className="text-white/80 mt-8 text-sm">
               Let&apos;s help you build a secure, resilient, and trusted digital environment.
             </p>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
@@ -440,4 +439,3 @@ export default function CybersecurityPage() {
     </main>
   )
 }
-

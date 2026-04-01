@@ -1,13 +1,12 @@
-'use client'
-
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { motion } from 'framer-motion'
+import { MotionDiv } from '@/components/MotionWrapper'
 import Link from 'next/link'
-import { ArrowLeft, Calendar, Tag, Clock, Share2, ExternalLink } from 'lucide-react'
+import { ArrowLeft, Calendar, Tag, Clock, ExternalLink } from 'lucide-react'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
 import { calculateReadingTime } from '@/lib/readingTime'
+import BlogShare from '@/components/BlogShare'
+import { notFound } from 'next/navigation'
 
 interface BlogPost {
   slug: string
@@ -29,7 +28,7 @@ const blogData: Record<string, BlogPost> = {
     excerpt: 'Knowledge Network Solutions has been recognized for outstanding contribution to advancing digital skills and innovation in Sierra Leone.',
     category: 'Awards',
     date: 'November 15, 2025',
-    image: '/hero-images/hero-1-it-consultancy.webp', // Black professionals group high-five
+    image: '/hero-images/hero-1-it-consultancy.webp',
     author: 'KNS Team',
     content: [
       'We are thrilled to announce that Knowledge Network Solutions (KNS) has been honored with the prestigious Digital Skills Champion Award at the Sierra Leone Tech Summit 2025. This recognition comes from the Ministry of Communication, Technology, and Innovation, acknowledging our exceptional contribution to advancing digital skills and innovation across Sierra Leone.',
@@ -39,7 +38,7 @@ const blogData: Record<string, BlogPost> = {
       '• Community outreach programs that provide free digital literacy training',
       '• Innovative training methodologies that combine theoretical knowledge with hands-on practical experience',
       'This award reflects our commitment to empowering individuals and organizations through technology education. Over the past year, we have trained over 500 professionals in various IT disciplines, contributing significantly to the digital transformation of Sierra Leone.',
-      'Our CEO, in accepting the award, stated: "This recognition is a testament to our team\'s dedication and the trust our clients and partners place in us. We remain committed to advancing digital skills and innovation in Sierra Leone, and this award only strengthens our resolve to continue this important work."',
+      'Our CEO, in accepting the award, stated: "This recognition is a testament to our team&apos;s dedication and the trust our clients and partners place in us. We remain committed to advancing digital skills and innovation in Sierra Leone, and this award only strengthens our resolve to continue this important work."',
       'Looking ahead, KNS plans to expand our training programs and introduce new courses in emerging technologies such as artificial intelligence, blockchain, and data science. We are also exploring partnerships with international technology companies to bring cutting-edge training programs to Sierra Leone.',
       'We extend our gratitude to the Ministry of Communication, Technology, and Innovation for this recognition and to all our clients, partners, and team members who have supported us on this journey.',
     ],
@@ -51,7 +50,7 @@ const blogData: Record<string, BlogPost> = {
     excerpt: 'We are excited to announce our comprehensive cybersecurity training program designed to equip professionals with essential security skills.',
     category: 'Training',
     date: 'November 10, 2025',
-    image: '/hero-images/hero-2-cybersecurity.webp', // Black man with cybersecurity interface
+    image: '/hero-images/hero-2-cybersecurity.webp',
     author: 'KNS Training Team',
     content: [
       'Knowledge Network Solutions is proud to announce the launch of our comprehensive Cybersecurity Training Program, designed to address the growing need for skilled cybersecurity professionals in Sierra Leone and across West Africa.',
@@ -80,7 +79,7 @@ const blogData: Record<string, BlogPost> = {
     excerpt: 'KNS has formed strategic partnerships with major cloud service providers to offer enhanced enterprise solutions to our clients.',
     category: 'Partnerships',
     date: 'November 5, 2025',
-    image: '/hero-images/hero-5-cloud.png', // Black man in data center
+    image: '/hero-images/hero-5-cloud.png',
     author: 'KNS Business Development',
     content: [
       'Knowledge Network Solutions is excited to announce strategic partnerships with leading global cloud service providers. These partnerships will enable us to offer enhanced enterprise cloud solutions and services to businesses across Sierra Leone and the wider region.',
@@ -109,7 +108,7 @@ const blogData: Record<string, BlogPost> = {
     excerpt: 'Our IT consultancy team has expanded to provide more comprehensive support for businesses undergoing digital transformation.',
     category: 'Services',
     date: 'October 28, 2025',
-    image: '/hero-images/hero-3-training.jpg', // Black man in computer lab
+    image: '/hero-images/hero-3-training.jpg',
     author: 'KNS Consultancy Team',
     content: [
       'Knowledge Network Solutions is pleased to announce the expansion of our IT Consultancy Services division. This expansion comes in response to the growing demand for expert IT guidance as businesses across Sierra Leone accelerate their digital transformation initiatives.',
@@ -137,7 +136,7 @@ const blogData: Record<string, BlogPost> = {
   },
   'dsti-security-sector-digital-training': {
     slug: 'dsti-security-sector-digital-training',
-    title: 'DSTI and Partners Drive Digital Skills Training to Strengthen Sierra Leone\'s Security Sector',
+    title: 'DSTI and Partners Drive Digital Skills Training to Strengthen Sierra Leone&apos;s Security Sector',
     excerpt: 'DSTI, in collaboration with MoCTI and KNS College, launches comprehensive digital skills training initiative for over 500 security officers, beginning October 2025 during Cybersecurity Awareness Month.',
     category: 'Training',
     date: 'January 15, 2025',
@@ -146,10 +145,10 @@ const blogData: Record<string, BlogPost> = {
     sourceLink: 'https://www.facebook.com/story.php?story_fbid=1091901303130327&id=100069314015484&rdid=E7zEHn477yzeQMbi#',
     content: [
       'The Directorate of Science, Technology and Innovation (DSTI), in collaboration with the Ministry of Communication, Technology and Innovation (MoCTI), in partnership with KNS College, has proposed a comprehensive training initiative for the Office of National Security (ONS), Sierra Leone Police (SLP), and Ministry of Defence / Republic of Sierra Leone Armed Forces (RSLAF).',
-      'DSTI recently held a strategic planning meeting to advance the nation\'s security sector through digital innovation. This initiative directly supports the Government of Sierra Leone\'s digital transformation agenda, reinforcing priorities under the Big Five Game Changers and the National Digital Transformation Strategy (NDTS).',
+      'DSTI recently held a strategic planning meeting to advance the nation&apos;s security sector through digital innovation. This initiative directly supports the Government of Sierra Leone&apos;s digital transformation agenda, reinforcing priorities under the Big Five Game Changers and the National Digital Transformation Strategy (NDTS).',
       'Beginning in October 2025, which coincides with Cybersecurity Awareness Month, the programme will provide specialized training in cybersecurity, digital literacy, emerging technologies, and other critical courses. More than 500 security officers drawn from the police and armed forces will participate in the first phase.',
       'The training will equip frontline personnel with practical skills to identify, prevent, and respond to both traditional and emerging security risks, ensuring that national protection keeps pace with rapid technological change. This partnership brings together DSTI, MoCTI, ONS, SLP, and RSLAF in a coordinated effort to modernize national security.',
-      'By training over 500 officers in critical digital competencies, the programme will strengthen the ability of security agencies to prevent cybercrime, safeguard national data, and respond swiftly to evolving threats. The October 2025 launch will mark a turning point, embedding long-term digital resilience within Sierra Leone\'s security architecture.',
+      'By training over 500 officers in critical digital competencies, the programme will strengthen the ability of security agencies to prevent cybercrime, safeguard national data, and respond swiftly to evolving threats. The October 2025 launch will mark a turning point, embedding long-term digital resilience within Sierra Leone&apos;s security architecture.',
       'All course materials will be stored on a dedicated digital platform, allowing officers to revisit lessons, share knowledge, and train others well beyond the initial sessions. Continuous access to the digital learning platform will support ongoing professional development and foster a culture of lifelong learning within the security services.',
       'This initiative reflects a wider commitment to integrating innovation with national security, ensuring that skills acquired today remain relevant for years to come.',
     ],
@@ -157,36 +156,12 @@ const blogData: Record<string, BlogPost> = {
   },
 }
 
-export default function BlogDetailPage({ params }: { params: Promise<{ slug: string }> | { slug: string } }) {
-  const [post, setPost] = useState<BlogPost | null>(null)
-
-  useEffect(() => {
-    const getSlug = async () => {
-      const resolvedParams = await Promise.resolve(params)
-      const postSlug = typeof resolvedParams === 'object' && 'slug' in resolvedParams ? resolvedParams.slug : resolvedParams
-      setPost(blogData[postSlug] || null)
-    }
-    getSlug()
-  }, [params])
+export default async function BlogDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params
+  const post = blogData[resolvedParams.slug]
 
   if (!post) {
-    return (
-      <main className="min-h-screen">
-        <Navbar />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
-          <h1 className="text-4xl font-bold text-charcoal mb-4">Post Not Found</h1>
-          <p className="text-gray-600 mb-8">The blog post you&apos;re looking for doesn&apos;t exist.</p>
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-mauve text-white rounded-lg font-semibold hover:bg-mauve-dark transition-colors"
-          >
-            <ArrowLeft size={20} />
-            Back to Home
-          </Link>
-        </div>
-        <Footer />
-      </main>
-    )
+    notFound()
   }
 
   const relatedPosts = post.relatedPosts
@@ -194,7 +169,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ slug: str
     : []
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white text-charcoal">
       <Navbar />
 
       {/* Hero Section */}
@@ -207,13 +182,14 @@ export default function BlogDetailPage({ params }: { params: Promise<{ slug: str
             className="object-cover"
             priority
             sizes="100vw"
+            quality={85}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60"></div>
         </div>
 
         <div className="relative z-10 h-full flex items-end">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-12">
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -245,7 +221,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ slug: str
               {post.author && (
                 <p className="text-white/90 text-lg">By {post.author}</p>
               )}
-            </motion.div>
+            </MotionDiv>
           </div>
         </div>
       </section>
@@ -254,7 +230,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ slug: str
       <section className="py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Return Button */}
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -267,24 +243,25 @@ export default function BlogDetailPage({ params }: { params: Promise<{ slug: str
               <ArrowLeft size={20} />
               Return to News
             </Link>
-          </motion.div>
+          </MotionDiv>
 
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="prose prose-lg max-w-none"
           >
-            {post.content.map((paragraph, index) => (
-              <p key={index} className="text-gray-700 leading-relaxed mb-6 text-lg">
-                {paragraph}
-              </p>
-            ))}
-          </motion.div>
+            <div className="prose prose-lg max-w-none">
+              {post.content.map((paragraph, index) => (
+                <p key={index} className="text-gray-700 leading-relaxed mb-6 text-lg">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </MotionDiv>
 
           {/* Source Link Section */}
           {post.sourceLink && (
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -299,37 +276,18 @@ export default function BlogDetailPage({ params }: { params: Promise<{ slug: str
                 <ExternalLink size={20} />
                 View Original Post on Facebook
               </a>
-            </motion.div>
+            </MotionDiv>
           )}
 
           {/* Share and Return Section */}
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-12 pt-8 border-t border-gray-200"
           >
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <div className="flex items-center gap-4">
-                <span className="text-gray-600 font-semibold">Share:</span>
-                <div className="flex gap-3">
-                  <button
-                    onClick={() => {
-                      if (navigator.share) {
-                        navigator.share({
-                          title: post.title,
-                          text: post.excerpt,
-                          url: window.location.href,
-                        })
-                      }
-                    }}
-                    className="p-2 bg-mauve-light/20 text-mauve rounded-lg hover:bg-mauve-light/30 transition-colors"
-                    aria-label="Share article"
-                  >
-                    <Share2 size={20} />
-                  </button>
-                </div>
-              </div>
+              <BlogShare title={post.title} excerpt={post.excerpt} />
               <Link
                 href="/#blog-news"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-mauve text-white rounded-lg font-semibold hover:bg-mauve-dark transition-all duration-300 shadow-lg hover:shadow-xl"
@@ -338,11 +296,11 @@ export default function BlogDetailPage({ params }: { params: Promise<{ slug: str
                 Return to News
               </Link>
             </div>
-          </motion.div>
+          </MotionDiv>
 
           {/* Related Posts */}
           {relatedPosts.length > 0 && (
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
@@ -378,7 +336,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ slug: str
                   </Link>
                 ))}
               </div>
-            </motion.div>
+            </MotionDiv>
           )}
         </div>
       </section>
@@ -387,4 +345,3 @@ export default function BlogDetailPage({ params }: { params: Promise<{ slug: str
     </main>
   )
 }
-

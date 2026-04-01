@@ -1,71 +1,14 @@
-'use client'
-
 import dynamic from 'next/dynamic'
 import Navbar from '@/components/Navbar'
-import { motion } from 'framer-motion'
 import { Target, Eye, Award, Users, TrendingUp, Linkedin, Shield, Heart, Lightbulb, Handshake, Leaf } from 'lucide-react'
 import Image from 'next/image'
-import { useState } from 'react'
+import ExecutiveImage from '@/components/ExecutiveImage'
+import { MotionDiv } from '@/components/MotionWrapper'
 
 // Lazy load Footer since it's below the fold
 const Footer = dynamic(() => import('@/components/Footer'), {
   ssr: true,
 })
-
-// Alias for cleaner code
-const MotionDiv = motion.div
-
-// Executive Image Component with error handling
-function ExecutiveImage({ src, alt }: { src: string; alt: string }) {
-  const [imgError, setImgError] = useState(false)
-  const [imgSrc, setImgSrc] = useState(src)
-
-  // Use a regular img to detect errors since Next.js Image doesn't support onError
-  const handleImgError = () => {
-    if (!imgError) {
-      // Try different file extensions
-      const basePath = src.replace(/\.(jpg|jpeg|png|webp)$/i, '')
-      const extensions = ['.jpg', '.jpeg', '.png', '.webp']
-      const currentExt = src.match(/\.(jpg|jpeg|png|webp)$/i)?.[0] || '.jpg'
-      const otherExts = extensions.filter(ext => ext !== currentExt)
-
-      if (otherExts.length > 0) {
-        setImgSrc(basePath + otherExts[0])
-      } else {
-        setImgError(true)
-      }
-    }
-  }
-
-  if (imgError) {
-    return (
-      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-mauve-light to-mauve/20">
-        <div className="text-center p-4">
-          <Users className="w-16 h-16 text-mauve mx-auto mb-2" />
-          <p className="text-mauve font-semibold">{alt}</p>
-        </div>
-      </div>
-    )
-  }
-
-  return (
-    <div className="relative h-full w-full">
-      <Image
-        src={imgSrc}
-        alt={alt}
-        fill
-        className="object-cover"
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        loading="lazy"
-        quality={85}
-        onLoadingComplete={(result) => {
-          if (result.naturalWidth === 0) handleImgError()
-        }}
-        onError={handleImgError}
-      />
-    </div>
-  )
-}
 
 export default function AboutPage() {
   const executives = [
@@ -107,7 +50,7 @@ export default function AboutPage() {
       <Navbar />
       <section className="pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-10 sm:pb-14 md:pb-16 lg:pb-20 bg-gradient-to-b from-mauve-light/20 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -119,10 +62,10 @@ export default function AboutPage() {
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               Empowering a Smarter Digital Future
             </p>
-          </motion.div>
+          </MotionDiv>
 
           <div className="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center mb-10 sm:mb-14 md:mb-20">
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -135,12 +78,11 @@ export default function AboutPage() {
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
-                loading="eager"
                 quality={85}
               />
-            </motion.div>
+            </MotionDiv>
 
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -159,7 +101,7 @@ export default function AboutPage() {
               <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                 With over 20 years of experience across national ICT programmes, education reform, enterprise architecture, telecom infrastructure, and cybersecurity initiatives, KNS continues to build Africa&apos;s next generation of digital professionals, resilient institutions, and secure digital ecosystems.
               </p>
-            </motion.div>
+            </MotionDiv>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-10 mb-12 sm:mb-16 md:mb-20">
@@ -254,7 +196,7 @@ export default function AboutPage() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal mb-3 sm:mb-4">Our Values</h2>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-              <motion.div
+              <MotionDiv
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
@@ -272,9 +214,9 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </MotionDiv>
 
-              <motion.div
+              <MotionDiv
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -292,9 +234,9 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </MotionDiv>
 
-              <motion.div
+              <MotionDiv
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -312,9 +254,9 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </MotionDiv>
 
-              <motion.div
+              <MotionDiv
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -332,9 +274,9 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </MotionDiv>
 
-              <motion.div
+              <MotionDiv
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -352,7 +294,7 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </MotionDiv>
             </div>
           </MotionDiv>
 
@@ -422,7 +364,7 @@ export default function AboutPage() {
             </div>
             <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {executives.map((exec, idx) => (
-                <motion.div
+                <MotionDiv
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -472,7 +414,7 @@ export default function AboutPage() {
                       </a>
                     </div>
                   </div>
-                </motion.div>
+                </MotionDiv>
               ))}
             </div>
           </MotionDiv>
@@ -482,4 +424,3 @@ export default function AboutPage() {
     </main>
   )
 }
-

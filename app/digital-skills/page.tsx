@@ -1,10 +1,9 @@
-'use client'
-
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { motion } from 'framer-motion'
+import { MotionDiv } from '@/components/MotionWrapper'
 import Link from 'next/link'
 import Image from 'next/image'
+import AnimatedGridDots from '@/components/AnimatedGridDots'
 import { 
   ArrowRight, BookOpen, Award, Building2, GraduationCap, Users, Globe,
   CheckCircle, Target, FileText, Zap, ShieldCheck, Star, Briefcase, Badge
@@ -117,27 +116,11 @@ export default function DigitalSkillsPage() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-gradient-to-b from-[#0A1A3A] via-[#0A1A3A] to-black overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          {/* Background Effects */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 left-0 w-full h-full">
-              {Array.from({ length: 20 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute w-1 h-1 bg-mauve-light rounded-full animate-pulse"
-                  style={{
-                    left: `${Math.random() * 100}%`,
-                    top: `${Math.random() * 100}%`,
-                    animationDelay: `${Math.random() * 5}s`,
-                    animationDuration: `${2 + Math.random() * 3}s`
-                  }}
-                />
-              ))}
-            </div>
-          </div>
+          <AnimatedGridDots />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -150,22 +133,22 @@ export default function DigitalSkillsPage() {
               <ArrowRight size={16} className="mr-2" />
               Go to Home
             </Link>
-          </motion.div>
+          </MotionDiv>
 
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-white"
           >
-            <motion.p
+            <MotionDiv
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-mauve-light font-semibold text-lg mb-4 tracking-wider"
             >
               SIERRA LEONE&apos;S DIGITAL SKILLS CHAMPION 2025
-            </motion.p>
+            </MotionDiv>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Digital Skills Development &amp; Capacity Building
             </h1>
@@ -175,7 +158,7 @@ export default function DigitalSkillsPage() {
             <p className="text-lg text-gray-300 max-w-3xl">
               From foundational digital literacy to globally recognized professional certifications, KNS delivers comprehensive training programs that prepare individuals and institutions for the digital economy.
             </p>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
@@ -183,7 +166,7 @@ export default function DigitalSkillsPage() {
       <section className="py-20 bg-gradient-to-b from-black to-[#0A1A3A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -199,8 +182,8 @@ export default function DigitalSkillsPage() {
               <p className="text-lg text-gray-300 leading-relaxed">
                 Our comprehensive portfolio includes certification bootcamps, academic curriculum development, public sector upskilling, youth empowerment programs, and nationwide digital inclusion campaigns, all designed to build a competitive, digitally empowered Sierra Leone.
               </p>
-            </motion.div>
-            <motion.div
+            </MotionDiv>
+            <MotionDiv
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -214,9 +197,11 @@ export default function DigitalSkillsPage() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                  quality={85}
                 />
               </div>
-            </motion.div>
+            </MotionDiv>
           </div>
         </div>
       </section>
@@ -224,7 +209,7 @@ export default function DigitalSkillsPage() {
       {/* Services Section */}
       <section className="py-20 bg-[#0A1A3A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -237,13 +222,13 @@ export default function DigitalSkillsPage() {
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Comprehensive training solutions for individuals, institutions, and communities
             </p>
-          </motion.div>
+          </MotionDiv>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => {
               const Icon = service.icon
               return (
-                <motion.div
+                <MotionDiv
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -274,7 +259,7 @@ export default function DigitalSkillsPage() {
                     Learn More
                     <ArrowRight size={16} className="ml-2" />
                   </Link>
-                </motion.div>
+                </MotionDiv>
               )
             })}
           </div>
@@ -284,7 +269,7 @@ export default function DigitalSkillsPage() {
       {/* Why Choose KNS Section */}
       <section className="py-20 bg-gradient-to-b from-[#0A1A3A] to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -294,13 +279,13 @@ export default function DigitalSkillsPage() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Why Choose KNS for Digital Skills
             </h2>
-          </motion.div>
+          </MotionDiv>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {whyChoose.map((item, index) => {
               const Icon = item.icon
               return (
-                <motion.div
+                <MotionDiv
                   key={index}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -317,7 +302,7 @@ export default function DigitalSkillsPage() {
                   <p className="text-gray-300 text-sm leading-relaxed">
                     {item.description}
                   </p>
-                </motion.div>
+                </MotionDiv>
               )
             })}
           </div>
@@ -327,7 +312,7 @@ export default function DigitalSkillsPage() {
       {/* Who We Serve Section */}
       <section className="py-20 bg-[#0A1A3A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -340,13 +325,13 @@ export default function DigitalSkillsPage() {
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Our programs are designed for diverse learners and institutions
             </p>
-          </motion.div>
+          </MotionDiv>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {whoWeServe.map((item, index) => {
               const Icon = item.icon
               return (
-                <motion.div
+                <MotionDiv
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -358,7 +343,7 @@ export default function DigitalSkillsPage() {
                   <p className="text-gray-300 text-sm font-medium">
                     {item.label}
                   </p>
-                </motion.div>
+                </MotionDiv>
               )
             })}
           </div>
@@ -368,7 +353,7 @@ export default function DigitalSkillsPage() {
       {/* Methodology Section */}
       <section className="py-20 bg-gradient-to-b from-black to-[#0A1A3A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -378,12 +363,12 @@ export default function DigitalSkillsPage() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Our Training Methodology
             </h2>
-          </motion.div>
+          </MotionDiv>
 
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-6">
               {methodology.map((step, index) => (
-                <motion.div
+                <MotionDiv
                   key={index}
                   initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -395,7 +380,7 @@ export default function DigitalSkillsPage() {
                     <span className="text-mauve-light font-bold text-sm">{index + 1}</span>
                   </div>
                   <p className="text-gray-300">{step}</p>
-                </motion.div>
+                </MotionDiv>
               ))}
             </div>
           </div>
@@ -405,7 +390,7 @@ export default function DigitalSkillsPage() {
       {/* Certiport Global Section */}
       <section className="py-20 bg-[#0A1A3A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -457,14 +442,14 @@ export default function DigitalSkillsPage() {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-mauve-dark to-mauve">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -491,7 +476,7 @@ export default function DigitalSkillsPage() {
                 Explore All Services
               </Link>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
@@ -499,4 +484,3 @@ export default function DigitalSkillsPage() {
     </main>
   )
 }
-

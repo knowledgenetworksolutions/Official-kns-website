@@ -1,110 +1,79 @@
-# KNS Web - Knowledge Network Systems Website
+# Official KNS Consultancy Website
 
-A professional and responsive website for **KNS (Knowledge Network Systems)** built with **Next.js 14**, **Tailwind CSS**, and **Framer Motion**.
+Welcome to the **Official KNS Consultancy Website** repository. This is a professional, responsive, and modern web application built for Knowledge Network Systems (KNS).
 
-## Features
+## 🚀 Tech Stack
 
-- **Hero Section** with 5-image sliding animation (left to right, continuous loop)
-- **Responsive Design** - Mobile-first approach
-- **Modern UI** - White and mauve color scheme
-- **Smooth Animations** - Framer Motion integration
-- **SEO Optimized** - Meta tags and structured data ready
-- **Multiple Sections**: About, Services, Training, Partners, Testimonials, Contact
-- **Authentication Pages** - Sign up and Login
+- **Frontend**: Next.js 14 (App Router), React 18, TypeScript, Tailwind CSS, Framer Motion (for animations), and Lucide React (for icons). The frontend environment runs natively in the browser with server-side rendering support.
+- **Backend**: Next.js Serverless Functions. The server environment uses Node.js (v20) and handles API routing and server-side logic through Next.js deployment capabilities.
+- **Database**: State and data logic is structured to be extensible. Once an active database (e.g., PostgreSQL, MongoDB) is connected, queries run securely via the backend. Environment variables handle the connection details on the hosting platform.
 
-## Tech Stack
+## 🌐 Deployment & Architecture
 
-- **Next.js 14** (App Router)
-- **TypeScript**
-- **Tailwind CSS**
-- **Framer Motion** (Animations)
-- **Lucide React** (Icons)
+- **Where it runs**:
+  - **Frontend & Backend**: The application is configured and actively deployed on **Netlify** (managed natively via `netlify.toml`). Netlify seamlessly handles the static frontend assets on its global Edge network alongside the Next.js server actions / SSR via serverless functions.
+- **URLs**:
+  - **Production URL**: *(Configured within the Netlify Dashboard — mapped to the official KNS domain)*
+  - **Local URL**: `http://localhost:3000`
 
-## Installation
+## ✨ Key Features
 
-1. Install dependencies:
-```bash
-npm install
-```
+- **Hero Section**: Includes a **5-image sliding animation** that continuously loops from left to right (20s duration, featuring tech themes: meetings, data center, cybersecurity, cloud computing, IT training).
+- **Responsive Design**: Mobile-first UI using modern paradigms.
+- **Color Scheme**:
+  - **Primary Mauve**: `#E0B0FF`
+  - **Secondary**: White `#FFFFFF`
+  - **Accent**: Charcoal Gray `#333333`
+- **Sections**: Detailed routing for About, Services (Cybersecurity, Partner Services, Digital Transformation, etc.), Training, Gallery, Contact, and Auth.
 
-2. Run the development server:
-```bash
-npm run dev
-```
+## 👨‍💻 Team
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+- **Lead Developer**: Abdul Salim Gani
 
-## Color Scheme
+## 📦 Project Structure
 
-- **Primary Mauve**: `#E0B0FF`
-- **Secondary**: White `#FFFFFF`
-- **Accent**: Charcoal Gray `#333333`
-
-## Project Structure
-
-```
+```text
 /
-├── app/
-│   ├── page.tsx          # Home page
-│   ├── about/            # About page
-│   ├── services/         # Services page
-│   ├── training/         # Training page
-│   ├── testimonials/     # Testimonials page
-│   ├── contact/          # Contact page
-│   └── auth/             # Authentication page
-├── components/
-│   ├── Navbar.tsx        # Navigation bar
-│   ├── Hero.tsx          # Hero section with image slider
-│   ├── About.tsx         # About section
-│   ├── Services.tsx      # Services section
-│   ├── Training.tsx      # Training section
-│   ├── Partners.tsx      # Partners section
-│   ├── Testimonials.tsx  # Testimonials carousel
-│   ├── Contact.tsx       # Contact form
-│   └── Footer.tsx        # Footer component
-└── styles/
-    └── globals.css       # Global styles
+├── app/                  # Next.js 14 App Router routes (about, services, contact, etc.)
+├── components/           # Reusable UI components (Navbar, Hero, Testimonials, Footer)
+├── public/               # Static assets (images, fonts, formatting)
+├── lib/                  # Utilities (e.g., readingTime.ts)
+├── package.json          # Project dependencies and scripts
+└── netlify.toml          # Netlify build and deployment config
 ```
 
-## Hero Section Animation
+## 🛠️ Local Development
 
-The hero section features a **5-image sliding animation** that continuously loops from left to right:
-- Duration: 20 seconds per cycle
-- Direction: Left to right
-- Loop: Infinite
-- Images: Tech meeting, Data center, Cybersecurity, Cloud computing, IT training
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-## Deployment
+2. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
 
-Deploy easily on Vercel:
+3. **Navigate to the site**: Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-1. Push your code to GitHub
-2. Import your repository on Vercel
-3. Deploy!
+## 🤝 How to Contribute
 
-Or use the Vercel CLI:
-```bash
-npm i -g vercel
-vercel
-```
+We welcome contributions from other developers to enhance the platform!
 
-## Notes
+1. **Branch**: Check out a new branch (`git checkout -b feature/your-feature-name` or `bugfix/issue-description`).
+2. **Develop**: Write your code. Make sure to adhere to the existing UI paradigms, TypeScript strictness, and Tailwind utility standards.
+3. **Test**: Run `npm run dev` and ensure there are no errors in our components or animations. Additionally, ensure `npm run build` succeeds locally without warnings.
+4. **Commit**: Keep commits clean and descriptive.
+   ```bash
+   git commit -m "feat: implement dynamic routing for blog"
+   ```
+5. **Push and PR**: Push your changes to your branch and open a Pull Request against the main repository branch.
+6. **Review**: The **Lead Developer (Abdul Salim Gani)** or another maintainer will review your code. Address any requested changes, and once approved, your code will be merged into production!
 
-- Contact form submission needs backend integration.
-- Authentication pages are UI-only. Backend integration required for full functionality.
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
-
-## License
+## 📄 License
 
 This project is proprietary and confidential.
 
+---
 
-Built by Eng. Salim for Knowledge Network Systems
-
+> **Built for Knowledge Network Systems (KNS)**

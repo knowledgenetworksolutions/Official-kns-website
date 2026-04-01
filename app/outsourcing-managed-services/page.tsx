@@ -189,7 +189,7 @@ export default function OutsourcingManagedServicesPage() {
             className="text-white"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Outsourcing & Managed Services
+              Outsourcing &amp; Managed Services
             </h1>
             <p className="text-xl md:text-2xl text-mauve-light font-semibold mb-8 max-w-4xl">
               Operational Excellence. Cost Efficiency. Reliable 24/7 Support.
@@ -213,7 +213,7 @@ export default function OutsourcingManagedServicesPage() {
                 Running modern ICT, telecom, and digital infrastructures requires skilled teams, continuous monitoring, proactive maintenance, and well-structured processes. Yet many organisations struggle with limited internal capacity, rising operational costs, skills shortages, or the need for 24/7 support.
               </p>
               <p className="text-lg text-mauve-light leading-relaxed font-semibold">
-                Knowledge Network Solutions (KNS) provides comprehensive Outsourcing & Managed Services that help organisations reduce operational burden, increase availability, improve service quality, and focus on their core mission.
+                Knowledge Network Solutions (KNS) provides comprehensive Outsourcing &amp; Managed Services that help organisations reduce operational burden, increase availability, improve service quality, and focus on their core mission.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
                 We take on the day-to-day management of IT, telecoms, service desks, field engineering, and support operations, delivering reliability, predictability, and measurable results.
@@ -474,7 +474,7 @@ export default function OutsourcingManagedServicesPage() {
               Ready to Improve Your Operational Efficiency?
             </h2>
             <p className="text-xl text-cyan-100 mb-8 max-w-3xl mx-auto">
-              KNS is ready to become your trusted partner for stable, secure, and cost-effective ICT and telecom operations. Let's help you reduce downtime, manage complexity, and deliver uninterrupted services.
+              KNS is ready to become your trusted partner for stable, secure, and cost-effective ICT and telecom operations. Let&apos;s help you reduce downtime, manage complexity, and deliver uninterrupted services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

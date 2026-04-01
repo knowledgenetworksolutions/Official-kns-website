@@ -195,7 +195,7 @@ export default function SecOpsPage() {
               className="text-white space-y-6"
             >
               <p className="text-lg text-gray-300 leading-relaxed">
-                In today's rapidly evolving threat landscape, organizations across Sierra Leone and the Mano River region face increasingly complex cyber challenges, ranging from malware campaigns and phishing attempts to insider threats, data breaches, and targeted attacks against telecom, financial, and government systems.
+                In today&apos;s rapidly evolving threat landscape, organizations across Sierra Leone and the Mano River region face increasingly complex cyber challenges, ranging from malware campaigns and phishing attempts to insider threats, data breaches, and targeted attacks against telecom, financial, and government systems.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
                 Many institutions now have firewalls, antivirus solutions, SIEM tools, or cloud-based security platforms, but without proper security operations governance, these tools deliver only partial protection.
@@ -516,7 +516,7 @@ export default function SecOpsPage() {
               Stay Ahead of Cyber Threats with KNS
             </h2>
             <p className="text-xl text-cyan-100 mb-8 max-w-3xl mx-auto">
-              In today's digital environment, cybersecurity must be continuous, not reactive. KNS provides the operational oversight, expertise, and governance required to keep your organization protected 24/7.
+              In today&apos;s digital environment, cybersecurity must be continuous, not reactive. KNS provides the operational oversight, expertise, and governance required to keep your organization protected 24/7.
             </p>
             <p className="text-lg text-white mb-10 max-w-2xl mx-auto font-semibold">
               Let us help you mature your security operations and strengthen your cyber defence capability.

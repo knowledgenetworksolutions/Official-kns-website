@@ -193,7 +193,7 @@ export default function PenetrationTestingPage() {
               Penetration Testing & Vulnerability Assessments
             </h1>
             <p className="text-xl md:text-2xl text-cyan-400 font-semibold mb-8 max-w-4xl">
-              Strengthening Cybersecurity Across Sierra Leone's Expanding Digital Economy
+              Strengthening Cybersecurity Across Sierra Leone&apos;s Expanding Digital Economy
             </p>
           </motion.div>
         </div>
@@ -217,7 +217,7 @@ export default function PenetrationTestingPage() {
                 To stay secure, organizations must identify weaknesses before attackers do.
               </p>
               <p className="text-lg text-mauve-light leading-relaxed font-semibold">
-                Knowledge Network Solutions (KNS) provides Sierra Leone's most comprehensive and nationally aligned Penetration Testing & Vulnerability Assessment (PT/VA) services, designed to safeguard institutions, protect customer data, and ensure operational resilience in a rapidly evolving threat landscape.
+                Knowledge Network Solutions (KNS) provides Sierra Leone&apos;s most comprehensive and nationally aligned Penetration Testing &amp; Vulnerability Assessment (PT/VA) services, designed to safeguard institutions, protect customer data, and ensure operational resilience in a rapidly evolving threat landscape.
               </p>
             </motion.div>
             <motion.div
@@ -294,7 +294,7 @@ export default function PenetrationTestingPage() {
                 </li>
               </ul>
               <p className="text-lg text-gray-300 italic leading-relaxed">
-                Sierra Leone's attack surface has significantly expanded.
+                Sierra Leone&apos;s attack surface has significantly expanded.
               </p>
             </motion.div>
 
@@ -323,7 +323,7 @@ export default function PenetrationTestingPage() {
                 ))}
               </ul>
               <p className="text-cyan-300 mt-6 font-medium">
-                KNS provides the technical depth and local context required to protect the systems powering Sierra Leone's digitization.
+                KNS provides the technical depth and local context required to protect the systems powering Sierra Leone&apos;s digitization.
               </p>
             </motion.div>
           </div>

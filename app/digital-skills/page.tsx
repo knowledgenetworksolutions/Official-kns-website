@@ -36,7 +36,7 @@ export default function DigitalSkillsPage() {
     {
       icon: GraduationCap,
       title: 'TVET, College & University Curriculum Development',
-      description: 'Modern ICT programs powered by global certifications. We develop fully industry-aligned curricula integrated with Certiport certifications such as IC3, MOS, Adobe, ESB, and IT Specialist. Institutions can deliver dual qualifications that prepare graduates for today\'s digital workforce.',
+      description: 'Modern ICT programs powered by global certifications. We develop fully industry-aligned curricula integrated with Certiport certifications such as IC3, MOS, Adobe, ESB, and IT Specialist. Institutions can deliver dual qualifications that prepare graduates for today&apos;s digital workforce.',
       tagline: 'Industry-ready programs',
       link: '/digital-skills/curriculum-development'
     },
@@ -59,7 +59,7 @@ export default function DigitalSkillsPage() {
   const whyChoose = [
     {
       icon: Star,
-      title: 'Sierra Leone\'s Digital Skills Champion 2025',
+      title: 'Sierra Leone&apos;s Digital Skills Champion 2025',
       description: 'Recognized by the Ministry of Communication, Technology & Innovation (MoCTI) as the leading digital skills provider in the nation.'
     },
     {
@@ -164,10 +164,10 @@ export default function DigitalSkillsPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-mauve-light font-semibold text-lg mb-4 tracking-wider"
             >
-              SIERRA LEONE'S DIGITAL SKILLS CHAMPION 2025
+              SIERRA LEONE&apos;S DIGITAL SKILLS CHAMPION 2025
             </motion.p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Digital Skills Development & Capacity Building
+              Digital Skills Development &amp; Capacity Building
             </h1>
             <p className="text-xl md:text-2xl text-mauve-light font-semibold mb-8 max-w-4xl">
               Empowering Citizens, Transforming Institutions, Building a Digitally Skilled Nation
@@ -191,7 +191,7 @@ export default function DigitalSkillsPage() {
               className="text-white space-y-6"
             >
               <p className="text-lg text-gray-300 leading-relaxed">
-                As Sierra Leone accelerates its digital transformation, the need for a digitally skilled workforce has never been more critical. Knowledge Network Solutions (KNS) stands at the forefront of this mission, recognized by the Ministry of Communication, Technology & Innovation (MoCTI) as "Digital Skills Champion 2025."
+                As Sierra Leone accelerates its digital transformation, the need for a digitally skilled workforce has never been more critical. Knowledge Network Solutions (KNS) stands at the forefront of this mission, recognized by the Ministry of Communication, Technology &amp; Innovation (MoCTI) as &quot;Digital Skills Champion 2025.&quot;
               </p>
               <p className="text-lg text-mauve-light leading-relaxed font-semibold">
                 We deliver end-to-end digital skills development programs, from IC3 Digital Literacy for first-time computer users to advanced professional certifications in cybersecurity, cloud computing, networking, and enterprise technology.
@@ -474,7 +474,7 @@ export default function DigitalSkillsPage() {
               Build Your Digital Future With KNS
             </h2>
             <p className="text-xl text-cyan-100 mb-8 max-w-3xl mx-auto">
-              Whether you're an individual seeking certification, an institution developing curriculum, or a government agency upskilling your workforce, KNS has the programs and expertise to help you succeed.
+              Whether you&apos;re an individual seeking certification, an institution developing curriculum, or a government agency upskilling your workforce, KNS has the programs and expertise to help you succeed.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

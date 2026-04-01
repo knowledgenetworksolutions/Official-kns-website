@@ -48,7 +48,7 @@ export default function Training() {
           className="text-center mb-16"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-charcoal mb-4">
-            Training & Courses
+            Training &amp; Courses
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
             Enhance your skills with our comprehensive training programs

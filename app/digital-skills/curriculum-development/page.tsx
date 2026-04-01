@@ -135,7 +135,7 @@ export default function CurriculumDevelopmentPage() {
                 KNS integrates Certiport certification tracks into academic curricula to help colleges deliver globally benchmarked digital qualifications.
               </p>
               <p className="text-lg text-mauve-light leading-relaxed font-semibold">
-                We develop fully industry-aligned curricula integrated with Certiport certifications such as IC3, MOS, Adobe, ESB, and IT Specialist. Institutions can deliver dual qualifications that prepare graduates for today's digital workforce.
+                We develop fully industry-aligned curricula integrated with Certiport certifications such as IC3, MOS, Adobe, ESB, and IT Specialist. Institutions can deliver dual qualifications that prepare graduates for today&apos;s digital workforce.
               </p>
             </motion.div>
             <motion.div

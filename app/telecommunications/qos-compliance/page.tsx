@@ -78,7 +78,7 @@ export default function QOSCompliancePage() {
             className="text-white"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              QoS Monitoring, Regulatory Compliance & Network Performance Analytics
+              QoS Monitoring, Regulatory Compliance &amp; Network Performance Analytics
             </h1>
             <p className="text-xl md:text-2xl text-cyan-400 font-semibold mb-8 max-w-4xl">
               Ensuring High-Quality Service Delivery for Operators, ISPs & Enterprise Networks

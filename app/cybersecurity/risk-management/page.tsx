@@ -272,7 +272,7 @@ export default function RiskManagementPage() {
               className="text-white"
             >
               <p className="text-lg text-gray-300 mb-6 font-semibold">
-                Sierra Leone\'s digital evolution has accelerated in recent years:
+                Sierra Leone&apos;s digital evolution has accelerated in recent years:
               </p>
               <ul className="space-y-3 text-gray-300 mb-8">
                 {digitalEvolution.map((item, index) => (

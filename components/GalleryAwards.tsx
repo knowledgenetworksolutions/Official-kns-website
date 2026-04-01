@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Trophy, Award as AwardIcon } from 'lucide-react'
 import { useState } from 'react'
+import Image from 'next/image'
 
 export default function GalleryAwards() {
   const [imageError, setImageError] = useState(false)
@@ -37,16 +38,18 @@ export default function GalleryAwards() {
             className="relative h-48 sm:h-64 md:h-80 lg:h-96 rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-mauve-light to-white"
           >
             {!imageError ? (
-              <img
+              <Image
                 src="/Digital champion award -mocti.jpeg"
                 alt="Digital Skills Champion Award"
-                className="w-full h-full object-contain p-4"
-                onLoad={() => setImageLoaded(true)}
+                className="w-full h-full object-contain p-4 transition-opacity duration-300"
+                onLoadingComplete={() => setImageLoaded(true)}
                 onError={() => {
                   setImageError(true)
                   setImageLoaded(false)
                 }}
-                style={{ display: imageLoaded ? 'block' : 'none' }}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                style={{ opacity: imageLoaded ? 1 : 0 }}
               />
             ) : (
               <div className="absolute inset-0 flex items-center justify-center">

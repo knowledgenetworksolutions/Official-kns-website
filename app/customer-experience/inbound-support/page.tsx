@@ -115,7 +115,7 @@ export default function InboundSupportPage() {
                 KNS manages all inbound enquiries, complaints, billing support, and service updates with professionalism and empathy. Our trained agents ensure every customer interaction is handled with care, efficiency, and a commitment to resolution.
               </p>
               <p className="text-lg text-mauve-light leading-relaxed font-semibold">
-                Improve satisfaction, reduce wait times, and strengthen your brand's frontline experience with our comprehensive inbound customer care services.
+                Improve satisfaction, reduce wait times, and strengthen your brand&apos;s frontline experience with our comprehensive inbound customer care services.
               </p>
             </motion.div>
             <motion.div

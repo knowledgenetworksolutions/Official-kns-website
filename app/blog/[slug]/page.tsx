@@ -175,7 +175,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ slug: str
         <Navbar />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
           <h1 className="text-4xl font-bold text-charcoal mb-4">Post Not Found</h1>
-          <p className="text-gray-600 mb-8">The blog post you're looking for doesn't exist.</p>
+          <p className="text-gray-600 mb-8">The blog post you&apos;re looking for doesn&apos;t exist.</p>
           <Link
             href="/"
             className="inline-flex items-center gap-2 px-6 py-3 bg-mauve text-white rounded-lg font-semibold hover:bg-mauve-dark transition-colors"

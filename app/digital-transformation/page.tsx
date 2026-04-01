@@ -154,7 +154,7 @@ export default function DigitalTransformationPage() {
             className="text-white"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Digital Transformation & Enterprise Technology Solutions
+              Digital Transformation &amp; Enterprise Technology Solutions
             </h1>
             <p className="text-xl md:text-2xl text-mauve-light font-semibold mb-8 max-w-4xl">
               The Foundation of Modern Service Delivery, Organisational Efficiency, and National Competitiveness
@@ -175,7 +175,7 @@ export default function DigitalTransformationPage() {
               className="text-white space-y-6"
             >
               <p className="text-lg text-gray-300 leading-relaxed">
-                Digital transformation is no longer optional. It's the foundation of modern service delivery, organisational efficiency, and national competitiveness. As organisations across Sierra Leone and the Mano River region adopt cloud platforms, digital public services, workflow automation, and data-driven decision-making, they need trusted partners who can bridge strategy and technology seamlessly.
+                Digital transformation is no longer optional. It&apos;s the foundation of modern service delivery, organisational efficiency, and national competitiveness. As organisations across Sierra Leone and the Mano River region adopt cloud platforms, digital public services, workflow automation, and data-driven decision-making, they need trusted partners who can bridge strategy and technology seamlessly.
               </p>
               <p className="text-lg text-mauve-light leading-relaxed font-semibold">
                 KNS helps organisations modernise their systems, redesign processes, strengthen governance, migrate to the cloud, and build integrated digital ecosystems that unlock real operational and strategic value.
@@ -184,7 +184,7 @@ export default function DigitalTransformationPage() {
                 From enterprise architecture and cloud infrastructure to automation, data analytics, IT governance, and smart government services, we deliver end-to-end solutions that make technology work for people, not the other way around.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                Whether you're beginning your digital journey or scaling existing systems, KNS provides the expertise, structure, and support to accelerate your transformation.
+                Whether you&apos;re beginning your digital journey or scaling existing systems, KNS provides the expertise, structure, and support to accelerate your transformation.
               </p>
             </motion.div>
             <motion.div

@@ -140,7 +140,7 @@ export default function TelecommunicationsPage() {
             className="text-center text-white"
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-              Telecommunications Engineering & Network Services
+              Telecommunications Engineering &amp; Network Services
             </h1>
             <p className="text-2xl md:text-3xl text-mauve-light font-semibold mb-8 max-w-4xl mx-auto">
               Connecting Nations. Powering Institutions. Enabling Digital Growth.

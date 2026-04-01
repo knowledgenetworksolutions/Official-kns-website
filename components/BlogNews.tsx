@@ -78,7 +78,7 @@ export default function BlogNews() {
           className="text-center mb-16"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-charcoal mb-4">
-            Blog & News
+            Blog &amp; News
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
             Stay updated with the latest news, insights, and updates from KNS
@@ -159,7 +159,7 @@ export default function BlogNews() {
             href="/blog"
             className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-mauve text-white rounded-lg font-semibold text-sm sm:text-base md:text-lg hover:bg-mauve-dark transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            View All News & Updates
+            View All News &amp; Updates
             <ArrowRight size={20} />
           </Link>
         </motion.div>

@@ -16,7 +16,7 @@ export default function CustomerExperiencePage() {
     {
       icon: PhoneIncoming,
       title: 'Inbound Customer Care',
-      description: 'Fast, friendly customer support, every time. KNS manages all inbound enquiries, complaints, billing support, and service updates with professionalism and empathy. Improve satisfaction, reduce wait times, and strengthen your brand\'s frontline experience.',
+      description: 'Fast, friendly customer support, every time. KNS manages all inbound enquiries, complaints, billing support, and service updates with professionalism and empathy. Improve satisfaction, reduce wait times, and strengthen your brand&apos;s frontline experience.',
       tagline: 'Always Here to Help',
       link: '/customer-experience/inbound-support'
     },
@@ -61,7 +61,7 @@ export default function CustomerExperiencePage() {
     {
       icon: Award,
       title: 'NaTCA-Approved Call Center Operation',
-      description: 'Fully licensed and compliant with Sierra Leone\'s National Telecommunications Authority requirements.'
+      description: 'Fully licensed and compliant with Sierra Leone&apos;s National Telecommunications Authority requirements.'
     },
     {
       icon: Users,
@@ -156,7 +156,7 @@ export default function CustomerExperiencePage() {
               NATCA-APPROVED CALL CENTER OPERATION
             </motion.p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Customer Experience & Call Center Services
+              Customer Experience &amp; Call Center Services
             </h1>
             <p className="text-xl md:text-2xl text-mauve-light font-semibold mb-8 max-w-4xl">
               Fast, Friendly, and Frictionless Service Across Every Touchpoint
@@ -180,7 +180,7 @@ export default function CustomerExperiencePage() {
                 Customer expectations have changed. Today they demand fast, friendly, and frictionless service across every touchpoint. Whether by phone, email, chat, WhatsApp, or social media, they expect your organisation to respond instantly and with professionalism. KNS helps you deliver exactly that.
               </p>
               <p className="text-lg text-mauve-light leading-relaxed font-semibold">
-                With a NaTCA-approved call center operation, trained agents, modern technology, and deep expertise across telecoms, ICT, and digital transformation, KNS provides complete Customer Experience & Contact Center solutions to help organisations scale support, improve public satisfaction, and deliver world-class service in Sierra Leone and the Mano River region.
+                With a NaTCA-approved call center operation, trained agents, modern technology, and deep expertise across telecoms, ICT, and digital transformation, KNS provides complete Customer Experience &amp; Contact Center solutions to help organisations scale support, improve public satisfaction, and deliver world-class service in Sierra Leone and the Mano River region.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
                 From inbound support to outbound engagement, technical helpdesk, omnichannel management, BPO operations, and CX strategy consulting, KNS transforms your customer service into a competitive advantage.

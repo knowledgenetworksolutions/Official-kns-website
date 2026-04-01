@@ -138,7 +138,7 @@ export default function CybersecurityHero() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 leading-relaxed"
             >
-              Protecting institutions, empowering people, and strengthening national digital security across Sierra Leone, Guinea & Liberia.
+              Protecting institutions, empowering people, and strengthening national digital security across Sierra Leone, Guinea &amp; Liberia.
             </motion.p>
 
             {/* Tagline */}

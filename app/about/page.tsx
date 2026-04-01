@@ -49,14 +49,7 @@ function ExecutiveImage({ src, alt }: { src: string; alt: string }) {
   }
 
   return (
-    <>
-      {/* Hidden img for error detection */}
-      <img
-        src={imgSrc}
-        alt=""
-        className="hidden"
-        onError={handleImgError}
-      />
+    <div className="relative h-full w-full">
       <Image
         src={imgSrc}
         alt={alt}
@@ -65,8 +58,12 @@ function ExecutiveImage({ src, alt }: { src: string; alt: string }) {
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         loading="lazy"
         quality={85}
+        onLoadingComplete={(result) => {
+          if (result.naturalWidth === 0) handleImgError()
+        }}
+        onError={handleImgError}
       />
-    </>
+    </div>
   )
 }
 
@@ -154,13 +151,13 @@ export default function AboutPage() {
                 Knowledge Network Solutions (KNS) is a premier technology, telecommunications, digital skills, and cybersecurity consulting company transforming how organizations operate, connect, and secure their digital environments across Sierra Leone and West Africa. As a trusted partner to government ministries, development agencies, universities, banks, telecom operators, and private-sector enterprises, we deliver solutions that bridge the digital divide, enhance operational efficiency, and strengthen national competitiveness.
               </p>
               <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-                Recognized by the Ministry of Communication, Technology & Innovation (MoCTI) as "Digital Skills Champion 2025," KNS stands at the frontline of Sierra Leone's digital evolution. We empower citizens with globally recognized certifications, support digital transformation across institutions, and deliver secure, scalable, and future-ready technologies for organizations of all sizes.
+                Recognized by the Ministry of Communication, Technology & Innovation (MoCTI) as &quot;Digital Skills Champion 2025,&quot; KNS stands at the frontline of Sierra Leone&apos;s digital evolution. We empower citizens with globally recognized certifications, support digital transformation across institutions, and deliver secure, scalable, and future-ready technologies for organizations of all sizes.
               </p>
               <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                 With an integrated portfolio of digital-skills development, cybersecurity advisory, enterprise technology solutions, telecommunications engineering, customer-experience & call-centre operations, and managed services, KNS serves as a one-stop digital transformation partner. Our approach blends innovation, hands-on expertise, and global best practices to create meaningful impact and long-term sustainability.
               </p>
               <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
-                With over 20 years of experience across national ICT programmes, education reform, enterprise architecture, telecom infrastructure, and cybersecurity initiatives, KNS continues to build Africa's next generation of digital professionals, resilient institutions, and secure digital ecosystems.
+                With over 20 years of experience across national ICT programmes, education reform, enterprise architecture, telecom infrastructure, and cybersecurity initiatives, KNS continues to build Africa&apos;s next generation of digital professionals, resilient institutions, and secure digital ecosystems.
               </p>
             </motion.div>
           </div>
@@ -198,7 +195,7 @@ export default function AboutPage() {
                 <div>
                   <h3 className="text-xl sm:text-2xl font-semibold text-charcoal mb-3">Our Vision</h3>
                   <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                    To be West Africa's most trusted digital transformation partner leading in cybersecurity, telecommunications, digital skills, and customer experience while shaping a secure, connected, and digitally empowered future.
+                    To be West Africa&apos;s most trusted digital transformation partner leading in cybersecurity, telecommunications, digital skills, and customer experience while shaping a secure, connected, and digitally empowered future.
                   </p>
                 </div>
               </div>
@@ -369,7 +366,7 @@ export default function AboutPage() {
             <div className="bg-gradient-to-r from-mauve-light/30 to-mauve/20 rounded-2xl p-6 md:p-10 lg:p-12 text-center">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal mb-4 sm:mb-6">Our Commitment</h2>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
-                We are dedicated to building a digitally skilled, secure, and competitive Sierra Leone and West Africa one institution, one community, and one citizen at a time. Through innovation, partnership, and excellence, KNS continues to shape the region's digital future.
+                We are dedicated to building a digitally skilled, secure, and competitive Sierra Leone and West Africa one institution, one community, and one citizen at a time. Through innovation, partnership, and excellence, KNS continues to shape the region&apos;s digital future.
               </p>
             </div>
           </MotionDiv>
@@ -391,7 +388,7 @@ export default function AboutPage() {
               <div className="grid md:grid-cols-2 gap-4 text-gray-600">
                 <div className="flex items-start gap-3">
                   <span className="text-mauve font-bold mt-1">·</span>
-                  <p className="text-sm sm:text-base">Government ministries & regulators</p>
+                  <p className="text-sm sm:text-base">Government ministries &amp; regulators</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-mauve font-bold mt-1">·</span>
@@ -399,15 +396,15 @@ export default function AboutPage() {
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-mauve font-bold mt-1">·</span>
-                  <p className="text-sm sm:text-base">Telecom operators & network infrastructure providers</p>
+                  <p className="text-sm sm:text-base">Telecom operators &amp; network infrastructure providers</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-mauve font-bold mt-1">·</span>
-                  <p className="text-sm sm:text-base">Universities & TVET institutions</p>
+                  <p className="text-sm sm:text-base">Universities &amp; TVET institutions</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-mauve font-bold mt-1">·</span>
-                  <p className="text-sm sm:text-base">Financial institutions & enterprise organizations</p>
+                  <p className="text-sm sm:text-base">Financial institutions &amp; enterprise organizations</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-mauve font-bold mt-1">·</span>

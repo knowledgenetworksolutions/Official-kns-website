@@ -215,19 +215,7 @@ export default function Contact() {
                 ) : (
                   <>
                     Send Message
-                    <span className="relative w-5 h-5">
-                      <img
-                        src="/icons/send-icon.svg"
-                        alt="Send"
-                        className="w-5 h-5 object-contain"
-                        onError={(e) => {
-                          e.currentTarget.style.display = 'none'
-                          const fallback = e.currentTarget.nextElementSibling as HTMLElement
-                          if (fallback) fallback.style.display = 'block'
-                        }}
-                      />
-                      <Send size={20} style={{ display: 'none' }} />
-                    </span>
+                    <Send size={20} />
                   </>
                 )}
               </button>
@@ -247,17 +235,7 @@ export default function Contact() {
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-mauve-light rounded-lg relative w-12 h-12 flex items-center justify-center">
-                    <img
-                      src="/icons/email-icon.svg"
-                      alt="Email"
-                      className="w-6 h-6 object-contain"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none'
-                        const fallback = e.currentTarget.nextElementSibling as HTMLElement
-                        if (fallback) fallback.style.display = 'block'
-                      }}
-                    />
-                    <Mail className="text-mauve" size={24} style={{ display: 'none' }} />
+                    <Mail className="text-mauve" size={24} />
                   </div>
                   <div>
                     <h4 className="font-semibold text-charcoal mb-1">Email</h4>
@@ -266,17 +244,7 @@ export default function Contact() {
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-mauve-light rounded-lg relative w-12 h-12 flex items-center justify-center">
-                    <img
-                      src="/icons/phone-icon.svg"
-                      alt="Phone"
-                      className="w-6 h-6 object-contain"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none'
-                        const fallback = e.currentTarget.nextElementSibling as HTMLElement
-                        if (fallback) fallback.style.display = 'block'
-                      }}
-                    />
-                    <PhoneCall className="text-mauve" size={24} style={{ display: 'none' }} />
+                    <PhoneCall className="text-mauve" size={24} />
                   </div>
                   <div>
                     <h4 className="font-semibold text-charcoal mb-1">Phone</h4>
@@ -286,17 +254,7 @@ export default function Contact() {
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-mauve-light rounded-lg relative w-12 h-12 flex items-center justify-center">
-                    <img
-                      src="/icons/location-icon.svg"
-                      alt="Location"
-                      className="w-6 h-6 object-contain"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none'
-                        const fallback = e.currentTarget.nextElementSibling as HTMLElement
-                        if (fallback) fallback.style.display = 'block'
-                      }}
-                    />
-                    <MapPin className="text-mauve" size={24} style={{ display: 'none' }} />
+                    <MapPin className="text-mauve" size={24} />
                   </div>
                   <div>
                     <h4 className="font-semibold text-charcoal mb-1">Address</h4>

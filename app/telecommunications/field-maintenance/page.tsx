@@ -78,7 +78,7 @@ export default function FieldMaintenancePage() {
             className="text-white"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Field Maintenance, Network Optimization & Hybrid/Solar Site Solutions
+              Field Maintenance, Network Optimization &amp; Hybrid/Solar Site Solutions
             </h1>
             <p className="text-xl md:text-2xl text-cyan-400 font-semibold mb-8 max-w-4xl">
               24/7 Telecom Field Support for Reliable Connectivity

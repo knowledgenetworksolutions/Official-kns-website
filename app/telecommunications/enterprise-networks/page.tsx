@@ -82,7 +82,7 @@ export default function EnterpriseNetworksPage() {
             className="text-white"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Enterprise Network Design, LAN/WAN & Structured Cabling
+              Enterprise Network Design, LAN/WAN &amp; Structured Cabling
             </h1>
             <p className="text-xl md:text-2xl text-cyan-400 font-semibold mb-8 max-w-4xl">
               Secure, Scalable and Professionally Engineered Enterprise Networks

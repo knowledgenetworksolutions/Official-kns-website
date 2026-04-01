@@ -169,6 +169,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'vellum.co.ke',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.google.com',
+      },
     ],
   },
 }

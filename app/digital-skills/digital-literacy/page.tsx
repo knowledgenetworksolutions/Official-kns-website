@@ -23,7 +23,7 @@ export default function DigitalLiteracyPage() {
     },
     {
       title: 'Microsoft Office Specialist (MOS)',
-      description: 'Certiport\'s MOS program provides hands-on mastery in:',
+      description: 'Certiport&apos;s MOS program provides hands-on mastery in:',
       items: [
         'Word',
         'Excel',
@@ -43,7 +43,7 @@ export default function DigitalLiteracyPage() {
     },
     {
       title: 'Digital Badges via Credly',
-      description: 'Learners receive digital credentials instantly through Certiport\'s Credly integration.',
+      description: 'Learners receive digital credentials instantly through Certiport&apos;s Credly integration.',
       items: [
         'Instant credential verification',
         'Shareable digital badges',
@@ -115,7 +115,7 @@ export default function DigitalLiteracyPage() {
                 KNS delivers foundational Certiport Digital Skills programs, including IC3 Digital Literacy, MOS (Microsoft Office Specialist), and other beginner-level digital credential pathways.
               </p>
               <p className="text-lg text-mauve-light leading-relaxed font-semibold">
-                Perfect for students, jobseekers, and first-time computer users, our programs provide the essential digital skills needed to succeed in today's digital economy.
+                Perfect for students, jobseekers, and first-time computer users, our programs provide the essential digital skills needed to succeed in today&apos;s digital economy.
               </p>
             </motion.div>
             <motion.div

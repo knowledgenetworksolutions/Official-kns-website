@@ -1,82 +1,103 @@
-# Official KNS Consultancy Website
+# Official KNS Consultancy Website: Digital Transformation for West Africa
 
-Welcome to the **Official KNS Consultancy Website** repository. This is a professional, responsive, and modern web application built for Knowledge Network Systems (KNS).
+Welcome to the **Official KNS Consultancy Website** repository. This platform is the digital flagship of Knowledge Network Systems (KNS), a premier technology, telecommunications, and cybersecurity consultancy firm driving innovation across Sierra Leone and the Mano River region.
 
-## 🚀 Current Status: Production Ready
+## 🚀 Project Overview
 
-The codebase has undergone a comprehensive **CI/CD Stabilization & Linting Resolution** phase. As of April 2026, the project is:
-- **100% ESLint Clean**: Adheres strictly to `next/core-web-vitals` standards.
-- **Build Verified**: Successfully generates all 56 static pages with zero errors.
-- **Optimized**: Cleaned of all temporary audit reports and build artifacts.
+The KNS Consultancy Website is a high-performance, responsive web application designed to serve as a one-stop hub for digital transformation services. Recognized as the **"Digital Skills Champion 2025"** by the Ministry of Communication, Technology & Innovation (MoCTI), KNS leverages this platform to empower citizens, support institutional digital growth, and secure national digital ecosystems.
 
-## 🛠️ Tech Stack
+### Core Service Modules
+- **Cybersecurity & Threat Analysis**: SOC operations, SecOps advisory, and penetration testing.
+- **Digital Skills & IC3 Training**: Global certification pathways (Pearson VUE, Certiport).
+- **Telecommunications Engineering**: Fiber-optic design, MPLS networks, and enterprise connectivity.
+- **Customer Experience & Inbound Support**: Professional call-center and managed support operations.
 
-- **Frontend**: Next.js 14 (App Router), React 18, TypeScript, Tailwind CSS, Framer Motion (for animations), and Lucide React (for icons).
-- **Backend**: Next.js Serverless Functions.
-- **Database**: Extensible architecture ready for PostgreSQL, MongoDB, or other enterprise-grade databases.
-- **Deployment**: Configured for **Netlify** / **Vercel** with native `netlify.toml` support.
+---
 
-## ✨ Key Features
+## 🌐 Hosting & Infrastructure
 
-- **Hero Section**: Dynamic 5-image sliding animation with tech-themed transitions.
-- **Service Specializations**: Dedicated modules for **Cybersecurity**, **Digital Transformation**, **Telecommunications**, and **Digital Skills**.
-- **Responsive Design**: Mobile-first, high-performance UI using Tailwind CSS.
-- **Brand Palette**:
-  - **Primary Mauve**: `#E0B0FF`
-  - **Secondary**: White `#FFFFFF`
-  - **Accent**: Charcoal Gray `#333333`
+The application is architected for maximum resilience and high availability, specifically optimized for regional delivery.
 
-## 👨‍💻 Team
+- **Primary Production Host**: **Sector Link** (`kns.sl`)
+- **Git Remote Target**: `sectorlink` (git@kns.sl:kns-website.git)
+- **Deployment Strategy**:
+  - Hosted on **Sector Link's Infrastructure**, providing localized, low-latency access for West African stakeholders.
+  - Next.js 14 App Router architecture ensures fast server-side rendering (SSR) and static site generation (SSG) on the Sector Link network.
+  - Verified for production on **Node.js v20+** environments.
 
+---
+
+## 🏗️ Architecture & Technology Stack
+
+- **Framework**: [Next.js 14.2](https://nextjs.org/) (App Router)
+- **Language**: TypeScript (Strict Mode)
+- **Styling**: Tailwind CSS (Mobile-first, Responsive)
+- **Animations**: Framer Motion (Optimized sliding Hero and entry transitions)
+- **Icons**: Lucide React (Tree-shaken)
+- **Optimization**: Standardized next/image utilization with AVIF/WebP support.
+
+---
+
+## 👨‍💻 Team & Leadership
+
+- **Co-Founders**: Desmond Macfoy (CEO) & Chinedu D. G. Nwaefuna (CISO)
 - **Lead Developer**: Abdul Salim Gani
+- **Contributors**: Future technology leaders dedicated to African digital resilience.
 
-## 📦 Project Structure
-
-```text
-/
-├── app/                  # Next.js 14 App Router routes (about, services, contact, etc.)
-├── components/           # Reusable UI components (Navbar, Hero, Testimonials, Footer)
-├── public/               # Static assets (images, fonts, branding)
-├── lib/                  # Utilities (e.g., readingTime.ts, security-helpers)
-├── package.json          # Project dependencies and scripts
-└── netlify.toml          # Netlify build and deployment config
-```
+---
 
 ## 🛠️ Local Development
 
-1. **Install dependencies**:
+1. **Clone the Project**:
+   ```bash
+   git clone https://github.com/Officialsalim12/KNS_WEBSITE.git
+   cd KNS_WEBSITE
+   ```
+
+2. **Install Dependencies**:
    ```bash
    npm install
    ```
 
-2. **Run Lint Check**:
-   ```bash
-   npm run lint
-   ```
-
-3. **Start the development server**:
+3. **Run Development Server**:
    ```bash
    npm run dev
    ```
 
-4. **Production Build Verification**:
+4. **Verify Build**:
    ```bash
    npm run build
    ```
 
-## 🤝 Contribution Guidelines
+---
 
-We maintain a high standard for code quality and UI performance.
+## 🤝 Professional Contribution Guide
 
-1. **Branch Management**: Use `feature/` or `bugfix/` prefixes.
-2. **Entity Escaping**: Ensure all `'`, `&`, and `"` characters in JSX are escaped (e.g., `&apos;`, `&amp;`) to maintain build stability.
-3. **Build Integrity**: All PRs must pass `npm run build` without errors before merging.
-4. **Review Process**: All changes are reviewed by the **Lead Developer (Abdul Salim Gani)**.
+We maintain high architectural and coding standards. Please follow these guidelines:
+
+### 1. Branching Strategy
+- **`main`**: Stable, production-ready branch (Sector Link branch).
+- **`feature/name`**: New feature development.
+- **`bugfix/description`**: Targeted issue resolution.
+
+### 2. Coding Standards
+- **Component Integrity**: Keep UI components reusable and separate from business logic.
+- **Entity Escaping**: **WARNING:** All special characters (`'`, `"`, `&`) in JSX text must be escaped (e.g., `&apos;`, `&amp;`) to maintain build compliance.
+- **Server Components**: Prefer Server Components by default. Use `"use client"` only for client-side interactivity.
+
+### 3. Submission Checklist
+- [ ] Run `npm run lint` and ensure ZERO errors/warnings.
+- [ ] Run `npm run build` and ensure the production build completes with **Exit Code 0**.
+- [ ] Verify responsiveness on Mobile and Desktop viewports.
+- [ ] Ensure all images use `next/image` with proper `alt` descriptions.
+
+### 4. Pull Requests
+Open a PR against the `main` branch. The **Lead Developer (Abdul Salim Gani)** or a board member will review the changes before they are synced to the **Sector Link** production environment.
+
+---
 
 ## 📄 License
 
 This project is proprietary and confidential.
 
----
-
-> **Built for Knowledge Network Systems (KNS)**
+> **Empowering a Smarter Digital Future for Sierra Leone.**

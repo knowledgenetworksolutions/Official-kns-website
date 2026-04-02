@@ -11,6 +11,25 @@ The KNS Consultancy Website is a high-performance, responsive web application de
 - **Digital Skills & IC3 Training**: Global certification pathways (Pearson VUE, Certiport).
 - **Telecommunications Engineering**: Fiber-optic design, MPLS networks, and enterprise connectivity.
 - **Customer Experience & Inbound Support**: Professional call-center and managed support operations.
+- **Enterprise & Digital Strategy**: Driving national initiatives like the **"Big 5" Innovation Challenge**.
+
+---
+
+## ✨ 2026 Modernization & UI/UX Enhancements
+
+The platform has undergone a significant visual and functional upgrade to ensure a premium, production-ready experience:
+
+### 🎨 Visual & Section Upgrades
+- **About KNS**: Fully modernized with high-resolution hero imagery (`KNS-TECH-HUB`) and a sleek, two-column responsive layout.
+- **Blog & News**: Integrated contextually relevant visuals for key awards (MOCTI 2025), cybersecurity training, and official event invitations.
+- **Hero Interactivity**: Optimized the scrolling image track to **60vw** for a more immersive, widescreen storytelling experience.
+
+### 🔔 Production-Ready Notifications
+- **Animated Toast System**: Replaced standard browser `alert()` popups with a custom, high-performance Toast notification system built with **Framer Motion**.
+- **Context-Aware Feedback**: Standardized Success, Error, and Info messages across all forms (Contact, Newsletter, and Sharing).
+
+### 📈 Content Updates
+- **Big 5 Innovation Challenge**: Officially documented KNS's invitation by the Ministry of Communication, Technology, and Innovation (MoCTI) to lead digital solutions in Sierra Leone.
 
 ---
 

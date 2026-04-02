@@ -23,7 +23,7 @@ export async function POST(request: Request) {
     }
 
     // Add contact to Resend Audience
-    const data = await resend.contacts.create({
+    const data = await (resend as any).contacts.create({
       email: email,
       audienceId: audienceId,
     });

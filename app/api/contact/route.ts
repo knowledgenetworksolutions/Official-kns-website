@@ -21,7 +21,7 @@ export async function POST(request: Request) {
       from: 'KNS Contact Form <onboarding@resend.dev>',
       to: ['info@kns.sl'], // Replace with your verified email if needed
       subject: `New Contact Inquiry: ${subject}`,
-      reply_to: email,
+      replyTo: email,
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>

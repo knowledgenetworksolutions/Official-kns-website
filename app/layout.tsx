@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
+import { ToastProvider } from '@/context/ToastContext'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -21,7 +22,6 @@ export const metadata: Metadata = {
   keywords: 'IT Consultancy, Cybersecurity, IT Training, Software Solutions, Enterprise & Cloud Solution, Call Center/Customer Services',
 }
 
-import { ToastProvider } from '@/context/ToastContext'
 
 export default function RootLayout({
   children,

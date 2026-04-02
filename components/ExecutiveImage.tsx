@@ -44,8 +44,8 @@ export default function ExecutiveImage({ src, alt }: { src: string; alt: string 
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         loading="lazy"
         quality={85}
-        onLoadingComplete={(result) => {
-          if (result.naturalWidth === 0) handleImgError()
+        onLoad={(result) => {
+          if (result.currentTarget.naturalWidth === 0) handleImgError()
         }}
         onError={handleImgError}
       />

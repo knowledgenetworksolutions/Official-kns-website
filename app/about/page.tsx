@@ -16,7 +16,7 @@ export default function AboutPage() {
       name: 'Desmond Macfoy',
       role: 'Co-Founder & Chief Executive Officer (CEO)',
       credentials: 'BEng (Hons), MBA, PMP, CCISO, CASP+, CISA, CAPM, ISO 27001 Lead Implementer, Microsoft Cybersecurity Architect Expert',
-      image: '/Staffs/WhatsApp Image 2025-11-14 at 8.28.08 PM.jpeg',
+      image: '/Staffs/CEO.jpeg',
       bio: 'Desmond Macfoy is a distinguished executive with over 25 years of leadership experience in information and communications technology, cybersecurity strategy, and digital transformation across Africa and the Middle East. As the Co-Founder and Chief Executive Officer of KNS, Mr. Macfoy sets the strategic direction of the organization, cultivates high-level partnerships, and drives national-level initiatives to advance organizational growth and impact. His visionary leadership has positioned KNS as the 2025 Digital Skills Champion and the only Pearson VUE Select and Certiport Authorized Testing Center in Sierra Leone, enabling thousands of professionals to earn globally recognized certifications.',
       career: 'Throughout his career, Mr. Macfoy has held senior leadership roles in both the public and private sectors, providing strategic guidance to telecommunications and IT organizations in more than 15 countries throughout the Middle East and Africa.',
       keyFocusAreas: [
@@ -31,7 +31,7 @@ export default function AboutPage() {
       name: 'Chinedu D. G. Nwaefuna',
       role: 'Co-Founder & Chief Information Security Officer (CISO)',
       credentials: 'MSc IT, BSc IT, Microsoft Certified Trainer (MCT), PMP, EC-Council "CCISO, CEH & ECSA", ISACA "CISA & GCEIT", ISO 27032 Senior Lead Cybersecurity Manager, CCNP x4 (Collaboration, Service Provider, Security & Enterprise), VMware VCP "Network & Data Virtualization", CompTIA "SecurityX, Security+, Pentest+, CySA+, CSAE, CNSP & CNVP", Fortinet NSE-7 and more.',
-      image: '/Staffs/WhatsApp Image 2025-11-14 at 8.28.08 PM (1).jpeg',
+      image: '/Staffs/CISO.jpeg',
       bio: 'Chinedu D. G. Nwaefuna is an accomplished cybersecurity leader and enterprise network architect with over 20 years of experience in designing, implementing, and securing telecommunications and ICT infrastructure. As the Co-Founder and Chief Information Security Officer (CISO) of KNS, Chinedu oversees the organization&apos;s cybersecurity architecture, risk management strategies, incident response planning, secure network design, and national cyber capacity-building initiatives.',
       career: 'His expertise spans leading large-scale projects, including fiber backbone deployments, MPLS networks, and national emergency call-center infrastructure. Chinedu&apos;s extensive background includes serving as CTO at Afcom Sierra Leone, Cyber Security Specialist at Base SL, and co-owner/CTO at KNS, where he has played a pivotal role in advancing secure digital transformation for clients and national stakeholders.',
       keyFocusAreas: [

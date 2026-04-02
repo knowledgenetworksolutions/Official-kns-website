@@ -7,6 +7,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, CheckCircle, Shield, Server, Headphones, Briefcase, GraduationCap, PhoneCall } from 'lucide-react'
 import { redirect, notFound } from 'next/navigation'
+import GoBackButton from '@/components/GoBackButton'
 
 interface ServiceDetail {
   slug: string
@@ -272,13 +273,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               transition={{ duration: 0.6 }}
               className="mb-8"
             >
-              <Link
-                href="/"
-                className="inline-flex items-center text-mauve hover:text-mauve-dark mb-6"
-              >
-                <ArrowRight size={16} className="mr-2" />
-                Go to Home
-              </Link>
+              <GoBackButton className="text-mauve hover:text-mauve-dark mb-6" />
             </MotionDiv>
 
             <div className="grid md:grid-cols-2 gap-12 items-center mb-16">

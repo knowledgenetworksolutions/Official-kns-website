@@ -10,6 +10,7 @@ import {
   Briefcase, CheckCircle, Award, Globe, Star, Building2, Landmark, GraduationCap,
   Heart, Zap, FileText, Target
 } from 'lucide-react'
+import GoBackButton from '@/components/GoBackButton'
 
 export default function OutsourcingManagedServicesPage() {
   const services = [
@@ -173,13 +174,7 @@ export default function OutsourcingManagedServicesPage() {
             transition={{ duration: 0.6 }}
             className="mb-8"
           >
-            <Link 
-              href="/" 
-              className="inline-flex items-center text-mauve-light hover:text-mauve-light transition-colors"
-            >
-              <ArrowRight size={16} className="mr-2" />
-              Go to Home
-            </Link>
+            <GoBackButton className="text-mauve-light hover:text-mauve-light" />
           </motion.div>
 
           <motion.div

@@ -9,6 +9,7 @@ import {
   ArrowRight, Briefcase, Target, Network, Cloud, Zap, BarChart, ShieldCheck,
   Building2, CheckCircle, Award, Users, Globe, Star, FileText
 } from 'lucide-react'
+import GoBackButton from '@/components/GoBackButton'
 
 export default function DigitalTransformationPage() {
   const services = [
@@ -112,14 +113,14 @@ export default function DigitalTransformationPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-b from-[#0A1A3A] via-[#0A1A3A] to-black overflow-hidden">
+      <section className="relative pt-32 pb-20 bg-gradient-to-b from-brand-navy via-brand-navy to-brand-black overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           {/* Background Effects */}
           <div className="absolute inset-0 opacity-10">
             {Array.from({ length: 15 }).map((_, i) => (
               <div
                 key={i}
-                className="absolute w-1 h-1 bg-mauve-light rounded-full animate-pulse"
+                className="absolute w-1 h-1 bg-accent-tech rounded-full animate-pulse"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -138,13 +139,7 @@ export default function DigitalTransformationPage() {
             transition={{ duration: 0.6 }}
             className="mb-8"
           >
-            <Link 
-              href="/" 
-              className="inline-flex items-center text-mauve-light hover:text-mauve-light transition-colors"
-            >
-              <ArrowRight size={16} className="mr-2" />
-              Go to Home
-            </Link>
+            <GoBackButton className="text-accent-tech hover:text-accent-tech/80" />
           </motion.div>
 
           <motion.div
@@ -156,7 +151,7 @@ export default function DigitalTransformationPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Digital Transformation &amp; Enterprise Technology Solutions
             </h1>
-            <p className="text-xl md:text-2xl text-mauve-light font-semibold mb-8 max-w-4xl">
+            <p className="text-xl md:text-2xl text-accent-tech font-semibold mb-8 max-w-4xl">
               The Foundation of Modern Service Delivery, Organisational Efficiency, and National Competitiveness
             </p>
           </motion.div>
@@ -164,7 +159,7 @@ export default function DigitalTransformationPage() {
       </section>
 
       {/* Overview Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-[#0A1A3A]">
+      <section className="py-20 bg-gradient-to-b from-brand-black to-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -177,7 +172,7 @@ export default function DigitalTransformationPage() {
               <p className="text-lg text-gray-300 leading-relaxed">
                 Digital transformation is no longer optional. It&apos;s the foundation of modern service delivery, organisational efficiency, and national competitiveness. As organisations across Sierra Leone and the Mano River region adopt cloud platforms, digital public services, workflow automation, and data-driven decision-making, they need trusted partners who can bridge strategy and technology seamlessly.
               </p>
-              <p className="text-lg text-mauve-light leading-relaxed font-semibold">
+              <p className="text-lg text-accent-tech leading-relaxed font-semibold">
                 KNS helps organisations modernise their systems, redesign processes, strengthen governance, migrate to the cloud, and build integrated digital ecosystems that unlock real operational and strategic value.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
@@ -209,7 +204,7 @@ export default function DigitalTransformationPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-[#0A1A3A]">
+      <section className="py-20 bg-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -236,17 +231,17 @@ export default function DigitalTransformationPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-slate-800/50 border border-mauve/20 rounded-xl p-6 hover:border-mauve-light/40 hover:bg-slate-800/70 transition-all"
+                  className="bg-brand-navy/40 backdrop-blur-sm border border-accent-tech/20 rounded-xl p-6 hover:border-accent-tech/50 hover:bg-brand-navy/60 transition-all group"
                 >
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="p-3 bg-mauve/20 rounded-lg">
-                      <Icon className="text-mauve-light" size={24} />
+                    <div className="p-3 bg-accent-tech/10 rounded-lg group-hover:bg-accent-tech/20 transition-colors">
+                      <Icon className="text-accent-tech" size={24} />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-xl font-semibold text-white mb-2">
                         {service.title}
                       </h3>
-                      <p className="text-mauve-light text-sm font-medium mb-3">
+                      <p className="text-accent-tech text-sm font-medium mb-3">
                         {service.tagline}
                       </p>
                     </div>
@@ -256,7 +251,7 @@ export default function DigitalTransformationPage() {
                   </p>
                   <Link
                     href={service.link}
-                    className="inline-flex items-center text-mauve-light hover:text-mauve-light text-sm font-semibold"
+                    className="inline-flex items-center text-accent-tech hover:text-accent-tech/80 text-sm font-semibold"
                   >
                     Learn More
                     <ArrowRight size={16} className="ml-2" />
@@ -269,7 +264,7 @@ export default function DigitalTransformationPage() {
       </section>
 
       {/* Why Choose KNS Section */}
-      <section className="py-20 bg-gradient-to-b from-[#0A1A3A] to-black">
+      <section className="py-20 bg-gradient-to-b from-brand-navy to-brand-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -293,10 +288,10 @@ export default function DigitalTransformationPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-slate-800/50 border border-mauve/20 rounded-lg p-6"
+                  className="bg-brand-navy/40 backdrop-blur-sm border border-accent-tech/20 rounded-xl p-6 hover:border-accent-tech/50 transition-all"
                 >
                   <div className="flex items-start gap-4 mb-4">
-                    <Icon className="text-mauve-light flex-shrink-0" size={24} />
+                    <Icon className="text-accent-tech flex-shrink-0" size={24} />
                     <h3 className="text-xl font-semibold text-white">
                       {item.title}
                     </h3>
@@ -312,7 +307,7 @@ export default function DigitalTransformationPage() {
       </section>
 
       {/* Who We Serve Section */}
-      <section className="py-20 bg-[#0A1A3A]">
+      <section className="py-20 bg-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -339,9 +334,9 @@ export default function DigitalTransformationPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
-                  className="bg-slate-800/50 border border-mauve/20 rounded-lg p-6 text-center hover:border-mauve-light/40 transition-all"
+                  className="bg-brand-navy/40 backdrop-blur-sm border border-accent-tech/20 rounded-lg p-6 text-center hover:border-accent-tech/50 transition-all"
                 >
-                  <Icon className="text-mauve-light mx-auto mb-3" size={32} />
+                  <Icon className="text-accent-tech mx-auto mb-3" size={32} />
                   <p className="text-gray-300 text-sm font-medium">
                     {item.label}
                   </p>
@@ -353,7 +348,7 @@ export default function DigitalTransformationPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-mauve-dark to-mauve">
+      <section className="py-20 bg-gradient-to-r from-brand-navy to-brand-black border-t border-accent-tech/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -370,14 +365,14 @@ export default function DigitalTransformationPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-mauve rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center px-8 py-4 bg-accent-tech text-brand-black rounded-lg font-semibold text-lg hover:bg-accent-tech/80 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Contact Us Today
                 <ArrowRight size={20} className="ml-2" />
               </Link>
               <Link
                 href="/"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white/10 transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 border-2 border-accent-tech text-accent-tech rounded-lg font-semibold text-lg hover:bg-accent-tech/10 transition-all duration-300"
               >
                 Explore All Services
               </Link>

@@ -4,9 +4,14 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react'
+import { useToast } from '@/context/ToastContext'
 
 export default function Footer() {
   const [logoError, setLogoError] = useState(false)
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
+
   const quickLinks = [
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
@@ -36,6 +41,39 @@ export default function Footer() {
     { icon: Instagram, href: '#', label: 'Instagram' },
   ]
 
+  const { showToast } = useToast()
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!email) return
+
+    setStatus('loading')
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setStatus('success')
+        setEmail('')
+        showToast('Successfully subscribed to our newsletter!', 'success')
+      } else {
+        throw new Error(data.error || 'Failed to subscribe')
+      }
+    } catch (error: any) {
+      setStatus('error')
+      setErrorMessage(error.message || 'Something went wrong')
+      showToast(error.message || 'Something went wrong', 'error')
+    } finally {
+      // Reset status after a delay if needed, or just let the toast handle it
+      setTimeout(() => setStatus('idle'), 2000)
+    }
+  }
+
   return (
     <footer className="bg-gradient-to-r from-mauve-dark to-mauve text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
@@ -47,13 +85,13 @@ export default function Footer() {
                 KNS
               </div>
             ) : (
-              <div className="relative h-10 w-24 sm:h-12 sm:w-32 mb-4">
+              <div className="relative h-16 w-40 sm:h-20 sm:w-48 mb-4">
                 <Image
                   src="/IMG_2498-removebg-preview.png"
                   alt="KNS Logo"
                   fill
                   className="object-contain"
-                  sizes="128px"
+                  sizes="(max-width: 640px) 160px, 192px"
                   onError={() => setLogoError(true)}
                 />
               </div>
@@ -138,16 +176,29 @@ export default function Footer() {
             <p className="text-xs sm:text-sm md:text-base text-white/80 mb-3 sm:mb-4">
               Keep up on our always evolving product features and technology. Enter your e-mail and subscribe to our newsletter.
             </p>
-            <form className="flex flex-col sm:flex-row gap-2">
-              <input type="email" placeholder="Enter your e-mail" className="flex-1 px-4 py-2 rounded-lg text-charcoal focus:outline-none text-sm sm:text-base" />
-              <button type="button" className="px-4 sm:px-6 py-2 bg-white text-mauve font-semibold rounded-lg hover:bg-white/90 text-sm sm:text-base whitespace-nowrap">Subscribe</button>
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-2">
+              <input 
+                type="email" 
+                placeholder="Enter your e-mail" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="flex-1 px-4 py-2 rounded-lg text-charcoal focus:outline-none text-sm sm:text-base" 
+              />
+              <button 
+                type="submit" 
+                disabled={status === 'loading'}
+                className="px-4 sm:px-6 py-2 bg-white text-mauve font-semibold rounded-lg hover:bg-white/90 text-sm sm:text-base whitespace-nowrap disabled:opacity-50"
+              >
+                {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
+              </button>
             </form>
           </div>
         </div>
 
         {/* Copyright */}
         <div className="border-t border-white/20 mt-6 sm:mt-10 md:mt-12 pt-4 sm:pt-6 md:pt-8 text-center text-white/80">
-          <p className="text-xs sm:text-sm md:text-base">© Copyrights Knowledge Network Solutions 2014. All rights reserved.</p>
+          <p className="text-xs sm:text-sm md:text-base">© Copyrights Knowledge Network Solutions 2026. All rights reserved.</p>
         </div>
       </div>
     </footer>

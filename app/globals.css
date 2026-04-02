@@ -64,15 +64,15 @@ html {
 
 .hero-slider-track {
   display: flex;
-  width: 200%;
+  width: 600%;
   height: 100%;
-  animation: slideLeft 20s linear infinite;
+  animation: slideLeft 30s linear infinite;
 }
 
 .hero-slide {
   position: relative;
-  flex: 0 0 20%;
-  width: 20%;
+  flex: 0 0 10%;
+  width: 10%;
   height: 100%;
   overflow: hidden;
 }

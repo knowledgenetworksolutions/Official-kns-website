@@ -9,6 +9,7 @@ import {
   ArrowRight, ShieldCheck, FileCheck, Lock, Database, AlertTriangle, 
   CheckCircle, Target, FileText, Search, Users, Globe, Award, Server
 } from 'lucide-react'
+import GoBackButton from '@/components/GoBackButton'
 
 export default function ITAuditPage() {
   const services = [
@@ -183,10 +184,10 @@ export default function ITAuditPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-14 sm:pb-16 md:pb-20 bg-gradient-to-b from-slate-900 via-blue-900 to-black overflow-hidden">
+      <section className="relative pt-32 pb-20 bg-gradient-to-b from-brand-navy via-brand-navy to-brand-black overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 20% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%)`
+            backgroundImage: `radial-gradient(circle at 20% 50%, rgba(0, 245, 255, 0.15) 0%, transparent 50%)`
           }}></div>
         </div>
 
@@ -198,13 +199,7 @@ export default function ITAuditPage() {
             transition={{ duration: 0.6 }}
             className="mb-8"
           >
-            <Link 
-              href="/" 
-              className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
-            >
-              <ArrowRight size={16} className="mr-2" />
-              Go to Home
-            </Link>
+            <GoBackButton className="text-accent-cyber hover:text-accent-cyber/80" />
           </motion.div>
 
           <motion.div
@@ -216,7 +211,7 @@ export default function ITAuditPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               IT/IS Audit & Security Compliance Reviews
             </h1>
-            <p className="text-xl md:text-2xl text-cyan-400 font-semibold mb-8 max-w-4xl">
+            <p className="text-xl md:text-2xl text-accent-cyber font-semibold mb-8 max-w-4xl">
               Strengthening Governance, Compliance & Digital Trust Across Sierra Leone, Guinea & Liberia
             </p>
           </motion.div>
@@ -224,7 +219,7 @@ export default function ITAuditPage() {
       </section>
 
       {/* Overview Section */}
-      <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-b from-black to-slate-900">
+      <section className="py-20 bg-gradient-to-b from-brand-black to-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -237,7 +232,7 @@ export default function ITAuditPage() {
               <p className="text-lg text-gray-300 leading-relaxed">
                 Modern organizations depend on technology for their daily operations, but without strong governance, secure processes, and compliance frameworks, these digital systems become vulnerable to failure, misuse, or attack.
               </p>
-              <p className="text-lg text-mauve-light leading-relaxed font-semibold">
+              <p className="text-lg text-accent-cyber leading-relaxed font-semibold">
                 KNS delivers comprehensive IT/IS Audit & Security Compliance Review services designed to help institutions in Sierra Leone, and the broader Mano River region, align their digital environments with internationally recognized standards such as ISO 27001, NIST, and CIS Controls. Our audits strengthen governance, ensure accountability, improve operational resilience, and support regulatory obligations.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
@@ -254,7 +249,7 @@ export default function ITAuditPage() {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="relative h-96 rounded-xl overflow-hidden shadow-xl border border-mauve/30">
+              <div className="relative h-96 rounded-xl overflow-hidden shadow-xl border border-accent-cyber/30">
                 <Image
                   src="https://techlinqconsulting.com.au/wp-content/uploads/2021/07/audit.png"
                   alt="IT/IS Audit & Security Compliance Reviews"
@@ -269,7 +264,7 @@ export default function ITAuditPage() {
       </section>
 
       {/* Why Critical Section */}
-      <section className="py-14 sm:py-16 md:py-20 bg-slate-900">
+      <section className="py-20 bg-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -297,7 +292,7 @@ export default function ITAuditPage() {
               <ul className="space-y-3 text-gray-300 mb-8">
                 {risks.map((risk, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <span className="text-cyan-400 font-bold mt-1">·</span>
+                    <span className="text-accent-cyber font-bold mt-1">·</span>
                     <span>{risk}</span>
                   </li>
                 ))}
@@ -309,12 +304,12 @@ export default function ITAuditPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="bg-slate-800/50 border border-cyan-500/20 rounded-xl p-6 sm:p-8"
+              className="bg-brand-navy/40 backdrop-blur-sm border border-accent-cyber/20 rounded-xl p-6 sm:p-8"
             >
               <p className="text-lg text-gray-300 mb-6">
                 Regulators and development partners are demanding stronger governance, clearer reporting, and demonstrable compliance.
               </p>
-              <p className="text-cyan-300 font-semibold text-xl">
+              <p className="text-accent-cyber font-semibold text-xl">
                 KNS provides the assurance and governance capability needed to meet these expectations.
               </p>
             </motion.div>
@@ -323,7 +318,7 @@ export default function ITAuditPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-b from-slate-800 to-black">
+      <section className="py-20 bg-gradient-to-b from-brand-navy to-brand-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -347,11 +342,11 @@ export default function ITAuditPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-slate-800/50 border border-cyan-500/20 rounded-xl p-6 sm:p-8 hover:border-cyan-400/40 transition-all"
+                  className="bg-brand-navy/40 backdrop-blur-sm border border-accent-cyber/20 rounded-xl p-6 sm:p-8 hover:border-accent-cyber/50 transition-all group"
                 >
                   <div className="flex items-start gap-6 mb-6">
-                    <div className="p-4 bg-cyan-500/20 rounded-lg">
-                      <Icon className="text-cyan-400" size={32} />
+                    <div className="p-4 bg-accent-cyber/10 rounded-lg group-hover:bg-accent-cyber/20 transition-colors">
+                      <Icon className="text-accent-cyber" size={32} />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-2xl font-semibold text-white mb-3">
@@ -363,7 +358,7 @@ export default function ITAuditPage() {
                       <div className="grid md:grid-cols-2 gap-3">
                         {service.items.map((item, itemIndex) => (
                           <div key={itemIndex} className="flex items-start gap-2">
-                            <span className="text-cyan-400 font-bold mt-1">·</span>
+                            <span className="text-accent-cyber font-bold mt-1">·</span>
                             <span className="text-gray-300 text-sm">{item}</span>
                           </div>
                         ))}
@@ -378,7 +373,7 @@ export default function ITAuditPage() {
       </section>
 
       {/* Methodology Section */}
-      <section className="py-14 sm:py-16 md:py-20 bg-slate-900">
+      <section className="py-20 bg-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -404,7 +399,7 @@ export default function ITAuditPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-slate-800/50 border border-cyan-500/20 rounded-lg p-4 text-center"
+                  className="bg-brand-navy/40 backdrop-blur-sm border border-accent-cyber/20 rounded-lg p-4 text-center"
                 >
                   <p className="text-gray-300 text-sm">{framework}</p>
                 </motion.div>
@@ -421,10 +416,10 @@ export default function ITAuditPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex gap-6 bg-slate-800/50 border border-cyan-500/20 rounded-xl p-6"
+                  className="flex gap-6 bg-brand-navy/40 backdrop-blur-sm border border-accent-cyber/20 rounded-xl p-6"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 bg-cyan-500/20 rounded-full flex items-center justify-center">
-                    <span className="text-cyan-400 font-bold text-xl">{item.step}</span>
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent-cyber/10 rounded-full flex items-center justify-center">
+                    <span className="text-accent-cyber font-bold text-xl">{item.step}</span>
                   </div>
                   <div className="flex-1">
                     <h4 className="text-xl font-semibold text-white mb-2">{item.title}</h4>
@@ -438,7 +433,7 @@ export default function ITAuditPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-b from-black to-slate-900">
+      <section className="py-20 bg-gradient-to-b from-brand-black to-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
             <motion.div
@@ -453,7 +448,7 @@ export default function ITAuditPage() {
               <ul className="space-y-4">
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="text-cyan-400 flex-shrink-0 mt-1" size={24} />
+                    <CheckCircle className="text-accent-cyber flex-shrink-0 mt-1" size={24} />
                     <span className="text-gray-300 text-lg">{benefit}</span>
                   </li>
                 ))}
@@ -475,7 +470,7 @@ export default function ITAuditPage() {
               <ul className="space-y-4">
                 {deliverables.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <FileText className="text-cyan-400 flex-shrink-0 mt-1" size={24} />
+                    <FileText className="text-accent-cyber flex-shrink-0 mt-1" size={24} />
                     <span className="text-gray-300 text-lg">{item}</span>
                   </li>
                 ))}
@@ -489,7 +484,7 @@ export default function ITAuditPage() {
       </section>
 
       {/* Why Choose Section */}
-      <section className="py-20 bg-slate-900">
+      <section className="py-20 bg-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -511,10 +506,10 @@ export default function ITAuditPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-slate-800/50 border border-cyan-500/20 rounded-lg p-6"
+                className="bg-brand-navy/40 backdrop-blur-sm border border-accent-cyber/20 rounded-lg p-6"
               >
                 <div className="flex items-start gap-3">
-                  <Target className="text-cyan-400 flex-shrink-0 mt-1" size={20} />
+                  <Target className="text-accent-cyber flex-shrink-0 mt-1" size={20} />
                   <p className="text-gray-300">{item}</p>
                 </div>
               </motion.div>
@@ -524,7 +519,7 @@ export default function ITAuditPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-cyan-600 to-blue-600">
+      <section className="py-20 bg-gradient-to-r from-brand-navy to-brand-black border-t border-accent-cyber/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -535,10 +530,10 @@ export default function ITAuditPage() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Strengthen Governance. Build Trust. Ensure Compliance.
             </h2>
-            <p className="text-xl text-cyan-100 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-accent-cyber font-semibold mb-8 max-w-3xl mx-auto">
               With digital systems becoming the backbone of public and private sector operations across Sierra Leone, Guinea, and Liberia, strong IT governance is no longer optional. It is essential.
             </p>
-            <p className="text-lg text-white mb-10 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
               KNS helps organizations implement the right controls, meet international standards, satisfy regulators, and improve overall digital readiness.
             </p>
             <p className="text-lg text-white mb-10 max-w-2xl mx-auto font-semibold">
@@ -546,7 +541,7 @@ export default function ITAuditPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center px-8 py-4 bg-accent-cyber text-brand-black rounded-lg font-semibold text-lg hover:bg-accent-cyber/80 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Contact Us Today
               <ArrowRight size={20} className="ml-2" />

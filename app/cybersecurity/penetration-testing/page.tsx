@@ -9,6 +9,7 @@ import {
   ArrowRight, ShieldCheck, Network, Globe, Smartphone, Cloud, Server, 
   Users, CheckCircle, Target, FileText, Search, AlertTriangle, Lock
 } from 'lucide-react'
+import GoBackButton from '@/components/GoBackButton'
 
 export default function PenetrationTestingPage() {
   const services = [
@@ -159,10 +160,10 @@ export default function PenetrationTestingPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-14 md:pb-16 bg-gradient-to-b from-slate-900 via-blue-900 to-black overflow-hidden">
+      <section className="relative pt-32 pb-20 bg-gradient-to-b from-brand-navy via-brand-navy to-brand-black overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 20% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%)`
+            backgroundImage: `radial-gradient(circle at 20% 50%, rgba(0, 245, 255, 0.15) 0%, transparent 50%)`
           }}></div>
         </div>
 
@@ -174,13 +175,7 @@ export default function PenetrationTestingPage() {
             transition={{ duration: 0.6 }}
             className="mb-8"
           >
-            <Link 
-              href="/" 
-              className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
-            >
-              <ArrowRight size={16} className="mr-2" />
-              Go to Home
-            </Link>
+            <GoBackButton className="text-accent-cyber hover:text-accent-cyber/80" />
           </motion.div>
 
           <motion.div
@@ -192,7 +187,7 @@ export default function PenetrationTestingPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Penetration Testing & Vulnerability Assessments
             </h1>
-            <p className="text-xl md:text-2xl text-cyan-400 font-semibold mb-8 max-w-4xl">
+            <p className="text-xl md:text-2xl text-accent-cyber font-semibold mb-8 max-w-4xl">
               Strengthening Cybersecurity Across Sierra Leone&apos;s Expanding Digital Economy
             </p>
           </motion.div>
@@ -200,7 +195,7 @@ export default function PenetrationTestingPage() {
       </section>
 
       {/* Overview Section */}
-      <section className="py-10 sm:py-12 md:py-16 bg-gradient-to-b from-black to-slate-900">
+      <section className="py-20 bg-gradient-to-b from-brand-black to-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -216,7 +211,7 @@ export default function PenetrationTestingPage() {
               <p className="text-lg text-gray-300 leading-relaxed">
                 To stay secure, organizations must identify weaknesses before attackers do.
               </p>
-              <p className="text-lg text-mauve-light leading-relaxed font-semibold">
+              <p className="text-lg text-accent-cyber leading-relaxed font-semibold">
                 Knowledge Network Solutions (KNS) provides Sierra Leone&apos;s most comprehensive and nationally aligned Penetration Testing &amp; Vulnerability Assessment (PT/VA) services, designed to safeguard institutions, protect customer data, and ensure operational resilience in a rapidly evolving threat landscape.
               </p>
             </motion.div>
@@ -242,7 +237,7 @@ export default function PenetrationTestingPage() {
       </section>
 
       {/* Why Critical Section */}
-      <section className="py-10 sm:py-12 md:py-16 bg-slate-900">
+      <section className="py-20 bg-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -303,7 +298,7 @@ export default function PenetrationTestingPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="bg-slate-800/50 border border-cyan-500/20 rounded-xl p-6 sm:p-8"
+              className="bg-brand-navy/40 backdrop-blur-sm border border-accent-cyber/20 rounded-xl p-6 sm:p-8"
             >
               <h3 className="text-2xl font-semibold text-white mb-6">
                 Penetration Testing and Vulnerability Assessments help local organizations:
@@ -317,12 +312,12 @@ export default function PenetrationTestingPage() {
                   'Strengthen digital trust in an emerging digital economy'
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="text-cyan-400 flex-shrink-0 mt-1" size={20} />
+                    <CheckCircle className="text-accent-cyber flex-shrink-0 mt-1" size={20} />
                     <span className="text-gray-300">{item}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-cyan-300 mt-6 font-medium">
+              <p className="text-accent-cyber mt-6 font-medium">
                 KNS provides the technical depth and local context required to protect the systems powering Sierra Leone&apos;s digitization.
               </p>
             </motion.div>
@@ -331,7 +326,7 @@ export default function PenetrationTestingPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-10 sm:py-12 md:py-16 bg-gradient-to-b from-slate-800 to-black">
+      <section className="py-20 bg-gradient-to-b from-brand-navy to-brand-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -355,11 +350,11 @@ export default function PenetrationTestingPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-slate-800/50 border border-cyan-500/20 rounded-xl p-6 sm:p-8 hover:border-cyan-400/40 transition-all"
+                  className="bg-brand-navy/40 backdrop-blur-sm border border-accent-cyber/20 rounded-xl p-6 sm:p-8 hover:border-accent-cyber/50 transition-all group"
                 >
                   <div className="flex items-start gap-6 mb-6">
-                    <div className="p-4 bg-cyan-500/20 rounded-lg">
-                      <Icon className="text-cyan-400" size={32} />
+                    <div className="p-4 bg-accent-cyber/10 rounded-lg group-hover:bg-accent-cyber/20 transition-colors">
+                      <Icon className="text-accent-cyber" size={32} />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-2xl font-semibold text-white mb-3">
@@ -371,7 +366,7 @@ export default function PenetrationTestingPage() {
                       <div className="grid md:grid-cols-2 gap-3">
                         {service.items.map((item, itemIndex) => (
                           <div key={itemIndex} className="flex items-start gap-2">
-                            <span className="text-cyan-400 font-bold mt-1">·</span>
+                            <span className="text-accent-cyber font-bold mt-1">·</span>
                             <span className="text-gray-300 text-sm">{item}</span>
                           </div>
                         ))}
@@ -386,7 +381,7 @@ export default function PenetrationTestingPage() {
       </section>
 
       {/* Methodology Section */}
-      <section className="py-10 sm:py-12 md:py-16 bg-slate-900">
+      <section className="py-20 bg-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -412,7 +407,7 @@ export default function PenetrationTestingPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-slate-800/50 border border-cyan-500/20 rounded-lg p-4 text-center"
+                  className="bg-brand-navy/40 backdrop-blur-sm border border-accent-cyber/20 rounded-lg p-4 text-center"
                 >
                   <p className="text-gray-300 text-sm">{framework}</p>
                 </motion.div>
@@ -433,10 +428,10 @@ export default function PenetrationTestingPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex gap-6 bg-slate-800/50 border border-cyan-500/20 rounded-xl p-6"
+                  className="flex gap-6 bg-brand-navy/40 backdrop-blur-sm border border-accent-cyber/20 rounded-xl p-6"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 bg-cyan-500/20 rounded-full flex items-center justify-center">
-                    <span className="text-cyan-400 font-bold text-xl">{item.step}</span>
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent-cyber/10 rounded-full flex items-center justify-center">
+                    <span className="text-accent-cyber font-bold text-xl">{item.step}</span>
                   </div>
                   <div className="flex-1">
                     <h4 className="text-xl font-semibold text-white mb-2">{item.title}</h4>
@@ -450,7 +445,7 @@ export default function PenetrationTestingPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-10 sm:py-12 md:py-16 bg-gradient-to-b from-black to-slate-900">
+      <section className="py-20 bg-gradient-to-b from-brand-black to-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
             <motion.div
@@ -465,7 +460,7 @@ export default function PenetrationTestingPage() {
               <ul className="space-y-4">
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="text-cyan-400 flex-shrink-0 mt-1" size={24} />
+                    <CheckCircle className="text-accent-cyber flex-shrink-0 mt-1" size={24} />
                     <span className="text-gray-300 text-lg">{benefit}</span>
                   </li>
                 ))}
@@ -484,7 +479,7 @@ export default function PenetrationTestingPage() {
               <ul className="space-y-4">
                 {deliverables.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <FileText className="text-cyan-400 flex-shrink-0 mt-1" size={24} />
+                    <FileText className="text-accent-cyber flex-shrink-0 mt-1" size={24} />
                     <span className="text-gray-300 text-lg">{item}</span>
                   </li>
                 ))}
@@ -495,7 +490,7 @@ export default function PenetrationTestingPage() {
       </section>
 
       {/* Why Choose Section */}
-      <section className="py-10 sm:py-12 md:py-16 bg-slate-900">
+      <section className="py-20 bg-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -517,10 +512,10 @@ export default function PenetrationTestingPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-slate-800/50 border border-cyan-500/20 rounded-lg p-6"
+                className="bg-brand-navy/40 backdrop-blur-sm border border-accent-cyber/20 rounded-lg p-6"
               >
                 <div className="flex items-start gap-3">
-                  <Target className="text-cyan-400 flex-shrink-0 mt-1" size={20} />
+                  <Target className="text-accent-cyber flex-shrink-0 mt-1" size={20} />
                   <p className="text-gray-300">{item}</p>
                 </div>
               </motion.div>
@@ -530,7 +525,7 @@ export default function PenetrationTestingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-10 sm:py-12 md:py-16 bg-gradient-to-r from-mauve-dark to-mauve">
+      <section className="py-20 bg-gradient-to-r from-brand-navy to-brand-black border-t border-accent-cyber/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -541,15 +536,15 @@ export default function PenetrationTestingPage() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Secure Your Digital Future Today
             </h2>
-            <p className="text-xl text-cyan-100 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-accent-cyber font-semibold mb-8 max-w-3xl mx-auto">
               Cyberattacks in Sierra Leone are increasing, targeting financial institutions, government platforms, telecom infrastructure, and private enterprises. KNS helps you stay ahead with comprehensive penetration testing that reveals your weaknesses before attackers can exploit them.
             </p>
-            <p className="text-lg text-white mb-10 max-w-2xl mx-auto font-semibold">
+            <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto font-semibold">
               Protect your systems. Safeguard your customers. Strengthen your resilience.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center px-8 py-4 bg-accent-cyber text-brand-black rounded-lg font-semibold text-lg hover:bg-accent-cyber/80 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Contact Us Today
               <ArrowRight size={20} className="ml-2" />

@@ -14,7 +14,7 @@ export default function BlogNews() {
       excerpt: 'Knowledge Network Solutions has been recognized for outstanding contribution to advancing digital skills and innovation in Sierra Leone.',
       category: 'Awards',
       date: 'November 15, 2025',
-      image: '/hero-images/hero-1-it-consultancy.webp', // Black professionals group high-five
+      image: '/Mocti-recongnizeKNS.jpg', // Recognition award image
       slug: 'digital-skills-champion-award-2025',
     },
     {
@@ -23,17 +23,17 @@ export default function BlogNews() {
       excerpt: 'We are excited to announce our comprehensive cybersecurity training program designed to equip professionals with essential security skills.',
       category: 'Training',
       date: 'November 10, 2025',
-      image: '/hero-images/hero-2-cybersecurity.webp', // Black man with cybersecurity interface
+      image: '/cybersecurity.jpg', 
       slug: 'cybersecurity-training-launch',
     },
     {
       id: 3,
-      title: 'Partnership with Leading Cloud Providers Announced',
-      excerpt: 'KNS has formed strategic partnerships with major cloud service providers to offer enhanced enterprise solutions to our clients.',
-      category: 'Partnerships',
+      title: "KNS Officially Invited to the 'Big 5' Innovation Challenge by MoCTI",
+      excerpt: "Knowledge Network Solutions received an official invitation to participate in the 'Big 5' Innovation Challenge, a prestigious initiative by the Ministry of Communication, Technology, and Innovation to drive digital solutions in Sierra Leone.",
+      category: 'Events',
       date: 'November 5, 2025',
-      image: '/hero-images/hero-5-cloud.png', // Black man in data center
-      slug: 'cloud-partnerships-announcement',
+      image: '/CEOS.jpg', 
+      slug: 'big-5-innovation-challenge-invitation',
     },
     {
       id: 4,
@@ -41,7 +41,7 @@ export default function BlogNews() {
       excerpt: 'Our IT consultancy team has expanded to provide more comprehensive support for businesses undergoing digital transformation.',
       category: 'Services',
       date: 'October 28, 2025',
-      image: '/hero-images/hero-3-training.jpg', // Black man in computer lab
+      image: '/IT-Support.jpg', 
       slug: 'it-consultancy-expansion',
     },
   ]
@@ -103,26 +103,31 @@ export default function BlogNews() {
                 whileHover={{ y: -5, scale: 1.02 }}
                 className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col cursor-pointer h-full"
               >
-              {/* Image */}
-              <div className="relative h-48 w-full overflow-hidden blog-image-container">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  className="object-cover transition-transform duration-300 hover:scale-125"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-mauve text-white text-xs font-semibold rounded-full flex items-center gap-1">
-                    <Tag size={12} />
-                    {post.category}
-                  </span>
+                <div className="relative h-48 w-full overflow-hidden blog-image-container bg-gradient-to-br from-mauve/20 to-mauve/5 flex items-center justify-center">
+                  {post.image ? (
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-300 hover:scale-125"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
+                  ) : (
+                    <div className="text-mauve/30 font-bold text-xl uppercase tracking-widest opacity-50">
+                      {post.category}
+                    </div>
+                  )}
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 bg-mauve text-white text-xs font-semibold rounded-full flex items-center gap-1 shadow-lg">
+                      <Tag size={12} />
+                      {post.category}
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              {/* Content */}
-              <div className="p-6 flex flex-col flex-grow">
-                <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
                   <Calendar size={16} />
                   <span>{post.date}</span>
                   <span>•</span>

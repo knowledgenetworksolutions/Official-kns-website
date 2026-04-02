@@ -8,6 +8,7 @@ import Image from 'next/image'
 import { 
   ArrowRight, HelpCircle, CheckCircle, Target, Wrench, Server, Clock
 } from 'lucide-react'
+import GoBackButton from '@/components/GoBackButton'
 
 export default function HelpdeskSupportPage() {
   const services = [
@@ -78,13 +79,7 @@ export default function HelpdeskSupportPage() {
             transition={{ duration: 0.6 }}
             className="mb-8"
           >
-            <Link 
-              href="/" 
-              className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
-            >
-              <ArrowRight size={16} className="mr-2" />
-              Go to Home
-            </Link>
+            <GoBackButton className="text-cyan-400 hover:text-cyan-300" />
           </motion.div>
 
           <motion.div

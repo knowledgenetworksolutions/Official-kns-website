@@ -10,6 +10,7 @@ import {
   CheckCircle, Search, Eye, TrendingUp, Users, Building2, Landmark, Phone,
   GraduationCap, Heart, Briefcase, Server, Globe, Award
 } from 'lucide-react'
+import GoBackButton from '@/components/GoBackButton'
 
 export default function RiskManagementPage() {
   const services = [
@@ -178,13 +179,7 @@ export default function RiskManagementPage() {
             transition={{ duration: 0.6 }}
             className="mb-8"
           >
-            <Link 
-              href="/" 
-              className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
-            >
-              <ArrowRight size={16} className="mr-2" />
-              Go to Home
-            </Link>
+            <GoBackButton className="text-cyan-400 hover:text-cyan-300" />
           </motion.div>
 
           <motion.div
@@ -579,4 +574,3 @@ export default function RiskManagementPage() {
     </main>
   )
 }
-

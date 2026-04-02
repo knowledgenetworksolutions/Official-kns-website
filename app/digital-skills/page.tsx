@@ -8,6 +8,7 @@ import {
   ArrowRight, BookOpen, Award, Building2, GraduationCap, Users, Globe,
   CheckCircle, Target, FileText, Zap, ShieldCheck, Star, Briefcase, Badge
 } from 'lucide-react'
+import GoBackButton from '@/components/GoBackButton'
 
 export default function DigitalSkillsPage() {
   const services = [
@@ -114,7 +115,7 @@ export default function DigitalSkillsPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-b from-[#0A1A3A] via-[#0A1A3A] to-black overflow-hidden">
+      <section className="relative pt-32 pb-20 bg-gradient-to-b from-brand-navy via-brand-navy to-brand-black overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <AnimatedGridDots />
         </div>
@@ -126,13 +127,7 @@ export default function DigitalSkillsPage() {
             transition={{ duration: 0.6 }}
             className="mb-8"
           >
-            <Link 
-              href="/" 
-              className="inline-flex items-center text-mauve-light hover:text-mauve-light transition-colors"
-            >
-              <ArrowRight size={16} className="mr-2" />
-              Go to Home
-            </Link>
+            <GoBackButton className="text-accent-skills hover:text-accent-skills/80" />
           </MotionDiv>
 
           <MotionDiv
@@ -145,14 +140,14 @@ export default function DigitalSkillsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-mauve-light font-semibold text-lg mb-4 tracking-wider"
+              className="text-accent-skills font-semibold text-lg mb-4 tracking-wider"
             >
               SIERRA LEONE&apos;S DIGITAL SKILLS CHAMPION 2025
             </MotionDiv>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Digital Skills Development &amp; Capacity Building
             </h1>
-            <p className="text-xl md:text-2xl text-mauve-light font-semibold mb-8 max-w-4xl">
+            <p className="text-xl md:text-2xl text-accent-skills font-semibold mb-8 max-w-4xl">
               Empowering Citizens, Transforming Institutions, Building a Digitally Skilled Nation
             </p>
             <p className="text-lg text-gray-300 max-w-3xl">
@@ -163,7 +158,7 @@ export default function DigitalSkillsPage() {
       </section>
 
       {/* Overview Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-[#0A1A3A]">
+      <section className="py-20 bg-gradient-to-b from-brand-black to-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <MotionDiv
@@ -176,7 +171,7 @@ export default function DigitalSkillsPage() {
               <p className="text-lg text-gray-300 leading-relaxed">
                 As Sierra Leone accelerates its digital transformation, the need for a digitally skilled workforce has never been more critical. Knowledge Network Solutions (KNS) stands at the forefront of this mission, recognized by the Ministry of Communication, Technology &amp; Innovation (MoCTI) as &quot;Digital Skills Champion 2025.&quot;
               </p>
-              <p className="text-lg text-mauve-light leading-relaxed font-semibold">
+              <p className="text-lg text-accent-skills leading-relaxed font-semibold">
                 We deliver end-to-end digital skills development programs, from IC3 Digital Literacy for first-time computer users to advanced professional certifications in cybersecurity, cloud computing, networking, and enterprise technology.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
@@ -207,7 +202,7 @@ export default function DigitalSkillsPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-[#0A1A3A]">
+      <section className="py-20 bg-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
@@ -234,17 +229,17 @@ export default function DigitalSkillsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-slate-800/50 border border-mauve/20 rounded-xl p-6 hover:border-mauve-light/40 hover:bg-slate-800/70 transition-all"
+                  className="bg-brand-navy/40 backdrop-blur-sm border border-accent-skills/20 rounded-xl p-6 hover:border-accent-skills/50 hover:bg-brand-navy/60 transition-all group"
                 >
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="p-3 bg-mauve/20 rounded-lg">
-                      <Icon className="text-mauve-light" size={24} />
+                    <div className="p-3 bg-accent-skills/10 rounded-lg group-hover:bg-accent-skills/20 transition-colors">
+                      <Icon className="text-accent-skills" size={24} />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-xl font-semibold text-white mb-2">
                         {service.title}
                       </h3>
-                      <p className="text-mauve-light text-sm font-medium mb-3">
+                      <p className="text-accent-skills text-sm font-medium mb-3">
                         {service.tagline}
                       </p>
                     </div>
@@ -254,7 +249,7 @@ export default function DigitalSkillsPage() {
                   </p>
                   <Link
                     href={service.link}
-                    className="inline-flex items-center text-mauve-light hover:text-mauve-light text-sm font-semibold"
+                    className="inline-flex items-center text-accent-skills hover:text-accent-skills/80 text-sm font-semibold"
                   >
                     Learn More
                     <ArrowRight size={16} className="ml-2" />
@@ -267,7 +262,7 @@ export default function DigitalSkillsPage() {
       </section>
 
       {/* Why Choose KNS Section */}
-      <section className="py-20 bg-gradient-to-b from-[#0A1A3A] to-black">
+      <section className="py-20 bg-gradient-to-b from-brand-navy to-brand-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
@@ -291,10 +286,10 @@ export default function DigitalSkillsPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-slate-800/50 border border-mauve/20 rounded-lg p-6"
+                  className="bg-brand-navy/40 backdrop-blur-sm border border-accent-skills/20 rounded-xl p-6 hover:border-accent-skills/50 transition-all"
                 >
                   <div className="flex items-start gap-4 mb-4">
-                    <Icon className="text-mauve-light flex-shrink-0" size={24} />
+                    <Icon className="text-accent-skills flex-shrink-0" size={24} />
                     <h3 className="text-xl font-semibold text-white">
                       {item.title}
                     </h3>
@@ -310,7 +305,7 @@ export default function DigitalSkillsPage() {
       </section>
 
       {/* Who We Serve Section */}
-      <section className="py-20 bg-[#0A1A3A]">
+      <section className="py-20 bg-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
@@ -337,9 +332,9 @@ export default function DigitalSkillsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
-                  className="bg-slate-800/50 border border-mauve/20 rounded-lg p-6 text-center hover:border-mauve-light/40 transition-all"
+                  className="bg-brand-navy/40 backdrop-blur-sm border border-accent-skills/20 rounded-lg p-6 text-center hover:border-accent-skills/50 transition-all"
                 >
-                  <Icon className="text-mauve-light mx-auto mb-3" size={32} />
+                  <Icon className="text-accent-skills mx-auto mb-3" size={32} />
                   <p className="text-gray-300 text-sm font-medium">
                     {item.label}
                   </p>
@@ -351,7 +346,7 @@ export default function DigitalSkillsPage() {
       </section>
 
       {/* Methodology Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-[#0A1A3A]">
+      <section className="py-20 bg-gradient-to-b from-brand-black to-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
@@ -374,10 +369,10 @@ export default function DigitalSkillsPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-start gap-4 bg-slate-800/50 border border-mauve/20 rounded-lg p-4"
+                  className="flex items-start gap-4 bg-brand-navy/40 backdrop-blur-sm border border-accent-skills/20 rounded-lg p-4"
                 >
-                  <div className="flex-shrink-0 w-8 h-8 bg-mauve/20 rounded-full flex items-center justify-center">
-                    <span className="text-mauve-light font-bold text-sm">{index + 1}</span>
+                  <div className="flex-shrink-0 w-8 h-8 bg-accent-skills/10 rounded-full flex items-center justify-center">
+                    <span className="text-accent-skills font-bold text-sm">{index + 1}</span>
                   </div>
                   <p className="text-gray-300">{step}</p>
                 </MotionDiv>
@@ -388,19 +383,19 @@ export default function DigitalSkillsPage() {
       </section>
 
       {/* Certiport Global Section */}
-      <section className="py-20 bg-[#0A1A3A]">
+      <section className="py-20 bg-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-r from-mauve-dark/20 to-mauve/20 border border-mauve/30 rounded-xl p-8"
+            className="bg-brand-navy/40 backdrop-blur-sm border border-accent-skills/20 rounded-xl p-8"
           >
             <div className="flex items-start gap-4 mb-6">
-              <Badge className="text-mauve-light flex-shrink-0" size={32} />
+              <Badge className="text-accent-skills flex-shrink-0" size={32} />
               <div>
-                <h2 className="text-3xl font-bold text-white mb-4">
+                <h2 className="text-3xl font-bold text-white mb-4 uppercase">
                   CERTIPORT GLOBAL DIGITAL SKILLS & WORKFORCE CERTIFICATIONS
                 </h2>
                 <p className="text-lg text-gray-300 mb-6">
@@ -420,13 +415,13 @@ export default function DigitalSkillsPage() {
                 'Cloud & Data fundamentals'
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-2">
-                  <CheckCircle className="text-mauve-light flex-shrink-0 mt-1" size={16} />
+                  <CheckCircle className="text-accent-skills flex-shrink-0 mt-1" size={16} />
                   <span className="text-gray-300 text-sm">{item}</span>
                 </div>
               ))}
             </div>
-            <div className="mt-6 pt-6 border-t border-mauve/20">
-              <p className="text-mauve-light font-semibold mb-3">All Certiport certifications come with:</p>
+            <div className="mt-6 pt-6 border-t border-accent-skills/20">
+              <p className="text-accent-skills font-semibold mb-3">All Certiport certifications come with:</p>
               <div className="grid md:grid-cols-2 gap-3">
                 {[
                   'Official Exam Delivery via Certiport',
@@ -436,7 +431,7 @@ export default function DigitalSkillsPage() {
                   'Global exam readiness'
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-2">
-                    <Star className="text-mauve-light" size={16} />
+                    <Star className="text-accent-skills" size={16} />
                     <span className="text-gray-300 text-sm">{item}</span>
                   </div>
                 ))}
@@ -447,7 +442,7 @@ export default function DigitalSkillsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-mauve-dark to-mauve">
+      <section className="py-20 bg-gradient-to-r from-brand-navy to-brand-black border-t border-accent-skills/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
@@ -458,20 +453,20 @@ export default function DigitalSkillsPage() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Build Your Digital Future With KNS
             </h2>
-            <p className="text-xl text-cyan-100 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
               Whether you&apos;re an individual seeking certification, an institution developing curriculum, or a government agency upskilling your workforce, KNS has the programs and expertise to help you succeed.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center px-8 py-4 bg-accent-skills text-white rounded-lg font-semibold text-lg hover:bg-accent-skills/80 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Contact Us Today
                 <ArrowRight size={20} className="ml-2" />
               </Link>
               <Link
                 href="/"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white/10 transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 border-2 border-accent-skills text-accent-skills rounded-lg font-semibold text-lg hover:bg-accent-skills/10 transition-all duration-300"
               >
                 Explore All Services
               </Link>

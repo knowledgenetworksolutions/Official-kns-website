@@ -12,6 +12,12 @@ module.exports = {
         'mauve-dark': '#0052A3',
         'mauve-light': '#3385D6',
         charcoal: '#333333',
+        'brand-navy': '#0A1A3A',
+        'brand-black': '#020617',
+        'accent-cyber': '#00F5FF',
+        'accent-tech': '#3385D6',
+        'accent-skills': '#4F46E5',
+        'accent-cx': '#2DD4BF',
       },
       fontFamily: {
         sans: ['Inter', 'Poppins', 'system-ui', 'sans-serif'],

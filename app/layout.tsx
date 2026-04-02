@@ -21,6 +21,8 @@ export const metadata: Metadata = {
   keywords: 'IT Consultancy, Cybersecurity, IT Training, Software Solutions, Enterprise & Cloud Solution, Call Center/Customer Services',
 }
 
+import { ToastProvider } from '@/context/ToastContext'
+
 export default function RootLayout({
   children,
 }: {
@@ -28,7 +30,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        <ToastProvider>
+          {children}
+        </ToastProvider>
+      </body>
     </html>
   )
 }

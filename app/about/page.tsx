@@ -69,16 +69,16 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="relative h-60 sm:h-72 md:h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-xl"
+              className="relative h-72 sm:h-80 md:h-[550px] lg:h-[650px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white"
             >
               <Image
-                src="https://vellum.co.ke/wp-content/uploads/2024/08/SF2-1.jpg"
-                alt="KNS Team"
+                src="/KNS-TECH-HUB.jpg"
+                alt="KNS Tech Hub"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-500 hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
-                quality={85}
+                quality={90}
               />
             </MotionDiv>
 

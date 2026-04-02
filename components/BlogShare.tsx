@@ -2,12 +2,16 @@
 
 import { Share2 } from 'lucide-react'
 
+import { useToast } from '@/context/ToastContext'
+
 interface BlogShareProps {
   title: string
   excerpt: string
 }
 
 export default function BlogShare({ title, excerpt }: BlogShareProps) {
+  const { showToast } = useToast()
+
   const handleShare = () => {
     if (navigator.share) {
       navigator.share({
@@ -18,7 +22,7 @@ export default function BlogShare({ title, excerpt }: BlogShareProps) {
     } else {
       // Fallback: Copy to clipboard
       navigator.clipboard.writeText(window.location.href)
-      alert('Link copied to clipboard!')
+      showToast('Link copied to clipboard!', 'success')
     }
   }
 

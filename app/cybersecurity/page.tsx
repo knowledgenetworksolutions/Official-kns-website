@@ -8,6 +8,7 @@ import {
   ArrowRight, CheckCircle, Award, Globe, Building2, Landmark, Phone, 
   Heart, Briefcase, Server, Target, Users
 } from 'lucide-react'
+import GoBackButton from '@/components/GoBackButton'
 
 export default function CybersecurityPage() {
   const capabilities = [
@@ -108,12 +109,12 @@ export default function CybersecurityPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-14 sm:pb-16 md:pb-20 bg-gradient-to-b from-slate-900 via-blue-900 to-black overflow-hidden">
+      <section className="relative pt-32 pb-20 bg-gradient-to-b from-brand-navy via-brand-navy to-brand-black overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 20% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
-                             radial-gradient(circle at 80% 80%, rgba(0, 102, 255, 0.1) 0%, transparent 50%)`
+            backgroundImage: `radial-gradient(circle at 20% 50%, rgba(0, 245, 255, 0.15) 0%, transparent 50%),
+                             radial-gradient(circle at 80% 80%, rgba(0, 245, 255, 0.1) 0%, transparent 50%)`
           }}></div>
         </div>
 
@@ -124,13 +125,7 @@ export default function CybersecurityPage() {
             transition={{ duration: 0.6 }}
             className="mb-8"
           >
-            <Link 
-              href="/" 
-              className="inline-flex items-center text-mauve-light hover:text-mauve transition-colors"
-            >
-              <ArrowRight size={16} className="mr-2" />
-              Go to Home
-            </Link>
+            <GoBackButton className="text-accent-cyber hover:text-accent-cyber/80" />
           </MotionDiv>
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
@@ -141,7 +136,7 @@ export default function CybersecurityPage() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
               Cybersecurity & Digital Resilience
             </h1>
-            <p className="text-2xl md:text-3xl text-mauve-light font-semibold mb-8">
+            <p className="text-2xl md:text-3xl text-accent-cyber font-semibold mb-8">
               Protecting Institutions. Empowering People. Strengthening Nations.
             </p>
           </MotionDiv>
@@ -149,7 +144,7 @@ export default function CybersecurityPage() {
       </section>
 
       {/* Overview Section */}
-      <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-b from-black to-slate-900">
+      <section className="py-20 bg-gradient-to-b from-brand-black to-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <MotionDiv
@@ -189,7 +184,7 @@ export default function CybersecurityPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end">
                   <div className="p-6 text-white">
-                    <div className="text-4xl font-bold text-mauve-light mb-1">20+</div>
+                    <div className="text-4xl font-bold text-accent-cyber mb-1">20+</div>
                     <div className="text-lg text-gray-200">Years of Experience</div>
                   </div>
                 </div>
@@ -200,7 +195,7 @@ export default function CybersecurityPage() {
       </section>
 
       {/* Capabilities Section */}
-      <section className="py-14 sm:py-16 md:py-20 bg-slate-900">
+      <section className="py-20 bg-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
@@ -228,17 +223,17 @@ export default function CybersecurityPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-slate-800/50 border border-mauve/30 rounded-xl p-6 hover:border-mauve-light/50 hover:bg-slate-800/70 transition-all"
+                  className="bg-brand-navy/40 backdrop-blur-sm border border-accent-cyber/20 rounded-xl p-6 hover:border-accent-cyber/50 hover:bg-brand-navy/60 transition-all group"
                 >
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="p-3 bg-mauve/20 rounded-lg">
-                      <Icon className="text-mauve-light" size={24} />
+                    <div className="p-3 bg-accent-cyber/10 rounded-lg group-hover:bg-accent-cyber/20 transition-colors">
+                      <Icon className="text-accent-cyber" size={24} />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-xl font-semibold text-white mb-2">
                         {capability.title}
                       </h3>
-                      <p className="text-mauve-light text-sm font-medium mb-3">
+                      <p className="text-accent-cyber text-sm font-medium mb-3">
                         {capability.tagline}
                       </p>
                     </div>
@@ -248,7 +243,7 @@ export default function CybersecurityPage() {
                   </p>
                   <Link
                     href={capability.link}
-                    className="inline-flex items-center text-mauve-light hover:text-mauve text-sm font-semibold"
+                    className="inline-flex items-center text-accent-cyber hover:text-accent-cyber/80 text-sm font-semibold"
                   >
                     Learn More
                     <ArrowRight size={16} className="ml-2" />
@@ -261,7 +256,7 @@ export default function CybersecurityPage() {
       </section>
 
       {/* Why Choose KNS Section */}
-      <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-b from-slate-800 to-black">
+      <section className="py-20 bg-gradient-to-b from-brand-navy to-brand-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
@@ -286,11 +281,11 @@ export default function CybersecurityPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-slate-800/50 border border-mauve/30 rounded-xl p-6 text-center"
+                  className="bg-brand-navy/40 backdrop-blur-sm border border-accent-cyber/20 rounded-xl p-6 text-center hover:border-accent-cyber/50 transition-all"
                 >
                   <div className="flex justify-center mb-4">
-                    <div className="p-4 bg-mauve/20 rounded-full">
-                      <Icon className="text-mauve-light" size={32} />
+                    <div className="p-4 bg-accent-cyber/10 rounded-full">
+                      <Icon className="text-accent-cyber" size={32} />
                     </div>
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3">
@@ -307,7 +302,7 @@ export default function CybersecurityPage() {
       </section>
 
       {/* Who We Support Section */}
-      <section className="py-14 sm:py-16 md:py-20 bg-slate-900">
+      <section className="py-20 bg-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
@@ -332,11 +327,11 @@ export default function CybersecurityPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
-                  className="flex items-start gap-3 bg-slate-800/50 border border-mauve/30 rounded-lg p-4 hover:border-mauve-light/50 transition-all"
+                  className="flex items-start gap-3 bg-brand-navy/40 backdrop-blur-sm border border-accent-cyber/20 rounded-lg p-4 hover:border-accent-cyber/50 transition-all"
                 >
-                  <CheckCircle className="text-mauve-light flex-shrink-0 mt-1" size={20} />
+                  <CheckCircle className="text-accent-cyber flex-shrink-0 mt-1" size={20} />
                   <div className="flex items-center gap-2 flex-1">
-                    <Icon className="text-mauve-light/60 flex-shrink-0" size={18} />
+                    <Icon className="text-accent-cyber/60 flex-shrink-0" size={18} />
                     <p className="text-gray-300 text-sm">{item.label}</p>
                   </div>
                 </MotionDiv>
@@ -347,7 +342,7 @@ export default function CybersecurityPage() {
       </section>
 
       {/* Methodology Section */}
-      <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-b from-black to-slate-900">
+      <section className="py-20 bg-gradient-to-b from-brand-black to-brand-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
@@ -373,10 +368,10 @@ export default function CybersecurityPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-center gap-4 bg-slate-800/50 border border-mauve/30 rounded-lg p-4"
+                  className="flex items-center gap-4 bg-brand-navy/40 backdrop-blur-sm border border-accent-cyber/20 rounded-lg p-4"
                 >
-                  <div className="flex-shrink-0 w-10 h-10 bg-mauve/20 rounded-full flex items-center justify-center">
-                    <span className="text-mauve-light font-bold">{index + 1}</span>
+                  <div className="flex-shrink-0 w-10 h-10 bg-accent-cyber/10 rounded-full flex items-center justify-center">
+                    <span className="text-accent-cyber font-bold">{index + 1}</span>
                   </div>
                   <p className="text-gray-300 font-medium capitalize">{step}</p>
                 </MotionDiv>
@@ -396,7 +391,7 @@ export default function CybersecurityPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-r from-mauve-dark to-mauve">
+      <section className="py-20 bg-gradient-to-r from-brand-navy to-brand-black border-t border-accent-cyber/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
@@ -407,23 +402,23 @@ export default function CybersecurityPage() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Ready to Strengthen Your Cyber Defences?
             </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-accent-cyber/90 mb-8 max-w-3xl mx-auto">
               Cyber threats are growing fast, but with the right partner, you can stay ahead.
             </p>
-            <p className="text-lg text-white mb-10 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
               KNS provides the expertise, strategy, and solutions your organization needs to safeguard its digital future.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-mauve rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center px-8 py-4 bg-accent-cyber text-brand-black rounded-lg font-semibold text-lg hover:bg-accent-cyber/80 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Contact Us Today
                 <ArrowRight size={20} className="ml-2" />
               </Link>
               <Link
                 href="/services/cybersecurity-digital-resilience"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white rounded-lg font-semibold text-lg hover:bg-white/10 transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 border-2 border-accent-cyber text-accent-cyber rounded-lg font-semibold text-lg hover:bg-accent-cyber/10 transition-all duration-300"
               >
                 View Service Details
               </Link>

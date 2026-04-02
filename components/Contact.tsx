@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Mail, PhoneCall, MapPin, Send } from 'lucide-react'
 import { useState } from 'react'
+import { useToast } from '@/context/ToastContext'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -27,25 +28,43 @@ export default function Contact() {
     'General Inquiry',
   ]
 
+  const { showToast } = useToast()
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
-      console.log('Form submitted:', formData)
-      alert('Thank you for your message! We will get back to you soon.')
-      setFormData({ 
-        name: '', 
-        email: '', 
-        phone: '',
-        company: '',
-        subject: '',
-        service: '',
-        message: '' 
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        showToast('Thank you for your message! We will get back to you soon.', 'success')
+        setFormData({ 
+          name: '', 
+          email: '', 
+          phone: '',
+          company: '',
+          subject: '',
+          service: '',
+          message: '' 
+        })
+      } else {
+        throw new Error(data.error || 'Failed to send message')
+      }
+    } catch (error: any) {
+      console.error('Submission error:', error)
+      showToast(error.message || 'Something went wrong. Please try again later.', 'error')
+    } finally {
       setIsSubmitting(false)
-    }, 1000)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -96,7 +115,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mauve focus:border-transparent transition-all duration-300"
-                    placeholder="John Doe"
+                    placeholder="Enter your full name"
                   />
                 </div>
                 <div>
@@ -286,4 +305,3 @@ export default function Contact() {
     </section>
   )
 }
-

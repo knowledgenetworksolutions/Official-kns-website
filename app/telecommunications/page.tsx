@@ -10,6 +10,7 @@ import {
   CheckCircle, Target, FileText, Users, Building2, Landmark, 
   GraduationCap, Heart, Briefcase, Server, Award, Globe, Zap
 } from 'lucide-react'
+import GoBackButton from '@/components/GoBackButton'
 
 export default function TelecommunicationsPage() {
   const services = [
@@ -124,13 +125,7 @@ export default function TelecommunicationsPage() {
             transition={{ duration: 0.6 }}
             className="mb-8"
           >
-            <Link 
-              href="/" 
-              className="inline-flex items-center text-mauve-light hover:text-mauve transition-colors"
-            >
-              <ArrowRight size={16} className="mr-2" />
-              Go to Home
-            </Link>
+            <GoBackButton className="text-mauve-light hover:text-mauve" />
           </motion.div>
 
           <motion.div
